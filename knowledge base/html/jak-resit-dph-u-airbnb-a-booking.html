@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jak řešit DPH u Airbnb a Bookingu</title>
+  <style>
+    :root {
+      --bg: #f8f1e7;
+      --surface: rgba(255, 251, 245, 0.94);
+      --surface-strong: rgba(255, 255, 255, 0.98);
+      --text: #1e2a25;
+      --muted: #607065;
+      --line: rgba(30, 42, 37, 0.1);
+      --accent: #0f766e;
+      --accent-soft: rgba(15, 118, 110, 0.1);
+      --warm: #b96b36;
+      --warm-soft: rgba(185, 107, 54, 0.1);
+      --shadow: 0 20px 50px rgba(67, 50, 28, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #f8f1e7 0%, #f1e6d5 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      width: min(calc(100% - 24px), 1000px);
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+    .nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .nav a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .hero, .card, .step, .next-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      padding: 30px;
+      border-radius: 30px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      max-width: 14ch;
+    }
+    p, li {
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 1rem;
+    }
+    strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+    .hero p {
+      margin: 14px 0 0;
+      max-width: 66ch;
+      font-size: 1.05rem;
+    }
+    .expect {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--surface-strong);
+      border: 1px solid rgba(30, 42, 37, 0.08);
+    }
+    .expect strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .promo {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.14), rgba(255, 255, 255, 0.96));
+      border: 1px solid rgba(15, 118, 110, 0.16);
+    }
+
+    .promo strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 1.04rem;
+    }
+    .section-title {
+      margin-top: 26px;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      padding: 24px;
+      border-radius: 26px;
+      margin-top: 18px;
+    }
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .card ul, .step ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+    .card li, .step li {
+      margin-top: 8px;
+    }
+    .step {
+      padding: 18px;
+      border-radius: 20px;
+    }
+    .step strong.kicker {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--warm);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+    .step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .next-card {
+      padding: 20px;
+      border-radius: 22px;
+    }
+    .next-icon {
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .next-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .next-link {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--warm-soft);
+      border: 1px solid rgba(185, 107, 54, 0.14);
+    }
+    .meta {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(30, 42, 37, 0.04);
+      border: 1px solid rgba(30, 42, 37, 0.08);
+      font-size: 0.95rem;
+    }
+    .meta p { margin: 0; }
+    .sources {
+      margin-top: 18px;
+      padding-left: 18px;
+    }
+    @media (max-width: 820px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="nav">
+      <a href="./index.html">← Centrum pomoci</a>
+      <a href="./jak-funguje-poplatek-z-pobytu.html">Předchozí článek</a>
+      <a href="./co-delat-kdyz-se-kalendar-nenacita.html">Další článek →</a>
+    </div>
+
+    <section class="hero">
+      <span class="eyebrow">Legislativa v ČR</span>
+      <h1>Jak řešit DPH u Airbnb a Bookingu</h1>
+      <p>
+        Pokud přijímáte rezervace přes <strong>Airbnb</strong> nebo <strong>Booking.com</strong>, neřešíte jen daň z příjmu.
+        Prakticky velmi často vzniká i povinnost řešit <strong>DPH z provize nebo poplatků</strong>, které vám platforma účtuje.
+      </p>
+      <p>
+        Pro většinu menších hostitelů to v praxi znamená, že se kvůli přijaté službě od zahraniční platformy stávají
+        <strong>identifikovanou osobou</strong>. Pokud jste už <strong>plátce DPH</strong>, postup je jiný a můžete za splnění podmínek řešit i odpočet.
+      </p>
+      <div class="expect">
+        <strong>Co vás čeká dál</strong>
+        <p>Nejdřív si ujasníte, jestli jste neplátce nebo plátce DPH, pak ověříte vztah k provizím z Airbnb nebo Bookingu a podle toho vyřešíte registraci, přiznání i případný odpočet.</p>
+      </div>
+      <div class="promo">
+        <strong>Nechce se vám tohle celé řešit?</strong>
+        <p>Jsme tu pro vás a vyřešíme to za vás. V našich řadách máme tým daňových a účetních expertů, kteří vám s tím pomohou.</p>
+      </div>
+    </section>
+
+    <h2 class="section-title">Stručně: co je důležité vědět</h2>
+    <div class="grid-3">
+      <article class="next-card">
+        <div class="next-icon">1</div>
+        <h3>Provize platformy je služba</h3>
+        <p>Poplatky, které si Airbnb nebo Booking strhávají, nejsou jen technický detail. Z pohledu DPH jde o přijatou službu od zahraniční osoby.</p>
+      </article>
+      <article class="next-card">
+        <div class="next-icon">2</div>
+        <h3>Neplátce často končí jako identifikovaná osoba</h3>
+        <p>Pokud nejste plátce DPH a přijímáte takovou službu, velmi často vám vznikne povinnost registrovat se jako identifikovaná osoba.</p>
+      </article>
+      <article class="next-card">
+        <div class="next-icon">3</div>
+        <h3>Plátce DPH může řešit odpočet</h3>
+        <p>Jestli jste už plátce DPH, přiznáváte DPH z přijaté služby také, ale za splnění zákonných podmínek můžete uplatnit odpočet.</p>
+      </article>
+    </div>
+
+    <section class="card">
+      <h2>Co si ujasnit hned na začátku</h2>
+      <ul>
+        <li>jestli poskytujete <strong>ubytovací službu</strong>, nebo řešíte jiný režim příjmů</li>
+        <li>jestli jste dnes <strong>neplátce DPH</strong>, <strong>identifikovaná osoba</strong>, nebo <strong>plátce DPH</strong></li>
+        <li>přes kterou platformu přijímáte rezervace a jaké poplatky vám fakturuje</li>
+        <li>jestli už vám chodí daňové doklady nebo přehledy provizí od Airbnb či Bookingu</li>
+        <li>jestli váš obrat nesměřuje i k plné registraci plátce DPH</li>
+      </ul>
+      <div class="note">
+        V tomhle článku zjednodušujeme nejběžnější situaci hostitele v ČR. U konkrétního případu je vždy vhodné ověřit detaily s účetní nebo daňovým poradcem.
+      </div>
+    </section>
+
+    <h2 class="section-title">Jak to funguje prakticky</h2>
+    <div class="grid-2">
+      <article class="step">
+        <strong class="kicker">Krok 1</strong>
+        <h3>Počítejte s tím, že řešíte dvě různé daňové vrstvy</h3>
+        <p>U krátkodobého ubytování typicky řešíte <strong>daň z příjmů</strong> a vedle toho také <strong>DPH</strong>. To jsou dvě různé oblasti a není dobré je míchat dohromady.</p>
+        <p>Daň z příjmů řeší výdělek z ubytování. DPH naopak často řeší provizi nebo poplatek, který vám účtuje Airbnb nebo Booking jako zahraniční platforma.</p>
+      </article>
+
+      <article class="step">
+        <strong class="kicker">Krok 2</strong>
+        <h3>Jestli jste neplátce, často řešíte identifikovanou osobu</h3>
+        <p>Pokud nejste plátce DPH a přijmete službu s místem plnění v tuzemsku od osoby neusazené v tuzemsku, česká pravidla DPH vás typicky posouvají do režimu <strong>identifikované osoby</strong>.</p>
+        <p>Právě sem obvykle spadá provize nebo jiný poplatek fakturovaný zahraniční platformou.</p>
+      </article>
+
+      <article class="step">
+        <strong class="kicker">Krok 3</strong>
+        <h3>Identifikovaná osoba není totéž co plátce DPH</h3>
+        <p>Tohle je důležité. <strong>Identifikovaná osoba</strong> přiznává DPH z přijatých služeb od zahraniční osoby, ale <strong>není běžným plátcem DPH</strong>.</p>
+        <ul>
+          <li>neúčtujete standardně DPH na všechna tuzemská plnění jen kvůli této registraci</li>
+          <li>podáváte přiznání k DPH pro dotčená plnění</li>
+          <li>nemáte automaticky nárok na odpočet DPH na vstupu</li>
+        </ul>
+      </article>
+
+      <article class="step">
+        <strong class="kicker">Krok 4</strong>
+        <h3>Plátce DPH má jiný režim</h3>
+        <p>Pokud jste už <strong>plátce DPH</strong>, přijatou službu od Airbnb nebo Bookingu přiznáváte také. Rozdíl je v tom, že za splnění zákonných podmínek můžete řešit <strong>nárok na odpočet</strong>.</p>
+        <p>Proto je důležité neříkat obecně jen „musím řešit DPH“, ale nejdřív správně určit, v jakém režimu jste.</p>
+      </article>
+
+      <article class="step">
+        <strong class="kicker">Krok 5</strong>
+        <h3>Registraci neodkládejte až po první kontrole</h3>
+        <p>Oficiální výklady Finanční správy přímo upozorňují, že osoba povinná k dani, která není plátcem, se při přijetí takové služby stává identifikovanou osobou a má registrační povinnost.</p>
+        <p>V praxi proto není dobrý nápad čekat, až se „něco ozve“. Registraci je lepší řešit včas, ideálně ještě před tím, než vám začnou platformy účtovat provize opakovaně.</p>
+      </article>
+
+      <article class="step">
+        <strong class="kicker">Krok 6</strong>
+        <h3>Evidence poplatků z platforem musí sedět</h3>
+        <p>Abyste DPH řešili správně, potřebujete mít dohled nad tím, jaké poplatky a provize vám platforma účtuje. Bez toho nebudete mít správný základ pro daňové řešení.</p>
+        <p>Tohle je i důvod, proč u nás dává smysl navazovat po iCalu také automatizaci a práci s emaily a rezervacemi.</p>
+      </article>
+    </div>
+
+    <section class="card">
+      <h2>Nejčastější situace hostitele</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Neplátce DPH</h3>
+          <ul>
+            <li>u Airbnb nebo Bookingu přijímá službu od zahraniční platformy</li>
+            <li>typicky řeší registraci jako identifikovaná osoba</li>
+            <li>přiznává DPH z přijaté služby</li>
+            <li>nemá nárok na odpočet DPH na vstupu</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Plátce DPH</h3>
+          <ul>
+            <li>přiznává DPH z přijaté služby také</li>
+            <li>současně může při splnění podmínek řešit odpočet</li>
+            <li>musí správně rozlišovat vlastní ubytovací plnění a přijaté platformní poplatky</li>
+            <li>má širší průběžné povinnosti než identifikovaná osoba</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Na co si dát pozor</h2>
+      <ul>
+        <li>neplést si <strong>identifikovanou osobu</strong> s plným plátcovstvím DPH</li>
+        <li>neřešit jen poplatek z pobytu a zapomenout na DPH z provizí platforem</li>
+        <li>nepředpokládat, že když „nejste plátce“, DPH se vás netýká vůbec</li>
+        <li>nepočítat automaticky s odpočtem, pokud jste jen identifikovaná osoba</li>
+        <li>nezapomenout, že vedle DPH pořád řešíte i daň z příjmů</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Co z toho plyne pro Superhostem</h2>
+      <p>
+        V knowledge base by tohle mělo být vedené jako samostatný legislativní článek, protože jde o jednu z nejčastějších nejasností hostitelů.
+        Prakticky navazuje na nastavení nemovitosti, evidenci rezervací a správu dat z platforem.
+      </p>
+      <p>
+        Nechce se vám tohle celé řešit? <strong>Jsme tu pro vás a vyřešíme to za vás.</strong>
+      </p>
+      <div class="card-links">
+        <a class="next-link" href="./jak-funguje-poplatek-z-pobytu.html">Poplatek z pobytu</a>
+        <a class="next-link" href="./jak-funguje-email-forwarding.html">Email forwarding</a>
+        <a class="next-link" href="./jak-pridat-novou-nemovitost.html">Nastavení nemovitosti</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ověření a zdroje</h2>
+      <p>Tento článek je praktický orientační přehled. Nejde o daňové poradenství. Terminologie i logika článku jsou ověřené proti oficiálním zdrojům Finanční správy.</p>
+      <ul class="sources">
+        <li><a href="https://financnisprava.gov.cz/assets/cs/prilohy/d-seznam-dani/Informace_GFR_k_danovemu_posouzeni_povinnosti_poskytovatelu_.pdf" target="_blank" rel="noreferrer">GFŘ: Informace k daňovému posouzení povinností poskytovatelů služeb přes platformy</a></li>
+        <li><a href="https://financnisprava.gov.cz/cs/mezinarodni-spoluprace/mezinarodni-spoluprace-a-dph/informace-pro-platce-dph-k-vybranym-ustanovenim-zakona" target="_blank" rel="noreferrer">Finanční správa: Identifikované osoby a přeshraniční DPH</a></li>
+        <li><a href="https://financnisprava.gov.cz/assets/cs/prilohy/d-seznam-dani/Informace_GFR_ke_zmenam_sazeb_DPH_od_1_1_2024.pdf" target="_blank" rel="noreferrer">GFŘ: sazby DPH od 1. 1. 2024</a></li>
+      </ul>
+      <div class="meta">
+        <p><strong>Aktualizováno:</strong> 29. 3. 2026. Prakticky jde nejčastěji o situaci, kdy hostitel přijímá službu od zahraniční platformy a musí správně určit, zda řeší identifikovanou osobu nebo plátce DPH.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

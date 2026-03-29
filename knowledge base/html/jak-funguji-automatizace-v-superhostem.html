@@ -1,4 +1,396 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Jak fungují automatizace v Superhostem</title><style>body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#f8f1e7;color:#1e2a25}a{text-decoration:none;color:#0f766e}.page{width:min(calc(100% - 24px),900px);margin:0 auto;padding:24px 0 56px}.card{background:rgba(255,251,245,.94);border:1px solid rgba(30,42,37,.1);border-radius:28px;padding:28px;box-shadow:0 20px 50px rgba(67,50,28,.1)}h1{margin:0 0 12px;font-size:clamp(2.2rem,5vw,3.6rem)}h2{margin:22px 0 10px;font-size:1.15rem}p,li{color:#607065;line-height:1.75}.nav{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px}</style></head>
-<body><div class="page"><div class="nav"><a href="./index.html">← Přehled článků</a><a href="../knowledge-base-site.html#a-05-01">Zpět do propojené KB</a><a href="./jak-nastavit-zakladni-komunikacni-workflow.html">Další článek →</a></div><article class="card"><h1>Jak fungují automatizace v Superhostem</h1><p>Vysvětluje základní princip automatizací a pomáhá pochopit, co může systém dělat automaticky a kde je potřeba kontrola.</p><h2>Jak automatizace obvykle fungují</h2><ol><li>spouštěč nebo trigger</li><li>podmínka, za které má automatizace proběhnout</li><li>samotná akce</li></ol><h2>Jaká je hlavní výhoda</h2><p>Správně nastavené automatizace snižují ruční práci, zmenšují riziko zapomenutých kroků a pomáhají udržet konzistentní provoz.</p><h2>Co je potřeba hlídat</h2><p>Správné podmínky, správný trigger a návaznost na správná data nebo rezervace.</p></article></div></body></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jak nastavit automatizaci formulářů a zpráv</title>
+  <style>
+    :root {
+      --bg: #f8f1e7;
+      --surface: rgba(255, 251, 245, 0.94);
+      --surface-strong: rgba(255, 255, 255, 0.98);
+      --text: #1e2a25;
+      --muted: #607065;
+      --line: rgba(30, 42, 37, 0.1);
+      --accent: #0f766e;
+      --accent-soft: rgba(15, 118, 110, 0.1);
+      --warm: #b96b36;
+      --warm-soft: rgba(185, 107, 54, 0.1);
+      --shadow: 0 20px 50px rgba(67, 50, 28, 0.1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #f8f1e7 0%, #f1e6d5 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      width: min(calc(100% - 24px), 1000px);
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+    .nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .nav a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .hero, .card, .step, .next-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      padding: 30px;
+      border-radius: 30px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      max-width: 15ch;
+    }
+    p, li {
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 1rem;
+    }
+    strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+    .hero p {
+      margin: 14px 0 0;
+      max-width: 66ch;
+      font-size: 1.05rem;
+    }
+    .expect {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--surface-strong);
+      border: 1px solid rgba(30, 42, 37, 0.08);
+    }
+    .expect strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+    .section-title {
+      margin-top: 26px;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      padding: 24px;
+      border-radius: 26px;
+      margin-top: 18px;
+    }
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .card ul, .step ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+    .card li, .step li {
+      margin-top: 8px;
+    }
+    .step {
+      padding: 18px;
+      border-radius: 20px;
+    }
+    .step strong.kicker {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--warm);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+    .step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .next-card {
+      padding: 20px;
+      border-radius: 22px;
+    }
+    .next-icon {
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .next-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .next-link {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--warm-soft);
+      border: 1px solid rgba(185, 107, 54, 0.14);
+    }
+    .meta {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(30, 42, 37, 0.04);
+      border: 1px solid rgba(30, 42, 37, 0.08);
+      font-size: 0.95rem;
+    }
+    .meta p { margin: 0; }
+    .sources {
+      margin-top: 18px;
+      padding-left: 18px;
+    }
+    @media (max-width: 820px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="nav">
+      <a href="./index.html">← Centrum pomoci</a>
+      <a href="./jak-pridat-novou-nemovitost.html">Předchozí článek</a>
+      <a href="./zakladni-legislativni-povinnosti-hostitele-v-cr.html">Další článek →</a>
+    </div>
+
+    <section class="hero">
+      <span class="eyebrow">Automatizace a komunikace</span>
+      <h1>Jak nastavit automatizaci formulářů a zpráv</h1>
+      <p>
+        Smyslem automatizace je, aby host dostal odkaz na formulář nebo guestbook ve správný čas a vy
+        jste to nemuseli posílat ručně ke každé rezervaci.
+      </p>
+      <div class="expect">
+        <strong>Co vás čeká dál</strong>
+        <p>Nejdřív si v Superhostem zkopírujete odkaz pro konkrétní nemovitost, potom ho vložíte do automatické zprávy v Airbnb nebo Booking.com a nakonec sladíte čas odeslání s tím, co máte nastaveno v aplikaci.</p>
+      </div>
+    </section>
+
+    <h2 class="section-title">Co si připravit předem</h2>
+    <div class="grid-3">
+      <article class="next-card">
+        <div class="next-icon">1</div>
+        <h3>Nemovitost v Superhostem</h3>
+        <p>Automatizaci nastavujete až ve chvíli, kdy už máte v systému založenou konkrétní nemovitost.</p>
+      </article>
+      <article class="next-card">
+        <div class="next-icon">2</div>
+        <h3>Odkaz pro hosty</h3>
+        <p>Potřebujete permalink nebo veřejný odkaz, který se má hostům posílat ve zprávě.</p>
+      </article>
+      <article class="next-card">
+        <div class="next-icon">3</div>
+        <h3>Vybranou platformu</h3>
+        <p>Rozhodněte se, jestli budete automatickou zprávu nastavovat v Airbnb nebo v Booking.com.</p>
+      </article>
+    </div>
+
+    <section class="card">
+      <h2>Kde v Superhostem začít</h2>
+      <p>
+        V detailu konkrétní nemovitosti otevřete část <strong>Automatizace</strong>. Právě tam najdete odkaz pro hosty
+        a nastavení, kolik dní dopředu mají být rezervace přes tento odkaz hostům dostupné.
+      </p>
+      <ul>
+        <li>zkopírujte si odkaz pro hosty</li>
+        <li>nastavte počet dní dopředu, kdy má být rezervace viditelná</li>
+        <li>uložte nastavení ještě předtím, než budete vytvářet automatickou zprávu v OTA platformě</li>
+      </ul>
+      <div class="note">
+        Tohle nastavení musí časově sedět s tím, kdy se automatická zpráva odešle v Airbnb nebo Booking.com. Pokud nastavíte jiný počet dní v aplikaci a jiný počet dní v OTA, host nemusí po kliknutí vidět správnou rezervaci.
+      </div>
+    </section>
+
+    <h2 class="section-title">Nastavení v Airbnb</h2>
+    <div class="grid-2">
+      <article class="step">
+        <strong class="kicker">Krok 1</strong>
+        <h3>Otevřete správu rychlých odpovědí</h3>
+        <p>V Airbnb běžte do zpráv s hosty, otevřete ozubené kolečko a přejděte do části <strong>Správa rychlých odpovědí</strong>.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 2</strong>
+        <h3>Vytvořte novou šablonu</h3>
+        <p>Vytvořte novou rychlou odpověď nebo automatickou zprávu. Doporučuje se mít samostatnou šablonu pro každou nabídku.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 3</strong>
+        <h3>Vložte text a odkaz z Superhostem</h3>
+        <p>Do textu zprávy vložte svůj vzor komunikace a přidejte zkopírovaný odkaz pro hosty z části <strong>Automatizace</strong> v Superhostem.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 4</strong>
+        <h3>Vyberte jen jednu správnou nabídku</h3>
+        <p>V nastavení šablony zkontrolujte, že je přiřazená jen k jedné konkrétní nabídce. Pokud spravujete více nabídek, každá by měla mít vlastní šablonu.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 5</strong>
+        <h3>Nastavte správný čas odeslání</h3>
+        <p>Airbo doporučuje posílat zprávu například <strong>3 dny před příjezdem</strong>. Důležité je, aby stejný počet dní seděl i v nastavení odkazu v Superhostem.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 6</strong>
+        <h3>Zkontrolujte finální šablonu</h3>
+        <p>Před uložením si ověřte tři věci: správný odkaz, správně vybranou nabídku a správný čas odeslání.</p>
+      </article>
+    </div>
+
+    <h2 class="section-title">Nastavení v Booking.com</h2>
+    <div class="grid-2">
+      <article class="step">
+        <strong class="kicker">Krok 1</strong>
+        <h3>Otevřete nastavení zpráv</h3>
+        <p>Na domovské stránce Extranetu Booking.com otevřete nabídku <strong>Ubytovací zařízení</strong> a potom <strong>Nastavení zpráv</strong>.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 2</strong>
+        <h3>Vytvořte novou šablonu</h3>
+        <p>V části <strong>Šablony zpráv</strong> zvolte vytvoření nové šablony.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 3</strong>
+        <h3>Vložte odkaz z Superhostem</h3>
+        <p>Do textu nové šablony vložte zkopírovaný odkaz pro hosty. Pokud máte v Booking.com jednu nemovitost s více jednotkami, zkontrolujte, že používáte správný odkaz pro konkrétní jednotku.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 4</strong>
+        <h3>Pojmenujte šablonu a zvolte téma</h3>
+        <p>Šablonu si srozumitelně pojmenujte a jako typ zprávy obvykle zvolte příjezd nebo komunikaci před příjezdem.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 5</strong>
+        <h3>Naplánujte odeslání</h3>
+        <p>U nově vytvořené šablony zvolte <strong>Naplánovat odeslání šablony</strong> a nastavte počet dní před příjezdem.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 6</strong>
+        <h3>Sladěte čas s nastavením v Superhostem</h3>
+        <p>Stejný počet dní před příjezdem nastavte i v části <strong>Automatizace</strong> v Superhostem. Jinak host po otevření odkazu nemusí vidět správnou rezervaci.</p>
+      </article>
+    </div>
+
+    <section class="card">
+      <h2>Jak poznáte, že je automatizace nastavená správně</h2>
+      <ul>
+        <li>v textu zprávy je správný odkaz pro konkrétní nemovitost</li>
+        <li>šablona je navázaná na správnou nabídku nebo jednotku</li>
+        <li>čas odeslání v OTA odpovídá počtu dní nastavených v Superhostem</li>
+        <li>host po kliknutí na odkaz vidí svou rezervaci</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title">Doporučené základní workflow</h2>
+    <div class="grid-2">
+      <article class="step">
+        <strong class="kicker">Fáze 1</strong>
+        <h3>Zpráva po rezervaci</h3>
+        <p>Krátké potvrzení rezervace dává hostovi jistotu, že je vše v pořádku. V této fázi ale ještě nemusíte posílat všechnu administrativu najednou.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Fáze 2</strong>
+        <h3>Zpráva před příjezdem s formulářem</h3>
+        <p>Tohle je hlavní automatizace, kterou řeší tento článek. Právě tady posíláte odkaz na formulář nebo guestbook a sbíráte údaje potřebné pro provoz a legislativu.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Fáze 3</strong>
+        <h3>Instrukce k pobytu</h3>
+        <p>Podle typu provozu můžete navázat i samostatnou zprávou s informacemi k check-inu, vstupu do objektu nebo praktickým informacím k pobytu.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Fáze 4</strong>
+        <h3>Zpráva po odjezdu</h3>
+        <p>Na konci pobytu můžete automatizaci zakončit poděkováním, výzvou k hodnocení nebo interním checklistem pro úklid a další návazné úkoly.</p>
+      </article>
+    </div>
+
+    <section class="card">
+      <h2>Jak začít jednoduše</h2>
+      <p>
+        Na začátku není potřeba automatizovat všechno. Nejdřív dává největší smysl zprovoznit jednu dobře fungující zprávu
+        před příjezdem, která hostovi pošle správný odkaz ve správný čas. Teprve potom má smysl rozšiřovat workflow dál.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Nejčastější chyby</h2>
+      <ul>
+        <li>do zprávy je vložený špatný odkaz nebo starý permalink</li>
+        <li>jedna šablona je omylem přiřazená k více nabídkám</li>
+        <li>počet dní v OTA nesedí s nastavením v Superhostem</li>
+        <li>u Booking.com je použitý odkaz pro jinou jednotku než pro konkrétní rezervaci</li>
+      </ul>
+      <div class="note">
+        Pokud máte krátké pobyty nebo last minute rezervace, je ještě důležitější zkontrolovat, že automatická zpráva odchází opravdu včas a host má po kliknutí co otevřít.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ověření a zdroje</h2>
+      <p>Tento článek jsme připravili podle struktury Airbo návodu, ale přepsali jsme ho do našeho stylu a navázali ho na logiku nastavení nemovitosti v Superhostem.</p>
+      <ul class="sources">
+        <li><a href="https://airbo.cz/navody/jak-nastavit-auotmatizaci-formularu/" target="_blank" rel="noreferrer">Airbo: Jak nastavit automatizaci formulářů</a></li>
+      </ul>
+      <div class="meta">
+        <p><strong>Aktualizováno:</strong> 29. 3. 2026. Názvy sekcí v Airbnb a Booking.com se mohou měnit, ale logika nastavení zůstává stejná: správný odkaz, správná nabídka a správný čas odeslání.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

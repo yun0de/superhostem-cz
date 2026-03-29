@@ -1,4 +1,336 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Základní legislativní povinnosti hostitele v ČR</title><style>body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#f8f1e7;color:#1e2a25}a{text-decoration:none;color:#0f766e}.page{width:min(calc(100% - 24px),900px);margin:0 auto;padding:24px 0 56px}.card{background:rgba(255,251,245,.94);border:1px solid rgba(30,42,37,.1);border-radius:28px;padding:28px;box-shadow:0 20px 50px rgba(67,50,28,.1)}h1{margin:0 0 12px;font-size:clamp(2.2rem,5vw,3.6rem)}h2{margin:22px 0 10px;font-size:1.15rem}p,li{color:#607065;line-height:1.75}.nav{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px}</style></head>
-<body><div class="page"><div class="nav"><a href="./index.html">← Přehled článků</a><a href="../knowledge-base-site.html#a-06-01">Zpět do propojené KB</a><a href="./jak-funguje-poplatek-z-pobytu.html">Další článek →</a></div><article class="card"><h1>Základní legislativní povinnosti hostitele v ČR</h1><p>Dává začínajícímu hostiteli základní přehled o tom, jaké oblasti je potřeba v České republice řešit při poskytování krátkodobého ubytování.</p><h2>Důležitá poznámka</h2><p>Tento článek slouží jako praktický orientační přehled. Nejde o právní ani daňové poradenství.</p><h2>Jaké oblasti hostitel typicky řeší</h2><ul><li>evidence hostů</li><li>poplatek z pobytu</li><li>hlášení cizinců</li><li>daňové a registrační povinnosti</li></ul><h2>Jak k tomu přistoupit prakticky</h2><p>Ujasnit si typ provozu, zjistit základní povinnosti, nastavit evidenci hostů a průběžně kontrolovat změny pravidel.</p></article></div></body></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Základní legislativní povinnosti hostitele v ČR</title>
+  <style>
+    :root {
+      --bg: #f8f1e7;
+      --surface: rgba(255, 251, 245, 0.94);
+      --surface-strong: rgba(255, 255, 255, 0.98);
+      --text: #1e2a25;
+      --muted: #607065;
+      --line: rgba(30, 42, 37, 0.1);
+      --accent: #0f766e;
+      --accent-soft: rgba(15, 118, 110, 0.1);
+      --warm: #b96b36;
+      --warm-soft: rgba(185, 107, 54, 0.1);
+      --shadow: 0 20px 50px rgba(67, 50, 28, 0.1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #f8f1e7 0%, #f1e6d5 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      width: min(calc(100% - 24px), 1000px);
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+    .nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .nav a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .hero, .card, .step, .next-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      padding: 30px;
+      border-radius: 30px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      max-width: 13ch;
+    }
+    p, li {
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 1rem;
+    }
+    strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+    .hero p {
+      margin: 14px 0 0;
+      max-width: 66ch;
+      font-size: 1.05rem;
+    }
+    .expect {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--surface-strong);
+      border: 1px solid rgba(30, 42, 37, 0.08);
+    }
+    .expect strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+    .section-title {
+      margin-top: 26px;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      padding: 24px;
+      border-radius: 26px;
+      margin-top: 18px;
+    }
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .card ul, .step ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+    .card li, .step li {
+      margin-top: 8px;
+    }
+    .step {
+      padding: 18px;
+      border-radius: 20px;
+    }
+    .step strong.kicker {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--warm);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+    .step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .next-card {
+      padding: 20px;
+      border-radius: 22px;
+    }
+    .next-icon {
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .next-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .next-link {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--warm-soft);
+      border: 1px solid rgba(185, 107, 54, 0.14);
+    }
+    .meta {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(30, 42, 37, 0.04);
+      border: 1px solid rgba(30, 42, 37, 0.08);
+      font-size: 0.95rem;
+    }
+    .meta p { margin: 0; }
+    .sources {
+      margin-top: 18px;
+      padding-left: 18px;
+    }
+    @media (max-width: 820px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="nav">
+      <a href="./index.html">← Centrum pomoci</a>
+      <a href="./jak-funguji-automatizace-v-superhostem.html">Předchozí článek</a>
+      <a href="./jak-funguje-poplatek-z-pobytu.html">Další článek →</a>
+    </div>
+
+    <section class="hero">
+      <span class="eyebrow">Legislativa v ČR</span>
+      <h1>Základní legislativní povinnosti hostitele v ČR</h1>
+      <p>
+        Pokud začínáte s krátkodobým ubytováním, nestačí vyřešit jen Airbnb nebo Booking.
+        V praxi vás čeká několik povinných kroků vůči <strong>živnostenskému úřadu</strong>,
+        <strong>obci</strong>, <strong>cizinecké policii</strong> a v některých situacích i vůči
+        <strong>finančnímu úřadu</strong>.
+      </p>
+      <div class="expect">
+        <strong>Co vás čeká dál</strong>
+        <p>Nejdřív si vyřešíte podnikání a provozovnu, potom registraci k poplatku z pobytu, Ubyport a hlášení hostů. Vedle toho si musíte pohlídat i daňové otázky jako DPH z provizí platforem.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Důležitá poznámka</h2>
+      <p>Tento článek je praktický přehled pro začínající hostitele. Nejde o právní ani daňové poradenství. U konkrétní situace je vždy dobré ověřit detaily na oficiálních zdrojích nebo s odborníkem.</p>
+    </section>
+
+    <h2 class="section-title">Co musíte typicky řešit</h2>
+    <div class="grid-3">
+      <article class="next-card">
+        <div class="next-icon">1</div>
+        <h3>Živnost a provozovna</h3>
+        <p>Bez správně vyřešené živnosti a nahlášené provozovny nemá smysl navazovat další administrativu.</p>
+      </article>
+      <article class="next-card">
+        <div class="next-icon">2</div>
+        <h3>Poplatek z pobytu</h3>
+        <p>Registrace u města nebo městské části, variabilní symbol, hlášení a průběžné odvody.</p>
+      </article>
+      <article class="next-card">
+        <div class="next-icon">3</div>
+        <h3>Hlášení hostů</h3>
+        <p>Ubyport a návaznost na cizineckou policii pro hlášení zahraničních hostů.</p>
+      </article>
+      <article class="next-card">
+        <div class="next-icon">4</div>
+        <h3>Evidence hostů</h3>
+        <p>Údaje o pobytu, rezervacích a hostech musíte mít v pořádku průběžně, ne až při kontrole.</p>
+      </article>
+      <article class="next-card">
+        <div class="next-icon">5</div>
+        <h3>DPH a daňové povinnosti</h3>
+        <p>U Airbnb a Bookingu často řešíte i DPH z provizí a registraci jako identifikovaná osoba.</p>
+      </article>
+    </div>
+
+    <h2 class="section-title">Doporučené pořadí kroků</h2>
+    <div class="grid-2">
+      <article class="step">
+        <strong class="kicker">Krok 1</strong>
+        <h3>Vyřešte podnikání a provozovnu</h3>
+        <p>Začněte tím, že si ujasníte, v jakém režimu ubytování provozujete, a vyřešíte <strong>živnostenský list</strong> i <strong>nahlášení provozovny</strong>.</p>
+        <p>Tohle je základ, na který navazují další povinnosti.</p>
+      </article>
+
+      <article class="step">
+        <strong class="kicker">Krok 2</strong>
+        <h3>Zaregistrujte se k poplatku z pobytu</h3>
+        <p>Jakmile máte připravené podnikatelské minimum, řešte registraci na obci nebo městské části, pod kterou nemovitost spadá.</p>
+        <p>Po registraci si uložte variabilní symbol, případně konstantní symbol, a termíny měsíčního hlášení.</p>
+      </article>
+
+      <article class="step">
+        <strong class="kicker">Krok 3</strong>
+        <h3>Vyřešte Ubyport a hlášení hostů</h3>
+        <p>Pokud ubytováváte hosty, musíte řešit i návaznost na cizineckou policii. Prakticky to znamená registraci do Ubyportu a získání přístupových údajů.</p>
+        <p>Bez toho nebude nastavení nemovitosti kompletní.</p>
+      </article>
+
+      <article class="step">
+        <strong class="kicker">Krok 4</strong>
+        <h3>Nastavte si evidenci hostů a rezervací</h3>
+        <p>Pravidla se nejlépe dodržují tehdy, když máte data průběžně a správně. Proto dává smysl hned od začátku řešit rezervace, guestbook a návaznost na hlášení.</p>
+      </article>
+
+      <article class="step">
+        <strong class="kicker">Krok 5</strong>
+        <h3>Zkontrolujte daňové povinnosti</h3>
+        <p>Vedle lokálních povinností často řešíte i daňové dopady spolupráce s platformami jako Airbnb a Booking.com. Typicky jde o režim <strong>identifikované osoby</strong> nebo otázku <strong>DPH</strong>.</p>
+      </article>
+    </div>
+
+    <section class="card">
+      <h2>Na co začínající hostitelé nejčastěji zapomenou</h2>
+      <ul>
+        <li>řeší Airbnb a pricing, ale ještě nemají dořešenou provozovnu</li>
+        <li>zaregistrují se k poplatku z pobytu, ale neuloží si platební údaje a termíny</li>
+        <li>mají založený Ubyport, ale chybí jim správné údaje pro další práci se systémem</li>
+        <li>nepohlídají DPH z provizí platforem</li>
+        <li>začnou evidenci hostů řešit až ve chvíli, kdy ji po nich někdo chce doložit</li>
+      </ul>
+      <div class="note">
+        Nejčistší přístup je postavit si povinnosti jako workflow: podnikání → obec → Ubyport → evidence → daně. Jakmile je to takto rozdělené, celé to působí mnohem méně chaoticky.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Praktický rozcestník</h2>
+      <div class="card-links">
+        <a class="next-link" href="./jak-funguje-poplatek-z-pobytu.html">Jak funguje poplatek z pobytu</a>
+        <a class="next-link" href="./jak-se-zaregistrovat-do-ubyportu.html">Jak se zaregistrovat do Ubyportu</a>
+        <a class="next-link" href="./jak-resit-dph-u-airbnb-a-booking.html">Jak řešit DPH u Airbnb a Bookingu</a>
+        <a class="next-link" href="./jak-pridat-novou-nemovitost.html">Jak přidat novou nemovitost</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ověření a zdroje</h2>
+      <p>Článek jsme rozšířili podle Airbo přehledu pro začínající ubytovatele a navázali ho na konkrétní články, které už v knowledge base máme rozepsané detailněji.</p>
+      <ul class="sources">
+        <li><a href="https://airbo.cz/navody/navod-pro-zacinajici-ubytovatele/" target="_blank" rel="noreferrer">Airbo: Návod pro začínající ubytovatele</a></li>
+        <li><a href="https://policie.gov.cz/" target="_blank" rel="noreferrer">Policie ČR</a></li>
+        <li><a href="https://financnisprava.gov.cz/" target="_blank" rel="noreferrer">Finanční správa</a></li>
+      </ul>
+      <div class="meta">
+        <p><strong>Aktualizováno:</strong> 29. 3. 2026. Jde o přehledový rozcestník. Detailní postupy jsou rozepsané v navazujících článcích u poplatku z pobytu, Ubyportu a DPH.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

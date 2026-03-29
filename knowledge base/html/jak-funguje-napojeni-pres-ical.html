@@ -1,4 +1,365 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Jak funguje napojení přes iCal</title><style>body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#f8f1e7;color:#1e2a25}a{text-decoration:none;color:#0f766e}.page{width:min(calc(100% - 24px),900px);margin:0 auto;padding:24px 0 56px}.card{background:rgba(255,251,245,.94);border:1px solid rgba(30,42,37,.1);border-radius:28px;padding:28px;box-shadow:0 20px 50px rgba(67,50,28,.1)}h1{margin:0 0 12px;font-size:clamp(2.2rem,5vw,3.6rem)}h2{margin:22px 0 10px;font-size:1.15rem}p,li{color:#607065;line-height:1.75}.nav{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 14px}</style></head>
-<body><div class="page"><div class="nav"><a href="./index.html">← Přehled článků</a><a href="../knowledge-base-site.html#a-02-02">Zpět do propojené KB</a><a href="./jak-funguje-prehled-rezervaci.html">Další článek →</a></div><article class="card"><h1>Jak funguje napojení přes iCal</h1><p>Vysvětluje základní princip iCal propojení a pomáhá pochopit, jaká data systém přes kalendář získává a jaká naopak ne.</p><h2>Co iCal běžně přenáší</h2><ul><li>datum začátku rezervace</li><li>datum konce rezervace</li><li>blokované termíny</li><li>základní identifikaci události</li></ul><h2>Co iCal obvykle nepřenáší</h2><ul><li>cenu rezervace</li><li>výši poplatků</li><li>detailní rozpad provizí</li></ul><h2>Proč je to důležité</h2><p>iCal řeší primárně rezervační časová data, ne kompletní ekonomiku rezervace. Proto Superhostem kombinuje kalendářová data s booking emaily.</p></article></div></body></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jak získat a napojit iCal z Airbnb a Bookingu</title>
+  <style>
+    :root {
+      --bg: #f8f1e7;
+      --surface: rgba(255, 251, 245, 0.94);
+      --surface-strong: rgba(255, 255, 255, 0.98);
+      --text: #1e2a25;
+      --muted: #607065;
+      --line: rgba(30, 42, 37, 0.1);
+      --accent: #0f766e;
+      --accent-soft: rgba(15, 118, 110, 0.1);
+      --warm: #b96b36;
+      --warm-soft: rgba(185, 107, 54, 0.1);
+      --shadow: 0 20px 50px rgba(67, 50, 28, 0.1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #f8f1e7 0%, #f1e6d5 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      width: min(calc(100% - 24px), 1000px);
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+    .nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .nav a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .hero, .card, .step, .next-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      padding: 30px;
+      border-radius: 30px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      max-width: 14ch;
+    }
+    p, li {
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 1rem;
+    }
+    strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+    .hero p {
+      margin: 14px 0 0;
+      max-width: 66ch;
+      font-size: 1.05rem;
+    }
+    .expect {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--surface-strong);
+      border: 1px solid rgba(30, 42, 37, 0.08);
+    }
+    .expect strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+    .section-title {
+      margin-top: 26px;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      padding: 24px;
+      border-radius: 26px;
+      margin-top: 18px;
+    }
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .card ul, .step ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+    .card li, .step li {
+      margin-top: 8px;
+    }
+    .step {
+      padding: 18px;
+      border-radius: 20px;
+    }
+    .step strong.kicker {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--warm);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+    .step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .next-card {
+      padding: 20px;
+      border-radius: 22px;
+    }
+    .next-icon {
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .next-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .next-link {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--warm-soft);
+      border: 1px solid rgba(185, 107, 54, 0.14);
+    }
+    .meta {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(30, 42, 37, 0.04);
+      border: 1px solid rgba(30, 42, 37, 0.08);
+      font-size: 0.95rem;
+    }
+    .meta p { margin: 0; }
+    .sources {
+      margin-top: 18px;
+      padding-left: 18px;
+    }
+    @media (max-width: 820px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="nav">
+      <a href="./index.html">← Centrum pomoci</a>
+      <a href="./jak-pridat-novou-nemovitost.html">Předchozí článek</a>
+      <a href="./jak-funguje-prehled-rezervaci.html">Další článek →</a>
+    </div>
+
+    <section class="hero">
+      <span class="eyebrow">Nemovitosti a kalendáře</span>
+      <h1>Jak získat a napojit iCal z Airbnb a Bookingu</h1>
+      <p>
+        iCal je nejrychlejší způsob, jak dostat do Superhostem první rezervace a blokace termínů.
+        Tento návod řeší dvě nejčastější situace: <strong>jak najít iCal na Airbnb</strong> a
+        <strong>jak ho získat z Booking.com</strong>.
+      </p>
+      <div class="expect">
+        <strong>Co vás čeká dál</strong>
+        <p>Nejdřív si zkopírujete iCal odkaz z Airbnb nebo Bookingu, potom ho vložíte do nastavení nemovitosti v Superhostem a nakonec zkontrolujete, že se kalendář správně propsal.</p>
+      </div>
+    </section>
+
+    <h2 class="section-title">Co iCal umí a co ne</h2>
+    <div class="grid-2">
+      <article class="next-card">
+        <div class="next-icon">+</div>
+        <h3>Co iCal běžně přenáší</h3>
+        <ul>
+          <li>datum příjezdu a odjezdu</li>
+          <li>obsazené nebo blokované termíny</li>
+          <li>základní identifikaci události</li>
+        </ul>
+      </article>
+      <article class="next-card">
+        <div class="next-icon">-</div>
+        <h3>Co iCal obvykle nepřenáší</h3>
+        <ul>
+          <li>cenu rezervace</li>
+          <li>výši provize a poplatků</li>
+          <li>kompletní údaje o hostovi</li>
+        </ul>
+      </article>
+    </div>
+
+    <section class="card">
+      <h2>Kdy iCal použít</h2>
+      <p>
+        iCal dává největší smysl na začátku, když chcete rychle propojit kalendář s nemovitostí.
+        Pokud pak chcete pracovat i s detailnějšími daty o rezervacích, navazuje na to email forwarding a automatizace.
+      </p>
+    </section>
+
+    <h2 class="section-title">Jak získat iCal z Airbnb</h2>
+    <div class="grid-2">
+      <article class="step">
+        <strong class="kicker">Krok 1</strong>
+        <h3>Otevřete Kalendář na Airbnb</h3>
+        <p>Podle aktuální oficiální nápovědy Airbnb začínáte v sekci <strong>Calendar</strong> a vyberete konkrétní listing, který chcete propojit.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 2</strong>
+        <h3>Přejděte do Availability</h3>
+        <p>V kalendáři daného listingu otevřete část <strong>Availability</strong>. Právě tam Airbnb aktuálně schovává propojení s dalšími kalendáři.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 3</strong>
+        <h3>Zvolte Connect to another website</h3>
+        <p>Pod <strong>Connect calendars</strong> klikněte na <strong>Connect to another website</strong>. Airbnb vám zobrazí kalendářový odkaz, který můžete exportovat.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 4</strong>
+        <h3>Zkopírujte celý iCal odkaz</h3>
+        <p>Zkopírujte celou adresu, ne jen její část. Airbnb výslovně uvádí, že pro import na druhou stranu má jít o URL končící na <strong>.ics</strong>.</p>
+      </article>
+    </div>
+
+    <h2 class="section-title">Jak získat iCal z Booking.com</h2>
+    <div class="grid-2">
+      <article class="step">
+        <strong class="kicker">Krok 1</strong>
+        <h3>Otevřete Extranet Booking.com</h3>
+        <p>Přihlaste se do Extranetu Booking.com a otevřete konkrétní objekt, který chcete propojit.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 2</strong>
+        <h3>Přejděte do Calendar nebo Calendar &amp; Pricing</h3>
+        <p>Podle aktuální verze Extranetu běžte buď přes <strong>Rates &amp; Availability → Calendar</strong>, nebo přímo do <strong>Calendar &amp; Pricing</strong>.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 3</strong>
+        <h3>Otevřete Sync calendars</h3>
+        <p>V kalendáři otevřete <strong>Sync calendars</strong> a zvolte <strong>Add calendar connection</strong>. Booking tím otevře průvodce propojením s jiným kalendářem.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 4</strong>
+        <h3>Dokončete export kalendáře</h3>
+        <p>V průvodci klikněte na <strong>Copy link</strong> a zkopírujte svůj Booking.com iCal odkaz. Pod <strong>Export options</strong> bývá možné zvolit, jestli chcete exportovat jen rezervované termíny, nebo i uzavřené termíny.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 5</strong>
+        <h3>Zkontrolujte správnou jednotku a stav propojení</h3>
+        <p>Pokud máte více pokojů nebo jednotek, ověřte, že berete iCal právě pro tu konkrétní nemovitost, kterou napojujete. Po dokončení se v Extranetu obvykle zobrazí stav spojení, například <strong>Activating</strong> nebo <strong>OK</strong>.</p>
+      </article>
+    </div>
+
+    <h2 class="section-title">Jak vložit iCal do Superhostem</h2>
+    <div class="grid-2">
+      <article class="step">
+        <strong class="kicker">Krok 1</strong>
+        <h3>Otevřete detail nemovitosti</h3>
+        <p>V Superhostem otevřete konkrétní nemovitost, kterou právě nastavujete.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 2</strong>
+        <h3>Najděte část pro kalendáře nebo iCal</h3>
+        <p>V nastavení nemovitosti přejděte do části, kde se přidává zdroj kalendáře.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 3</strong>
+        <h3>Vložte iCal URL</h3>
+        <p>Do pole pro iCal vložte zkopírovanou adresu z Airbnb nebo Bookingu a zdroj si srozumitelně pojmenujte, například <strong>Airbnb</strong> nebo <strong>Booking</strong>.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 4</strong>
+        <h3>Uložte nastavení a zkontrolujte synchronizaci</h3>
+        <p>Po uložení ověřte, že se rezervace nebo blokace propsaly do kalendáře nemovitosti.</p>
+      </article>
+    </div>
+
+    <section class="card">
+      <h2>Na co si dát pozor</h2>
+      <ul>
+        <li>zkopírujte vždy celý iCal odkaz, ne jen jeho část</li>
+        <li>u více jednotek si hlídejte, že párujete správný kalendář ke správné nemovitosti</li>
+        <li>iCal nepřenáší ceny ani úplné finanční informace</li>
+        <li>pokud se nic nepropsalo, zkontrolujte, že odkaz není neplatný nebo starý</li>
+        <li>u Airbnb dnes počítejte s tím, že oficiální cesta vede přes <strong>Calendar → Availability → Connect calendars</strong></li>
+        <li>u Booking.com se názvy sekcí liší podle verze Extranetu, ale aktuálně se nejčastěji pohybujete přes <strong>Calendar</strong>, <strong>Calendar &amp; Pricing</strong> a <strong>Sync calendars</strong></li>
+      </ul>
+      <div class="note">
+        Pokud potřebujete nejen blokace termínů, ale i detailnější data o rezervacích, navazuje na iCal typicky email forwarding a další automatizace.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ověření a zdroje</h2>
+      <p>Tento článek je praktický návod podle běžného postupu v Airbnb a Booking.com. Rozhraní platforem se může měnit, proto je dobré počítat s drobnými rozdíly v názvech sekcí.</p>
+      <ul class="sources">
+        <li><a href="https://www.airbnb.com/help/article/99" target="_blank" rel="noreferrer">Airbnb Help: Sync your home host calendar to other websites</a></li>
+        <li><a href="https://partner.booking.com/en-gb/help/rates-availability/extranet-calendar/syncing-your-bookingcom-calendar-third-party-calendars" target="_blank" rel="noreferrer">Booking.com Partner Hub: Syncing your Booking.com calendar to third-party calendars</a></li>
+        <li><a href="https://airbo.cz/navody/napojeni-na-kalendar-airbnb/" target="_blank" rel="noreferrer">Airbo: Napojení na Airbnb</a></li>
+        <li><a href="https://airbo.cz/navody/napojeni-na-booking-com/" target="_blank" rel="noreferrer">Airbo: Napojení na Booking.com</a></li>
+        <li><a href="https://help.parkwith.us/settings--integrations/bjC7KLQXqS9fYYmxFeVAiv/how-to-sync-your-bookingcom-listing/5iuTesEA9XBAFTciVmaxW6" target="_blank" rel="noreferrer">Partner walkthrough quoting current Booking.com sync flow</a></li>
+      </ul>
+      <div class="meta">
+        <p><strong>Aktualizováno:</strong> 29. 3. 2026. Airbnb část jsme ověřili proti aktuální oficiální nápovědě. U Booking.com jsme ověřili aktuální flow proti Partner Hub URL a veřejně citovaným partner walkthroughs; oficiální partner help je mimo přihlášení částečně omezený, proto se přesné názvy položek mohou lišit podle verze Extranetu.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

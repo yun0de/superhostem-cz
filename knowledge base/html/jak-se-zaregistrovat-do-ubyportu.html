@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jak se zaregistrovat do Ubyportu</title>
+  <style>
+    :root {
+      --bg: #f8f1e7;
+      --surface: rgba(255, 251, 245, 0.94);
+      --surface-strong: rgba(255, 255, 255, 0.98);
+      --text: #1e2a25;
+      --muted: #607065;
+      --line: rgba(30, 42, 37, 0.1);
+      --accent: #0f766e;
+      --accent-soft: rgba(15, 118, 110, 0.1);
+      --warm: #b96b36;
+      --warm-soft: rgba(185, 107, 54, 0.1);
+      --shadow: 0 20px 50px rgba(67, 50, 28, 0.1);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #f8f1e7 0%, #f1e6d5 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      width: min(calc(100% - 24px), 1000px);
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+    .nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .nav a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .hero, .card, .step, .next-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      padding: 30px;
+      border-radius: 30px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      max-width: 14ch;
+    }
+    p, li {
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 1rem;
+    }
+    strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+    .hero p {
+      margin: 14px 0 0;
+      max-width: 66ch;
+      font-size: 1.05rem;
+    }
+    .expect {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--surface-strong);
+      border: 1px solid rgba(30, 42, 37, 0.08);
+    }
+    .expect strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+    .section-title {
+      margin-top: 26px;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      padding: 24px;
+      border-radius: 26px;
+      margin-top: 18px;
+    }
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .card ul, .step ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+    .card li, .step li {
+      margin-top: 8px;
+    }
+    .step {
+      padding: 18px;
+      border-radius: 20px;
+    }
+    .step strong.kicker {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--warm);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+    .step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .next-card {
+      padding: 20px;
+      border-radius: 22px;
+    }
+    .next-icon {
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .next-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .next-link {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--warm-soft);
+      border: 1px solid rgba(185, 107, 54, 0.14);
+    }
+    .meta {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(30, 42, 37, 0.04);
+      border: 1px solid rgba(30, 42, 37, 0.08);
+      font-size: 0.95rem;
+    }
+    .meta p { margin: 0; }
+    .sources {
+      margin-top: 18px;
+      padding-left: 18px;
+    }
+    @media (max-width: 820px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="nav">
+      <a href="./index.html">← Centrum pomoci</a>
+      <a href="./jak-pridat-novou-nemovitost.html">Předchozí článek</a>
+      <a href="./jak-funguje-poplatek-z-pobytu.html">Další článek →</a>
+    </div>
+
+    <section class="hero">
+      <span class="eyebrow">Legislativa v ČR</span>
+      <h1>Jak se zaregistrovat do Ubyportu</h1>
+      <p>
+        Pokud krátkodobě ubytováváte hosty v ČR, musíte řešit i hlášení cizinců cizinecké policii.
+        Praktickou cestou je registrace do <strong>Ubyportu</strong>, kde získáte přístupové údaje pro práci s ubytovanými hosty.
+      </p>
+      <div class="expect">
+        <strong>Co vás čeká dál</strong>
+        <p>Nejdřív zjistíte, zda už máte registraci a své IDUB. Pokud ne, vyplníte žádost o registraci nového ubytovacího zařízení, odešlete ji korektní cestou na Ředitelství služby cizinecké policie a po schválení uložíte přístupové údaje do Superhostem.</p>
+      </div>
+    </section>
+
+    <h2 class="section-title">Nejdřív si ujasněte, v jaké jste situaci</h2>
+    <div class="grid-2">
+      <article class="next-card">
+        <div class="next-icon">1</div>
+        <h3>Registraci ještě nemám</h3>
+        <p>Nemáte IDUB a ještě jste v Ubyportu nikdy neregistrovali ubytovací zařízení.</p>
+      </article>
+      <article class="next-card">
+        <div class="next-icon">2</div>
+        <h3>Registraci mám, ale chybí mi údaje pro webové služby</h3>
+        <p>Už jste v Ubyportu registrovaní, ale pro propojení se Superhostem potřebujete údaje pro automatizované vkládání dat.</p>
+      </article>
+    </div>
+
+    <section class="card">
+      <h2>Kdy tenhle návod použít</h2>
+      <p>
+        Tenhle článek dává smysl ve chvíli, kdy nastavujete první nemovitost a chybí vám údaje do části <strong>Ubyport</strong>.
+        Bez nich sice můžete mít založenou nemovitost, ale nebude kompletně připravená pro návaznost na hlášení hostů.
+      </p>
+      <div class="card-links">
+        <a class="next-link" href="https://ubyport.pcr.cz/" target="_blank" rel="noreferrer">Oficiální portál Ubyport</a>
+      </div>
+    </section>
+
+    <h2 class="section-title">Když ještě nemáte registraci</h2>
+    <div class="grid-2">
+      <article class="step">
+        <strong class="kicker">Krok 1</strong>
+        <h3>Otevřete portál Ubyport</h3>
+        <p>Na portálu cizinecké policie otevřete Ubyport a zvolte žádost o registraci nového ubytovacího zařízení.</p>
+        <p><a class="next-link" href="https://ubyport.pcr.cz/ubyport" target="_blank" rel="noreferrer">Otevřít oficiální Ubyport</a></p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 2</strong>
+        <h3>Vyplňte registrační formulář</h3>
+        <p>Vyplňte povinné údaje o sobě a o ubytovacím zařízení. Dávejte pozor hlavně na správnou adresu nemovitosti a kontaktní email, na který pak dorazí informace od policie.</p>
+        <p>Policie výslovně uvádí, že formulář má pomoci předejít chybám v zápisu dat, proto je dobré všechno před vygenerováním PDF ještě jednou zkontrolovat.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 3</strong>
+        <h3>Požádejte i o účet pro webové služby</h3>
+        <p>Pokud chcete Ubyport napojit na Superhostem, nestačí běžná registrace. Potřebujete také údaje pro <strong>webové služby</strong>, tedy účet určený pro automatizované vkládání dat.</p>
+        <p>Právě tyto údaje potom budete ukládat do systému.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 4</strong>
+        <h3>Vygenerujte PDF žádost a odešlete ji správnou cestou</h3>
+        <p>Po vyplnění formuláře si stáhněte vygenerovaný dokument PDF a odešlete ho na Ředitelství služby cizinecké policie některou z oficiálních cest.</p>
+        <ul>
+          <li>datovou schránkou na <strong>ybndqw9</strong></li>
+          <li>elektronicky podepsaným e-mailem na <strong>reguby@pcr.cz</strong></li>
+          <li>doporučeně poštou na adresu Ředitelství služby cizinecké policie, Praha 3, Olšanská 2, PSČ 130 51</li>
+          <li>osobně na ŘSCP, Praha 3, Olšanská 2, vchod A</li>
+        </ul>
+        <p>Pokud provozujete více adres, řeší se registrace po jednotlivých adresách.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 5</strong>
+        <h3>Počkejte na přidělení údajů</h3>
+        <p>Cizinecká policie vám po zpracování zašle protokol s přihlašovacími údaji. Podle oficiálního návodu může vyřízení trvat až <strong>30 dní</strong> dle správního řádu.</p>
+        <p>Pokud máte zpřístupněnou datovou schránku jako fyzická osoba, podnikající fyzická osoba nebo právnická osoba, může vám protokol přijít právě tam.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 6</strong>
+        <h3>Uložte údaje do Superhostem</h3>
+        <p>Jakmile je dostanete, doplňte je do nastavení konkrétní nemovitosti. Pro automatizaci potřebujete především údaje pro webové služby.</p>
+      </article>
+    </div>
+
+    <h2 class="section-title">Když už registraci máte</h2>
+    <div class="grid-2">
+      <article class="step">
+        <strong class="kicker">Krok 1</strong>
+        <h3>Zkontrolujte, jestli máte údaje pro webové služby</h3>
+        <p>Propojení se Superhostem nefunguje jen s běžným přístupem do Ubyportu. Potřebujete údaje určené pro <strong>robotické nebo webové vkládání dat</strong>.</p>
+        <p>Pokud jste byli registrovaní už v Ubyportu 1.0, policie uvádí, že původní přístupové údaje dál platí i pro Ubyport 2.0 a není potřeba dělat novou registraci zařízení.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 2</strong>
+        <h3>Pokud je nemáte, požádejte o jejich vytvoření</h3>
+        <p>Žádost se typicky posílá datovou schránkou na cizineckou policii. Do zprávy uveďte své IDUB a požadavek na vytvoření údajů pro webové služby.</p>
+      </article>
+      <article class="step">
+        <strong class="kicker">Krok 3</strong>
+        <h3>Vyčkejte na odpověď a uložte přístupy do systému</h3>
+        <p>Jakmile nové údaje dorazí, vložte je do nastavení nemovitosti v Superhostem, aby šla návaznost na hlášení hostů používat automatizovaně.</p>
+      </article>
+    </div>
+
+    <section class="card">
+      <h2>Na co si dát pozor</h2>
+      <ul>
+        <li>běžné přihlášení do Ubyportu nestačí, pokud chcete napojení na systém</li>
+        <li>registrace se řeší podle adresy konkrétního ubytovacího zařízení</li>
+        <li>pokud máte více adres, musíte počítat s více registracemi</li>
+        <li>kontaktní email ve formuláři musí být správně, protože na něj dorazí přístupové údaje</li>
+        <li>bez datové schránky je celý proces složitější</li>
+        <li>pokud zařízení nemá adresu vedenou v RÚIAN, policie doporučuje uvést adresu místně příslušného obecního úřadu a polohu vysvětlit v poznámce</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Co z toho plyne pro nastavení nemovitosti</h2>
+      <p>
+        Ubyport je jedna ze tří důležitých částí, které obvykle doplňujete po založení první nemovitosti spolu s
+        <strong>poplatkem z pobytu</strong> a <strong>iCal napojením</strong>.
+      </p>
+      <div class="card-links">
+        <a class="next-link" href="./jak-pridat-novou-nemovitost.html">Zpět na nastavení nemovitosti</a>
+        <a class="next-link" href="./jak-funguje-poplatek-z-pobytu.html">Poplatek z pobytu</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ověření a zdroje</h2>
+      <p>Tento článek je praktický návod, ne právní poradenství. Postup jsme připravili podle veřejně dostupného návodu Airbo a oficiálního portálu Ubyportu.</p>
+      <ul class="sources">
+        <li><a href="https://airbo.cz/navody/cizinecka-policie-registrace-do-ubyportu/" target="_blank" rel="noreferrer">Airbo: Cizinecká policie – registrace do Ubyportu</a></li>
+        <li><a href="https://policie.gov.cz/clanek/jak-spravne-vyplnit-formular-zadost-o-registraci-ubytovaciho-zarizeni.aspx" target="_blank" rel="noreferrer">Policie ČR: Jak správně vyplnit formulář Žádost o registraci ubytovacího zařízení</a></li>
+        <li><a href="https://ubyport.pcr.cz/" target="_blank" rel="noreferrer">Ubyport</a></li>
+      </ul>
+      <div class="meta">
+        <p><strong>Aktualizováno:</strong> 29. 3. 2026. Konkrétní způsob podání, adresy a názvy polí si před odesláním vždy ověřte přímo v aktuálním formuláři Ubyportu a v pokynech Policie ČR.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
