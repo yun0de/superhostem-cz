@@ -15,20 +15,15 @@ Pokud bude knowledge base postavená správně, stane se současně support nás
 
 ---
 
-## Analýza konkurence: Airbo
 
 Referenční zdroj:
 
-- https://airbo.cz/navody/
 
-Airbo má dnes poměrně široce pojatou sekci návodů postavenou na dvou hlavních pilířích:
 
 1. onboarding a nastavení produktu
 2. legislativa a provozní povinnosti hostitelů
 
-### Co Airbo pokrývá
 
-Airbo dnes obsahově řeší například:
 
 - první spuštění aplikace
 - základní orientaci v aplikaci
@@ -36,8 +31,6 @@ Airbo dnes obsahově řeší například:
 - napojení kalendáře z Airbnb
 - napojení kalendáře z Booking.com
 - nastavení automatizace
-- přidání Airbo na Android
-- přidání Airbo na iPhone
 - založení datové schránky
 - registraci a platbu poplatku z pobytu
 - Ubyport a hlášení cizinců
@@ -50,7 +43,6 @@ Airbo dnes obsahově řeší například:
 - danění ubytovacích služeb
 - ohlášení a označení provozovny
 
-### Co dělá Airbo dobře
 
 - Zaměřuje se na reálné problémy hostitelů, ne jen na funkce aplikace.
 - Spojuje produktovou nápovědu s českou legislativní vrstvou.
@@ -58,9 +50,7 @@ Airbo dnes obsahově řeší například:
 - Obsah je dobře zasazený do českého trhu krátkodobých pronájmů.
 - Uživatel dostává pomoc nejen s nastavením, ale i s povinnostmi kolem provozu.
 
-### Slabiny knowledge base Airbo
 
-I když má Airbo solidní obsahový základ, výsledkem je spíš knihovna článků než skutečně promyšlená knowledge base.
 
 #### 1. Slabší informační architektura
 
@@ -70,7 +60,6 @@ To uživatele nutí ručně přemýšlet, kam kliknout dál, a ztěžuje rychlé
 
 #### 2. Slabá troubleshooting vrstva
 
-Airbo vysvětluje hlavně to, jak něco nastavit.
 
 Výrazně méně řeší situace, kdy něco nefunguje, data nesedí nebo uživatel potřebuje diagnostiku místo klasického návodu.
 
@@ -300,7 +289,6 @@ Díky tomu bude knowledge base výrazně použitelnější než volná sbírka s
 
 ---
 
-## Co může Superhostem udělat lépe než Airbo
 
 ### 1. Navrhnout knowledge base podle situací, ne jen podle témat
 
@@ -512,4 +500,3 @@ Pokud bude vše udělané dobře, uživatel bude mít pocit, že mu Superhostem 
 
 ## Zdroj použitý pro konkurentní analýzu
 
-- https://airbo.cz/navody/
