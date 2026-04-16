@@ -36,9 +36,9 @@ jobs:
           mkdir -p _site/knowledge-base/html
           mkdir -p _site/knowledge-base/articles
 
-          cp "knowledge-base/knowledge-base-site.html" _site/knowledge-base/knowledge-base-site.html
-          cp "knowledge-base/html/"*.html _site/knowledge-base/html/
-          cp "knowledge-base/articles/knowledge-base-library.html" _site/knowledge-base/articles/
+          cp "knowledge base/knowledge-base-site.html" _site/knowledge-base/knowledge-base-site.html
+          cp "knowledge base/html/"*.html _site/knowledge-base/html/
+          cp "knowledge base/articles/knowledge-base-library.html" _site/knowledge-base/articles/
 
           cat > _site/index.html <<'EOF'
           <!DOCTYPE html>
