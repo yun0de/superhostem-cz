@@ -438,7 +438,7 @@ li a:hover {
 .next-link.btn-outline {
   background: transparent;
   color: hsl(var(--primary-foreground));
-  border-color: color-mix(in srgb, hsl(var(--primary)) 45%, white 55%);
+  border-color: color-mix(in srgb, hsl(var(--primary)) 25%, white 75%);
 }
 
 .btn-outline:hover,
@@ -446,7 +446,7 @@ li a:hover {
 .card-link.btn-outline:hover,
 .inline-cta.btn-outline:hover,
 .next-link.btn-outline:hover {
-  background: color-mix(in srgb, hsl(var(--primary)) 16%, transparent);
+  background: color-mix(in srgb, hsl(var(--primary)) 10%, transparent);
   color: hsl(var(--primary-foreground));
   transform: translateY(-0.5px);
 }
