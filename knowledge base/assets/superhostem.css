@@ -390,36 +390,47 @@ li a:hover {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 12px 28px;
+  padding: 12px 26px;
   border-radius: 10px;
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.1;
   text-decoration: none;
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
-  border: none;
+  border: 1.5px solid transparent;
   transition:
     transform 80ms ease,
     background-color 150ms ease,
-    color 150ms ease;
+    color 150ms ease,
+    border-color 150ms ease;
 }
-.btn:hover,
-.hero-link:hover,
-.card-link:hover,
-.inline-cta:hover,
-.next-link:hover {
-  background: color-mix(in srgb, hsl(var(--primary)) 90%, white 10%);
+
+.btn-primary,
+.hero-link:not(.btn-outline),
+.card-link:not(.btn-outline),
+.inline-cta:not(.btn-outline),
+.next-link:not(.btn-outline) {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.btn-primary:hover,
+.hero-link:not(.btn-outline):hover,
+.card-link:not(.btn-outline):hover,
+.inline-cta:not(.btn-outline):hover,
+.next-link:not(.btn-outline):hover {
+  background: color-mix(in srgb, hsl(var(--primary)) 88%, white 12%);
   transform: translateY(-0.5px);
 }
-.btn:active,
-.hero-link:active,
-.card-link:active,
-.inline-cta:active,
-.next-link:active {
+
+.btn-primary:active,
+.hero-link:not(.btn-outline):active,
+.card-link:not(.btn-outline):active,
+.inline-cta:not(.btn-outline):active,
+.next-link:not(.btn-outline):active {
   transform: translateY(0);
 }
+
 .btn-outline,
 .hero-link.btn-outline,
 .card-link.btn-outline,
@@ -427,15 +438,25 @@ li a:hover {
 .next-link.btn-outline {
   background: transparent;
   color: hsl(var(--primary));
-  border: 1.5px solid color-mix(in srgb, hsl(var(--primary)) 40%, white 60%);
+  border-color: color-mix(in srgb, hsl(var(--primary)) 45%, white 55%);
 }
+
 .btn-outline:hover,
 .hero-link.btn-outline:hover,
 .card-link.btn-outline:hover,
 .inline-cta.btn-outline:hover,
 .next-link.btn-outline:hover {
-  background: color-mix(in srgb, hsl(var(--primary)) 18%, transparent);
+  background: color-mix(in srgb, hsl(var(--primary)) 16%, transparent);
   color: hsl(var(--primary));
+  transform: translateY(-0.5px);
+}
+
+.btn-outline:active,
+.hero-link.btn-outline:active,
+.card-link.btn-outline:active,
+.inline-cta.btn-outline:active,
+.next-link.btn-outline:active {
+  transform: translateY(0);
 }
 
 section {
