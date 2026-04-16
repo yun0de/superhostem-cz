@@ -39,6 +39,7 @@ jobs:
           cp "knowledge base/knowledge-base-site.html" _site/knowledge-base/knowledge-base-site.html
           cp "knowledge base/html/"*.html _site/knowledge-base/html/
           cp "knowledge base/articles/knowledge-base-library.html" _site/knowledge-base/articles/
+          cp -R "knowledge base/assets" _site/knowledge-base/
 
           cat > _site/index.html <<'EOF'
           <!DOCTYPE html>
