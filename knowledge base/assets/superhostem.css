@@ -509,21 +509,15 @@ section {
 }
 
 .next-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0;
   color: hsl(var(--primary));
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
   transition: color 150ms ease;
 }
-.next-link::after {
-  content: "→";
-  font-size: 1rem;
-}
 .next-link:hover {
-  color: color-mix(in srgb, hsl(var(--primary)) 88%, white 12%);
+  color: color-mix(in srgb, hsl(var(--primary)) 85%, white 15%);
 }
 
 /* Inline call-to-action links (used within article text) */
