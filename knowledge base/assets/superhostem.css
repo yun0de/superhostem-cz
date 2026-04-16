@@ -508,29 +508,28 @@ section {
 .card-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: hsl(var(--primary));
-  border-radius: 50px;
+  gap: 6px;
+  padding: 0;
+  background: transparent;
   border: none;
-  color: hsl(var(--primary-foreground));
+  color: hsl(var(--primary));
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
   transition:
-    transform 80ms ease,
-    background-color 150ms ease;
+    color 150ms ease,
+    transform 120ms ease;
 }
 .card-link::after {
   content: "→";
   font-size: 1rem;
 }
 .card-link:hover {
-  background: color-mix(in srgb, hsl(var(--primary)) 88%, white 12%);
-  transform: translateY(-0.5px);
+  color: color-mix(in srgb, hsl(var(--primary)) 90%, white 10%);
+  transform: translateX(2px);
 }
 .card-link:active {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 /* Inline call-to-action links (used within article text) */
