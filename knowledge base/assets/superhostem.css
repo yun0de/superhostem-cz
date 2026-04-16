@@ -606,32 +606,6 @@ section {
   font-weight: 600;
 }
 
-.next-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 12px;
-  padding: 12px 18px;
-  border-radius: 999px;
-  background: hsl(var(--primary));
-  border: none;
-  color: hsl(var(--primary-foreground));
-  font-size: 0.92rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition:
-    background-color 150ms ease,
-    box-shadow 150ms ease,
-    transform 80ms ease;
-}
-.next-link:hover {
-  filter: brightness(1.06);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-.next-link:active {
-  transform: translateY(1px);
-}
-
 .note {
   margin-top: 18px;
   padding: 16px 18px;
