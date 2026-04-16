@@ -383,7 +383,6 @@ li a:hover {
 
 .btn,
 .hero-link,
-.card-link,
 .inline-cta,
 .next-link {
   display: inline-flex;
@@ -407,7 +406,6 @@ li a:hover {
 
 .btn-primary,
 .hero-link:not(.btn-outline),
-.card-link:not(.btn-outline),
 .inline-cta:not(.btn-outline),
 .next-link:not(.btn-outline) {
   background: hsl(var(--primary));
@@ -416,7 +414,6 @@ li a:hover {
 
 .btn-primary:hover,
 .hero-link:not(.btn-outline):hover,
-.card-link:not(.btn-outline):hover,
 .inline-cta:not(.btn-outline):hover,
 .next-link:not(.btn-outline):hover {
   background: color-mix(in srgb, hsl(var(--primary)) 88%, white 12%);
@@ -425,7 +422,6 @@ li a:hover {
 
 .btn-primary:active,
 .hero-link:not(.btn-outline):active,
-.card-link:not(.btn-outline):active,
 .inline-cta:not(.btn-outline):active,
 .next-link:not(.btn-outline):active {
   transform: translateY(0);
@@ -433,7 +429,6 @@ li a:hover {
 
 .btn-outline,
 .hero-link.btn-outline,
-.card-link.btn-outline,
 .inline-cta.btn-outline,
 .next-link.btn-outline {
   background: transparent;
@@ -448,7 +443,6 @@ li a:hover {
 
 .btn-outline:hover,
 .hero-link.btn-outline:hover,
-.card-link.btn-outline:hover,
 .inline-cta.btn-outline:hover,
 .next-link.btn-outline:hover {
   background: color-mix(in srgb, hsl(var(--primary)) 12%, transparent);
@@ -458,7 +452,6 @@ li a:hover {
 
 .btn-outline:active,
 .hero-link.btn-outline:active,
-.card-link.btn-outline:active,
 .inline-cta.btn-outline:active,
 .next-link.btn-outline:active {
   transform: translateY(0);
@@ -515,35 +508,29 @@ section {
 .card-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 0;
-  background: transparent;
+  gap: 8px;
+  padding: 10px 20px;
+  background: hsl(var(--primary));
+  border-radius: 50px;
   border: none;
-  color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
   font-size: 0.95rem;
   font-weight: 600;
-  text-decoration: underline;
-  text-decoration-color: color-mix(
-    in srgb,
-    hsl(var(--primary)) 70%,
-    transparent
-  );
-  text-underline-offset: 4px;
+  text-decoration: none;
   transition:
-    color 150ms ease,
-    text-decoration-color 150ms ease;
+    transform 80ms ease,
+    background-color 150ms ease;
 }
 .card-link::after {
   content: "→";
   font-size: 1rem;
 }
 .card-link:hover {
-  color: color-mix(in srgb, hsl(var(--primary)) 90%, white 10%);
-  text-decoration-color: color-mix(
-    in srgb,
-    hsl(var(--primary)) 90%,
-    transparent
-  );
+  background: color-mix(in srgb, hsl(var(--primary)) 88%, white 12%);
+  transform: translateY(-0.5px);
+}
+.card-link:active {
+  transform: translateY(0);
 }
 
 /* Inline call-to-action links (used within article text) */
