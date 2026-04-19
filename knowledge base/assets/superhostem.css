@@ -786,6 +786,20 @@ section {
   border-radius: var(--radius);
   padding: 12px;
 }
+.shot-grid-compact {
+  gap: 18px;
+}
+.shot-grid-compact .shot {
+  padding: 14px;
+}
+.shot-grid-compact img {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.shot-phone-narrow img {
+  max-width: 260px;
+}
 
 @media (max-width: 900px) {
   .shot-grid {
