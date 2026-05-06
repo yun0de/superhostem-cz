@@ -1,262 +1,331 @@
-<!doctype html>
-<html lang="cs" class="dark">
+<!DOCTYPE html>
+<html lang="cs">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jak přidat svou nemovitost</title>
-    <link rel="stylesheet" href="../assets/superhostem.css" />
-    
-  <link rel="stylesheet" href="../assets/superhostem.css">
-</head>
-  <body id="page-top">
-    <div class="page">
-      <header class="topbar">
-        <a class="brand" href="./index.html">
-          <div class="brand-mark">S</div>
-          <div>Superhostem.cz / Centrum pomoci</div>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Superhostem.cz Centrum nápovědy">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Centrum nápovědy</small>
+          </span>
         </a>
-        <a class="inline-cta btn-outline" href="https://superhostem.cz/">Na hlavní web</a>
-      </header>
-      <div class="nav container header">
-        <a href="./index.html">← Centrum pomoci</a>
-        <a href="./prvni-prihlaseni-a-orientace-v-uctu.html">Předchozí krok</a>
-        <a href="./jak-funguje-napojeni-pres-ical.html">Další krok →</a>
-      </div>
 
-      <section class="hero">
-        <span class="eyebrow">Quick start</span>
-        <h1>Jak přidat svou nemovitost</h1>
-        <p>
-          Po prvním přihlášení je přidání nemovitosti hlavní krok, který odemkne
-          další práci v aplikaci. Jakmile bude první nemovitost založená, můžete
-          na ni navázat import rezervací, formuláře pro hosty a další nastavení.
-        </p>
-        <div class="expect">
-          <strong>Co vás čeká dál</strong>
+        <nav class="kb-help-nav" aria-label="Hlavní navigace">
+          <a href="./index.html">Rozcestník</a>
+          <a href="./index.html#knihovna">Knihovna</a>
+          <a href="#kb-article-related">Související</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Jazyk"><a href="./jak-pridat-novou-nemovitost.html">CZ</a><a href="./en/jak-pridat-novou-nemovitost.html">EN</a><a href="./vn/jak-pridat-novou-nemovitost.html">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Přepnout barevný režim">
+            <button type="button" data-theme-option="light" aria-label="Světlý režim" title="Světlý režim"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="Podle systému" title="Podle systému"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Tmavý režim" title="Tmavý režim"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">Na hlavní web <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Quick start</p>
+          <h1 class="kb-article-title">Jak přidat svou nemovitost</h1>
+          <p class="kb-article-lead">Po prvním přihlášení je přidání nemovitosti hlavní krok, který odemkne další práci v aplikaci. Jakmile bude první nemovitost založená, můžete na ni navázat import rezervací, formuláře pro hosty a další nastavení.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Centrum pomoci</a>
+            <a href="./prvni-prihlaseni-a-orientace-v-uctu.html">Předchozí krok</a>
+            <a href="./jak-funguje-napojeni-pres-ical.html">Další krok →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>Co vás čeká dál</strong>
           <p>
             Vyberete si způsob založení nemovitosti a v jejím nastavení pak
             půjdete ve třech navazujících krocích: poplatky obci, Ubyport údaje
             a nakonec iCal napojení.
           </p>
-        </div>
-      </section>
+</div>
 
-      <h2 class="section-title">Kudy se k tomu dostanete</h2>
-      <div class="grid-2">
-        <article class="route">
-          <div class="route-badge">Cesta 1</div>
-          <h3>Přes sekci Nemovitosti</h3>
-          <p>
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <h2>Kudy se k tomu dostanete</h2>
+
+        <h3>Přes sekci Nemovitosti</h3>
+<p>
             V levém menu otevřete <strong>Nemovitosti</strong>. Pokud ještě
             nemáte nic založeno, uvidíte prázdný stav
             <strong>Zatím nemáte žádné nemovitosti</strong> a tlačítko
             <strong>Přidat první nemovitost</strong>.
           </p>
-        </article>
-        <article class="route">
-          <div class="route-badge">Cesta 2</div>
-          <h3>Přes onboarding na Přehledu</h3>
-          <p>
+        <h3>Přes onboarding na Přehledu</h3>
+<p>
             Na stránce <strong>Přehled</strong> uvidíte blok pro první nastavení
             nemovitosti. Tam můžete rovnou vyplnit
             <strong>Název nemovitosti</strong> a
             <strong>Airbnb iCal URL</strong>.
           </p>
-        </article>
-      </div>
-
-      <h2 class="section-title">Co uvidíte v sekci Nemovitosti</h2>
-      <section class="card">
-        <h2>Prázdný stav po prvním vstupu</h2>
-        <ul>
-          <li>tlačítko <strong>Synchronizovat všechny nemovitosti</strong></li>
-          <li>tlačítko <strong>Přidat nemovitost</strong></li>
-          <li>informaci <strong>Zatím nemáte žádné nemovitosti</strong></li>
-          <li>tlačítko <strong>Přidat první nemovitost</strong></li>
-          <li>odkaz <strong>Jak nastavit automatické přeposílání</strong></li>
+      
+<h2>Co uvidíte v sekci Nemovitosti</h2>
+<h2>Prázdný stav po prvním vstupu</h2>
+<ul>
+          <li>tlačítko <strong>Synchronizovat všechny nemovitosti</strong>
+</li>
+          <li>tlačítko <strong>Přidat nemovitost</strong>
+</li>
+          <li>informaci <strong>Zatím nemáte žádné nemovitosti</strong>
+</li>
+          <li>tlačítko <strong>Přidat první nemovitost</strong>
+</li>
+          <li>odkaz <strong>Jak nastavit automatické přeposílání</strong>
+</li>
         </ul>
-        <div class="note">
+<aside class="kb-article-callout">
           Po založení nemovitosti na vás navazuje její nastavení. Právě tam dává
           smysl pokračovat rovnou třemi povinnými oblastmi:
           <strong>poplatky obci</strong>, <strong>Ubyport údaje</strong> a
           <strong>iCal</strong>.
-        </div>
-      </section>
+        </aside>
+<h2>Jak postupovat krok za krokem</h2>
 
-      <h2 class="section-title">Jak postupovat krok za krokem</h2>
-      <div class="grid-2">
-        <article class="step">
-          <strong>Krok 1</strong>
-          <h3>Otevřete Nemovitosti nebo onboarding</h3>
-          <p>
+        <p class="kb-article-step-label">Krok 1</p>
+<h3>Otevřete Nemovitosti nebo onboarding</h3>
+<p>
             Pokud chcete jít klasickou cestou, klikněte v menu na
             <strong>Nemovitosti</strong> a použijte tlačítko
             <strong>Přidat nemovitost</strong> nebo
             <strong>Přidat první nemovitost</strong>.
           </p>
-          <p>
+<p>
             Pokud už máte připravený iCal z Airbnb, můžete zůstat na stránce
             <strong>Přehled</strong> a použít onboarding formulář.
           </p>
-        </article>
 
-        <article class="step">
-          <strong>Krok 2</strong>
-          <h3>Připravte si základní údaje</h3>
-          <p>
+        <p class="kb-article-step-label">Krok 2</p>
+<h3>Připravte si základní údaje</h3>
+<p>
             Než budete pokračovat, připravte si minimálně
             <strong>název nemovitosti</strong>. Ideálně už si ale nachystejte i
             tři údaje, které budete v nastavení nemovitosti doplňovat hned poté.
           </p>
-          <ul class="mini-list">
+<ul>
             <li><strong>poplatky obci</strong></li>
             <li><strong>Ubyport ID a heslo</strong></li>
             <li><strong>Airbnb iCal URL</strong></li>
           </ul>
-        </article>
 
-        <article class="step">
-          <strong>Krok 3</strong>
-          <h3>Vytvořte nemovitost</h3>
-          <p>
+        <p class="kb-article-step-label">Krok 3</p>
+<h3>Vytvořte nemovitost</h3>
+<p>
             V onboardingu po vyplnění polí <strong>Název nemovitosti</strong> a
             <strong>Airbnb iCal URL</strong> použijete tlačítko
             <strong>Vytvořit nemovitost a naimportovat rezervace</strong>.
           </p>
-          <p>
+<p>
             Pokud iCal zatím nemáte, nemovitost nejdřív založte přes
             <strong>Nemovitosti</strong> a hned potom přejděte do jejího
             nastavení, kde budete pokračovat dalšími třemi kroky.
           </p>
-        </article>
 
-        <article class="step">
-          <strong>Krok 4</strong>
-          <h3>Vyplňte poplatky obci</h3>
-          <p>
+        <p class="kb-article-step-label">Krok 4</p>
+<h3>Vyplňte poplatky obci</h3>
+<p>
             První navazující část nastavení je informace k
             <strong>poplatku obci</strong>. U každé nemovitosti je potřeba mít
             jasno, jestli už máte registraci hotovou, kam poplatky podáváte a
             jak je budete odesílat.
           </p>
-          <p>
+<p>
             Tento krok je důležitý i proto, aby se vám pak na konci měsíce
             správně generovalo hlášení, které se posílá městu.
           </p>
-          <p>
-            Nemáte tyto údaje?
-            <a class="next-link" href="./jak-funguje-poplatek-z-pobytu.html"
-              >Jak na poplatky obci</a
-            >
-          </p>
-        </article>
+<aside class="kb-article-tip">
+            <span class="kb-article-tip-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></span>
+            <span>Nemáte tyto údaje?</span>
+            <a href="./jak-funguje-poplatek-z-pobytu.html">Jak na poplatky obci</a>
+          </aside>
 
-        <article class="step">
-          <strong>Krok 5</strong>
-          <h3>Doplňte Ubyport ID a heslo</h3>
-          <p>
+        <p class="kb-article-step-label">Krok 5</p>
+<h3>Doplňte Ubyport ID a heslo</h3>
+<p>
             Jakmile máte vyřešené poplatky obci, pokračujte na
             <strong>Ubyport údaje</strong>. Ty jsou důležité pro návaznost na
             hlášení hostů a další administrativní část provozu.
           </p>
-          <p>
+<p>
             Pokud je teď nemáte po ruce, je dobré si je připravit co nejdřív,
             aby nastavení nemovitosti zůstalo kompletní. Pokud ještě nemáte
             Ubyport vůbec založený, nejdřív je potřeba projít registrací a
             teprve potom doplnit získané přihlašovací údaje do Superhostem.
           </p>
-          <ul class="mini-list">
+<ul>
             <li><strong>Ubyport ID</strong></li>
             <li><strong>Ubyport heslo</strong></li>
           </ul>
-          <p>
-            Nemáte Ubyport účet nebo přihlašovací údaje?
-            <a class="next-link" href="./jak-se-zaregistrovat-do-ubyportu.html"
-              >Jak na registraci do Ubyportu</a
-            >
-          </p>
-        </article>
+<aside class="kb-article-tip">
+            <span class="kb-article-tip-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></span>
+            <span>Nemáte Ubyport účet nebo přihlašovací údaje?</span>
+            <a href="./jak-se-zaregistrovat-do-ubyportu.html">Jak na registraci do Ubyportu</a>
+          </aside>
 
-        <article class="step">
-          <strong>Krok 6</strong>
-          <h3>Na závěr napojte iCal</h3>
-          <p>
+        <p class="kb-article-step-label">Krok 6</p>
+<h3>Na závěr napojte iCal</h3>
+<p>
             Poslední navazující část je <strong>iCal napojení</strong>, které
             zajistí načtení rezervací a synchronizaci kalendáře. Díky tomu se
             vám začne plnit přehled rezervací a aplikace začne pracovat s
             pobyty.
           </p>
-          <p>
+<p>
             Pokud používáte Airbnb nebo jiný OTA zdroj, vložte příslušnou iCal
             URL právě v této části nastavení nemovitosti.
           </p>
-          <p>
-            Nemáte tyto údaje?
-            <a class="next-link" href="./co-je-ical.html">Jak získat iCal</a>
-          </p>
-          <a class="next-link" href="./jak-funguje-napojeni-pres-ical.html"
-            >Pokračovat na iCal a další nastavení</a
-          >
-        </article>
-      </div>
+<aside class="kb-article-tip">
+            <span class="kb-article-tip-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></span>
+            <span>Nemáte tyto údaje?</span>
+            <a href="./co-je-ical.html">Jak získat iCal</a>
+          </aside>
+<a href="./jak-funguje-napojeni-pres-ical.html">Pokračovat na iCal a další nastavení</a>
+      
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Související odkazy</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Přehled</span>
+  <strong>Centrum pomoci</strong>
+</a>
 
-      <h2 class="section-title">Na co navázat po založení nemovitosti</h2>
-      <div class="grid-3">
-        <article class="next-card">
-          <div class="next-icon">1</div>
-          <h3>Poplatky obci</h3>
-          <p>
-            Začněte místními povinnostmi, aby nemovitost měla správně připravený
-            legislativní základ.
-          </p>
-          <a class="next-link" href="./jak-funguje-poplatek-z-pobytu.html"
-            >Otevřít poplatky</a
-          >
-        </article>
-        <article class="next-card">
-          <div class="next-icon">2</div>
-          <h3>Ubyport údaje</h3>
-          <p>
-            Pokračujte doplněním údajů pro hlášení hostů, aby na ně mohla
-            navazovat provozní administrativa.
-          </p>
-          <a class="next-link" href="./jak-se-zaregistrovat-do-ubyportu.html"
-            >Zjistit víc</a
-          >
-        </article>
-        <article class="next-card">
-          <div class="next-icon">3</div>
-          <h3>Napojit iCal</h3>
-          <p>
-            Na závěr propojte kalendář, aby se začaly načítat rezervace a
-            nemovitost byla připravená k běžnému provozu.
-          </p>
-          <a class="next-link" href="./jak-funguje-napojeni-pres-ical.html"
-            >Otevřít iCal</a
-          >
-        </article>
-      </div>
+<a class="kb-article-related-card" href="./prvni-prihlaseni-a-orientace-v-uctu.html">
+  <span>Předchozí</span>
+  <strong>První přihlášení a orientace v účtu</strong>
+</a>
 
-      <section class="card">
-        <h2>Co si připravit předem</h2>
-        <ul class="mini-list">
-          <li>název nemovitosti, pod kterým ji chcete mít v Superhostem</li>
-          <li>
-            základní informace k <strong>poplatku obci</strong>, hlavně jestli
-            už máte vyřešenou registraci a způsob podání
-          </li>
-          <li><strong>Ubyport ID a heslo</strong></li>
-          <li>
-            <strong>Airbnb iCal URL</strong>, pokud chcete rovnou naimportovat
-            rezervace
-          </li>
-          <li>
-            rozhodnutí, jestli začnete přes onboarding na Přehledu nebo přes
-            sekci Nemovitosti
-          </li>
-        </ul>
-      </section>
-    </div>
+<a class="kb-article-related-card" href="./jak-funguje-napojeni-pres-ical.html">
+  <span>Další</span>
+  <strong>Jak získat a napojit iCal z Airbnb a Bookingu</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>Na této stránce</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhostem.cz</span>
+        <a href="./index.html">Centrum nápovědy</a>
+      </div>
+    </footer>
+
     <a class="back-to-top" href="#page-top" aria-label="Zpět nahoru" title="Nahoru">↑</a>
-</body>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../assets/kb-navigation.js"></script>
+  </body>
 </html>

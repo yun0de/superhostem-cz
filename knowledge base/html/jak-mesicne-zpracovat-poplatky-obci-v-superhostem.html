@@ -1,147 +1,251 @@
 <!DOCTYPE html>
-<html lang="cs" class="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jak měsíčně zpracovat poplatky obci v Superhostem</title>
-  <link rel="stylesheet" href="../assets/superhostem.css">
-</head>
-<body id="page-top">
-  <div class="page">
-    <header class="topbar">
-      <a class="brand" href="./index.html">
-        <div class="brand-mark">S</div>
-        <div>Superhostem.cz / Centrum pomoci</div>
-      </a>
-      <a class="inline-cta btn-outline" href="https://superhostem.cz/">Na hlavní web</a>
-    </header>
-    <div class="nav container header">
-      <a href="./index.html">← Centrum pomoci</a>
-      <a href="./jak-funguji-automatizace-v-superhostem.html">Předchozí článek</a>
-      <a href="./jak-funguje-poplatek-z-pobytu.html">Další článek →</a>
-    </div>
+<html lang="cs">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak měsíčně zpracovat poplatky obci v Superhostem</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Superhostem.cz Centrum nápovědy">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Centrum nápovědy</small>
+          </span>
+        </a>
 
-    <section class="hero">
-      <span class="eyebrow">Automatizace a komunikace</span>
-      <h1>Jak měsíčně zpracovat poplatky obci v Superhostem</h1>
-      <p>
-        V části <strong>Poplatky obci</strong> si zkontrolujete výpočet za jednotlivé nemovitosti,
-        stáhnete si PDF pro ověření, odešlete hlášení přes datovou schránku a připravíte úhradu přes QR kód.
-      </p>
-      <div class="expect">
-        <strong>Co je důležité vědět</strong>
+        <nav class="kb-help-nav" aria-label="Hlavní navigace">
+          <a href="./index.html">Rozcestník</a>
+          <a href="./index.html#knihovna">Knihovna</a>
+          <a href="#kb-article-related">Související</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Jazyk"><a href="./jak-mesicne-zpracovat-poplatky-obci-v-superhostem.html">CZ</a><a href="./en/jak-mesicne-zpracovat-poplatky-obci-v-superhostem.html">EN</a><a href="./vn/jak-mesicne-zpracovat-poplatky-obci-v-superhostem.html">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Přepnout barevný režim">
+            <button type="button" data-theme-option="light" aria-label="Světlý režim" title="Světlý režim"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="Podle systému" title="Podle systému"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Tmavý režim" title="Tmavý režim"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">Na hlavní web <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Automatizace a komunikace</p>
+          <h1 class="kb-article-title">Jak měsíčně zpracovat poplatky obci v Superhostem</h1>
+          <p class="kb-article-lead">V části Poplatky obci si zkontrolujete výpočet za jednotlivé nemovitosti, stáhnete si PDF pro ověření, odešlete hlášení přes datovou schránku a připravíte úhradu přes QR kód.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Centrum pomoci</a>
+            <a href="./jak-funguji-automatizace-v-superhostem.html">Předchozí článek</a>
+            <a href="./jak-funguje-poplatek-z-pobytu.html">Další článek →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>Co je důležité vědět</strong>
         <p>
           Poplatky vždy řešíte za <strong>předchozí měsíc</strong>, ne za aktuální. Proto Superhostem standardně
           zobrazuje minulý měsíc, aby odpovídal období, které se běžně právě podává a platí.
         </p>
-      </div>
-    </section>
+</div>
 
-    <h2 class="section-title">Než začnete</h2>
-    <div class="grid-3">
-      <article class="next-card">
-        <div class="next-icon">1</div>
-        <h3>Správně nastavené údaje obce</h3>
-        <p>Sazbu, účet obce a další podklady musíte mít nastavené v detailu konkrétní nemovitosti.</p>
-      </article>
-      <article class="next-card">
-        <div class="next-icon">2</div>
-        <h3>Vybraný správný měsíc</h3>
-        <p>Kontrolujte období, za které skutečně podáváte hlášení. Ve výchozím stavu to bývá předchozí měsíc.</p>
-      </article>
-      <article class="next-card">
-        <div class="next-icon">3</div>
-        <h3>Kontrola před odesláním</h3>
-        <p>Ještě před datovkou nebo platbou si stáhněte PDF a ověřte, co přesně se na úřad posílá.</p>
-      </article>
-    </div>
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <h2>Než začnete</h2>
 
-    <section class="card">
-      <h2>Kde v aplikaci začít</h2>
-      <p>
+      <h3>Správně nastavené údaje obce</h3>
+<p>Sazbu, účet obce a další podklady musíte mít nastavené v detailu konkrétní nemovitosti.</p>
+      <h3>Vybraný správný měsíc</h3>
+<p>Kontrolujte období, za které skutečně podáváte hlášení. Ve výchozím stavu to bývá předchozí měsíc.</p>
+      <h3>Kontrola před odesláním</h3>
+<p>Ještě před datovkou nebo platbou si stáhněte PDF a ověřte, co přesně se na úřad posílá.</p>
+    
+<h2>Kde v aplikaci začít</h2>
+<p>
         V levém menu otevřete <strong>Poplatky obci</strong>. Nahoře uvidíte výběr měsíce, termín pro podání,
         souhrn za všechny nemovitosti a pod tím jednotlivé karty nemovitostí.
       </p>
-      <ul>
+<ul>
         <li>nahoře si vyberete měsíc, za který řešíte hlášení a platbu</li>
         <li>v souhrnu rychle uvidíte celkovou částku za všechny nemovitosti</li>
         <li>u každé nemovitosti pak najdete PDF, odeslání datovkou a QR platbu</li>
       </ul>
-    </section>
+<h2>Jak postupovat každý měsíc</h2>
 
-    <h2 class="section-title">Jak postupovat každý měsíc</h2>
-    <div class="grid-2">
-      <article class="step">
-        <strong class="kicker">Krok 1</strong>
-        <h3>Zkontrolujte, že pracujete s předchozím měsícem</h3>
-        <p>Poplatky obci se běžně podávají a platí za předchozí měsíc. Proto je v Superhostem jako výchozí zobrazené právě minulé období, ne aktuální měsíc.</p>
-        <p>Pokud si měsíc přepnete ručně, vždy si ověřte, že opravdu řešíte správné období pro podání.</p>
-      </article>
+      <h3>Zkontrolujte, že pracujete s předchozím měsícem</h3>
+<p>Poplatky obci se běžně podávají a platí za předchozí měsíc. Proto je v Superhostem jako výchozí zobrazené právě minulé období, ne aktuální měsíc.</p>
+<p>Pokud si měsíc přepnete ručně, vždy si ověřte, že opravdu řešíte správné období pro podání.</p>
 
-      <article class="step">
-        <strong class="kicker">Krok 2</strong>
-        <h3>Podívejte se na souhrn za všechny nemovitosti</h3>
-        <p>V horní části stránky uvidíte celkovou částku za vybraný měsíc a stav vyřízení. Díky tomu rychle poznáte, kolik vás čeká k odeslání a zaplacení.</p>
-      </article>
+      <h3>Podívejte se na souhrn za všechny nemovitosti</h3>
+<p>V horní části stránky uvidíte celkovou částku za vybraný měsíc a stav vyřízení. Díky tomu rychle poznáte, kolik vás čeká k odeslání a zaplacení.</p>
 
-      <article class="step">
-        <strong class="kicker">Krok 3</strong>
-        <h3>Otevřete detail konkrétní nemovitosti</h3>
-        <p>U každé nemovitosti zkontrolujte počet nocí, platících hostů, případné osvobozené hosty a výslednou částku. Právě z těchto dat se skládá měsíční hlášení pro obec.</p>
-      </article>
+      <h3>Otevřete detail konkrétní nemovitosti</h3>
+<p>U každé nemovitosti zkontrolujte počet nocí, platících hostů, případné osvobozené hosty a výslednou částku. Právě z těchto dat se skládá měsíční hlášení pro obec.</p>
 
-      <article class="step">
-        <strong class="kicker">Krok 4</strong>
-        <h3>Stáhněte si PDF pro ověření</h3>
-        <p>Než něco odešlete, stáhněte si <strong>PDF</strong> a projděte si, co přesně se bude na úřad posílat. Je to nejrychlejší kontrola před odesláním datovkou i před samotnou platbou.</p>
-      </article>
+      <h3>Stáhněte si PDF pro ověření</h3>
+<p>Než něco odešlete, stáhněte si <strong>PDF</strong> a projděte si, co přesně se bude na úřad posílat. Je to nejrychlejší kontrola před odesláním datovkou i před samotnou platbou.</p>
 
-      <article class="step">
-        <strong class="kicker">Krok 5</strong>
-        <h3>Odešlete hlášení datovou schránkou</h3>
-        <p>Po kontrole můžete použít tlačítko <strong>Odeslat datovkou</strong>. Superhostem za vás zprávu předpřipraví k odeslání na úřad, takže nemusíte vše vypisovat ručně od začátku.</p>
-      </article>
+      <h3>Odešlete hlášení datovou schránkou</h3>
+<p>Po kontrole můžete použít tlačítko <strong>Odeslat datovkou</strong>. Superhostem za vás zprávu předpřipraví k odeslání na úřad, takže nemusíte vše vypisovat ručně od začátku.</p>
 
-      <article class="step">
-        <strong class="kicker">Krok 6</strong>
-        <h3>Zaplaťte poplatek přes QR kód</h3>
-        <p>Pro úhradu použijte tlačítko <strong>QR platba</strong>. Otevře se vám platba s připravenými údaji, takže jen zkontrolujete částku a odešlete ji ze své bankovní aplikace.</p>
-      </article>
+      <h3>Zaplaťte poplatek přes QR kód</h3>
+<p>Pro úhradu použijte tlačítko <strong>QR platba</strong>. Otevře se vám platba s připravenými údaji, takže jen zkontrolujete částku a odešlete ji ze své bankovní aplikace.</p>
 
-      <article class="step">
-        <strong class="kicker">Krok 7</strong>
-        <h3>Zkontrolujte, že je vše vyřízené</h3>
-        <p>Po odeslání a zaplacení si ověřte stav u konkrétní nemovitosti. Díky tomu hned vidíte, co už je hotové a co ještě zbývá dokončit.</p>
-      </article>
+      <h3>Zkontrolujte, že je vše vyřízené</h3>
+<p>Po odeslání a zaplacení si ověřte stav u konkrétní nemovitosti. Díky tomu hned vidíte, co už je hotové a co ještě zbývá dokončit.</p>
 
-      <article class="step">
-        <strong class="kicker">Krok 8</strong>
-        <h3>Když částka nesedí, upravte nejdřív nastavení nemovitosti</h3>
-        <p>Sazby a další údaje pro výpočet poplatku nastavujete v <strong>Nastavení nemovitosti</strong>. Pokud něco nesedí, nezačínejte opravou až u měsíčního podání, ale zkontrolujte nejdřív právě nastavení konkrétní nemovitosti.</p>
-      </article>
-    </div>
-
-    <section class="card">
-      <h2>Na co si dát pozor</h2>
-      <ul>
+      <h3>Když částka nesedí, upravte nejdřív nastavení nemovitosti</h3>
+<p>Sazby a další údaje pro výpočet poplatku nastavujete v <strong>Nastavení nemovitosti</strong>. Pokud něco nesedí, nezačínejte opravou až u měsíčního podání, ale zkontrolujte nejdřív právě nastavení konkrétní nemovitosti.</p>
+    
+<h2>Na co si dát pozor</h2>
+<ul>
         <li>neodesílejte aktuální měsíc, pokud obec očekává podání za měsíc předchozí</li>
         <li>před datovkou i platbou si vždy stáhněte PDF a zkontrolujte podklady</li>
         <li>když nesedí částka, ověřte sazbu v nastavení konkrétní nemovitosti</li>
         <li>u více nemovitostí kontrolujte každou kartu zvlášť, ne jen celkový souhrn</li>
       </ul>
-    </section>
-
-    <section class="card">
-      <h2>Na co tenhle postup navazuje</h2>
-      <p>
+<h2>Na co tenhle postup navazuje</h2>
+<p>
         Tento článek řeší praktickou měsíční práci v aplikaci. Pokud si ještě potřebujete ujasnit samotnou povinnost,
         registraci a údaje od obce, začněte nejdřív článkem o poplatku z pobytu.
       </p>
-      <div class="card-links">
-        <a class="next-link" href="./jak-funguje-poplatek-z-pobytu.html">Jak funguje poplatek z pobytu</a>
+<ul class="kb-article-link-list"><li><a href="./jak-funguje-poplatek-z-pobytu.html">Jak funguje poplatek z pobytu</a></li></ul>
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Související odkazy</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Přehled</span>
+  <strong>Centrum pomoci</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-funguji-automatizace-v-superhostem.html">
+  <span>Předchozí</span>
+  <strong>Jak automatizovat komunikace s hosty</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-funguje-poplatek-z-pobytu.html">
+  <span>Další</span>
+  <strong>Jak funguje poplatek z pobytu</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>Na této stránce</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
       </div>
-    </section>
-  </div>
-  <a class="back-to-top" href="#page-top" aria-label="Zpět nahoru" title="Nahoru">↑</a>
-</body>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhostem.cz</span>
+        <a href="./index.html">Centrum nápovědy</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Zpět nahoru" title="Nahoru">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../assets/kb-navigation.js"></script>
+  </body>
 </html>

@@ -1,235 +1,317 @@
 <!DOCTYPE html>
-<html lang="cs" class="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jak automatizovat komunikace s hosty</title>
-  
-  
-  
-  
-  <link rel="stylesheet" href="../assets/superhostem.css">
-</head>
-<body id="page-top">
-  <div class="page">
-    <header class="topbar">
-      <a class="brand" href="./index.html">
-        <div class="brand-mark">S</div>
-        <div>Superhostem.cz / Centrum pomoci</div>
-      </a>
-      <a class="inline-cta btn-outline" href="https://superhostem.cz/">Na hlavní web</a>
-    </header>
-    <div class="nav container header">
-      <a href="./index.html">← Centrum pomoci</a>
-      <a href="./jak-pridat-novou-nemovitost.html">Předchozí článek</a>
-      <a href="./zakladni-legislativni-povinnosti-hostitele-v-cr.html">Další článek →</a>
-    </div>
+<html lang="cs">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak automatizovat komunikace s hosty</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Superhostem.cz Centrum nápovědy">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Centrum nápovědy</small>
+          </span>
+        </a>
 
-    <section class="hero">
-      <span class="eyebrow">Automatizace a komunikace</span>
-      <h1>Jak automatizovat komunikace s hosty</h1>
-      <p>
-        Smyslem automatizace je, aby host dostal odkaz na formulář nebo guestbook ve správný čas a vy
-        jste to nemuseli posílat ručně ke každé rezervaci.
-      </p>
-      <div class="expect">
-        <strong>Co vás čeká dál</strong>
-        <p>Nejdřív si v Superhostem zkopírujete odkaz pro konkrétní nemovitost, potom ho vložíte do automatické zprávy v Airbnb nebo Booking.com a nakonec sladíte čas odeslání s tím, co máte nastaveno v aplikaci.</p>
+        <nav class="kb-help-nav" aria-label="Hlavní navigace">
+          <a href="./index.html">Rozcestník</a>
+          <a href="./index.html#knihovna">Knihovna</a>
+          <a href="#kb-article-related">Související</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Jazyk"><a href="./jak-funguji-automatizace-v-superhostem.html">CZ</a><a href="./en/jak-funguji-automatizace-v-superhostem.html">EN</a><a href="./vn/jak-funguji-automatizace-v-superhostem.html">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Přepnout barevný režim">
+            <button type="button" data-theme-option="light" aria-label="Světlý režim" title="Světlý režim"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="Podle systému" title="Podle systému"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Tmavý režim" title="Tmavý režim"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">Na hlavní web <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
       </div>
-    </section>
+    </header>
 
-    <h2 class="section-title">Co si připravit předem</h2>
-    <div class="grid-3">
-      <article class="next-card">
-        <div class="next-icon">1</div>
-        <h3>Nemovitost v Superhostem</h3>
-        <p>Automatizaci nastavujete až ve chvíli, kdy už máte v systému založenou konkrétní nemovitost.</p>
-      </article>
-      <article class="next-card">
-        <div class="next-icon">2</div>
-        <h3>Odkaz pro hosty</h3>
-        <p>Potřebujete permalink nebo veřejný odkaz, který se má hostům posílat ve zprávě.</p>
-      </article>
-      <article class="next-card">
-        <div class="next-icon">3</div>
-        <h3>Vybranou platformu</h3>
-        <p>Rozhodněte se, jestli budete automatickou zprávu nastavovat v Airbnb nebo v Booking.com.</p>
-      </article>
-    </div>
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Automatizace a komunikace</p>
+          <h1 class="kb-article-title">Jak automatizovat komunikace s hosty</h1>
+          <p class="kb-article-lead">Smyslem automatizace je, aby host dostal odkaz na formulář nebo guestbook ve správný čas a vy jste to nemuseli posílat ručně ke každé rezervaci.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Centrum pomoci</a>
+            <a href="./jak-pridat-novou-nemovitost.html">Předchozí článek</a>
+            <a href="./zakladni-legislativni-povinnosti-hostitele-v-cr.html">Další článek →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>Co vás čeká dál</strong>
+        <p>Nejdřív si v Superhostem zkopírujete odkaz pro konkrétní nemovitost, potom ho vložíte do automatické zprávy v Airbnb nebo Booking.com a nakonec sladíte čas odeslání s tím, co máte nastaveno v aplikaci.</p>
+</div>
 
-    <section class="card">
-      <h2>Kde v Superhostem začít</h2>
-      <p>
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <h2>Co si připravit předem</h2>
+
+      <h3>Nemovitost v Superhostem</h3>
+<p>Automatizaci nastavujete až ve chvíli, kdy už máte v systému založenou konkrétní nemovitost.</p>
+      <h3>Odkaz pro hosty</h3>
+<p>Potřebujete permalink nebo veřejný odkaz, který se má hostům posílat ve zprávě.</p>
+      <h3>Vybranou platformu</h3>
+<p>Rozhodněte se, jestli budete automatickou zprávu nastavovat v Airbnb nebo v Booking.com.</p>
+    
+<h2>Kde v Superhostem začít</h2>
+<p>
         V detailu konkrétní nemovitosti otevřete část <strong>Automatizace</strong>. Právě tam najdete odkaz pro hosty
         a nastavení, kolik dní dopředu mají být rezervace přes tento odkaz hostům dostupné.
       </p>
-      <ul>
+<ul>
         <li>zkopírujte si odkaz pro hosty</li>
         <li>nastavte počet dní dopředu, kdy má být rezervace viditelná</li>
         <li>uložte nastavení ještě předtím, než budete vytvářet automatickou zprávu v OTA platformě</li>
       </ul>
-      <div class="note">
+<aside class="kb-article-callout">
         Tohle nastavení musí časově sedět s tím, kdy se automatická zpráva odešle v Airbnb nebo Booking.com. Pokud nastavíte jiný počet dní v aplikaci a jiný počet dní v OTA, host nemusí po kliknutí vidět správnou rezervaci.
-      </div>
-    </section>
-
-    <h2 class="section-title">Jak to vypadá v Airbnb zprávách</h2>
-    <div class="shot-grid shot-grid-compact">
-      <figure class="shot">
+      </aside>
+<h2>Jak to vypadá v Airbnb zprávách</h2>
+<div class="kb-article-media-grid">
+      <figure class="kb-article-figure">
         <img src="../assets/screens/messages1_cz.png" alt="Airbnb Zprávy s ikonou nastavení">
         <figcaption>V Airbnb začínáte v sekci <strong>Zprávy</strong>. Odtud otevřete přes ozubené kolečko <strong>Nastavení zpráv</strong>.</figcaption>
       </figure>
-      <figure class="shot">
+      <figure class="kb-article-figure">
         <img src="../assets/screens/messages2_cz.png" alt="Airbnb Nastavení zpráv se správou rychlých odpovědí">
         <figcaption>V nastavení zpráv vstupujete do <strong>Správy rychlých odpovědí</strong>, kde si vytváříte nebo upravujete šablony.</figcaption>
       </figure>
-      <figure class="shot">
+      <figure class="kb-article-figure">
         <img src="../assets/screens/messages4_cz.png" alt="Airbnb panel Přidat podrobnosti">
         <figcaption>Při úpravě zprávy můžete přes <strong>Přidat podrobnosti</strong> vložit dynamické proměnné jako jméno hosta nebo datum příjezdu.</figcaption>
       </figure>
-      <figure class="shot">
+      <figure class="kb-article-figure">
         <img src="../assets/screens/messages3_cz.png" alt="Airbnb tlačítko Vytvořit">
         <figcaption>Po dokončení šablonu vytvoříte a následně jí nastavíte správné načasování vůči příjezdu.</figcaption>
       </figure>
     </div>
+<h2>Nastavení v Airbnb</h2>
 
-    <h2 class="section-title">Nastavení v Airbnb</h2>
-    <div class="grid-2">
-      <article class="step">
-        <strong class="kicker">Krok 1</strong>
-        <h3>Otevřete správu rychlých odpovědí</h3>
-        <p>V Airbnb běžte do zpráv s hosty, otevřete ozubené kolečko a přejděte do části <strong>Správa rychlých odpovědí</strong>.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Krok 2</strong>
-        <h3>Vytvořte novou šablonu</h3>
-        <p>Vytvořte novou rychlou odpověď nebo automatickou zprávu. Doporučuje se mít samostatnou šablonu pro každou nabídku.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Krok 3</strong>
-        <h3>Vložte text a odkaz z Superhostem</h3>
-        <p>Do textu zprávy vložte svůj vzor komunikace a přidejte zkopírovaný odkaz pro hosty z části <strong>Automatizace</strong> v Superhostem.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Krok 4</strong>
-        <h3>Vyberte jen jednu správnou nabídku</h3>
-        <p>V nastavení šablony zkontrolujte, že je přiřazená jen k jedné konkrétní nabídce. Pokud spravujete více nabídek, každá by měla mít vlastní šablonu.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Krok 5</strong>
-        <h3>Nastavte správný čas odeslání</h3>
-        <p>Doporučené nastavení je například <strong>3 dny před příjezdem</strong>. Důležité je, aby stejný počet dní seděl i v nastavení odkazu v Superhostem.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Krok 6</strong>
-        <h3>Zkontrolujte finální šablonu</h3>
-        <p>Před uložením si ověřte tři věci: správný odkaz, správně vybranou nabídku a správný čas odeslání.</p>
-      </article>
-    </div>
+      <h3>Otevřete správu rychlých odpovědí</h3>
+<p>V Airbnb běžte do zpráv s hosty, otevřete ozubené kolečko a přejděte do části <strong>Správa rychlých odpovědí</strong>.</p>
+      <h3>Vytvořte novou šablonu</h3>
+<p>Vytvořte novou rychlou odpověď nebo automatickou zprávu. Doporučuje se mít samostatnou šablonu pro každou nabídku.</p>
+      <h3>Vložte text a odkaz z Superhostem</h3>
+<p>Do textu zprávy vložte svůj vzor komunikace a přidejte zkopírovaný odkaz pro hosty z části <strong>Automatizace</strong> v Superhostem.</p>
+      <h3>Vyberte jen jednu správnou nabídku</h3>
+<p>V nastavení šablony zkontrolujte, že je přiřazená jen k jedné konkrétní nabídce. Pokud spravujete více nabídek, každá by měla mít vlastní šablonu.</p>
+      <h3>Nastavte správný čas odeslání</h3>
+<p>Doporučené nastavení je například <strong>3 dny před příjezdem</strong>. Důležité je, aby stejný počet dní seděl i v nastavení odkazu v Superhostem.</p>
+      <h3>Zkontrolujte finální šablonu</h3>
+<p>Před uložením si ověřte tři věci: správný odkaz, správně vybranou nabídku a správný čas odeslání.</p>
+    
+<h2>Nastavení v Booking.com</h2>
 
-    <h2 class="section-title">Nastavení v Booking.com</h2>
-    <div class="grid-2">
-      <article class="step">
-        <strong class="kicker">Krok 1</strong>
-        <h3>Otevřete nastavení zpráv</h3>
-        <p>Na domovské stránce Extranetu Booking.com otevřete nabídku <strong>Ubytovací zařízení</strong> a potom <strong>Nastavení zpráv</strong>.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Krok 2</strong>
-        <h3>Vytvořte novou šablonu</h3>
-        <p>V části <strong>Šablony zpráv</strong> zvolte vytvoření nové šablony.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Krok 3</strong>
-        <h3>Vložte odkaz z Superhostem</h3>
-        <p>Do textu nové šablony vložte zkopírovaný odkaz pro hosty. Pokud máte v Booking.com jednu nemovitost s více jednotkami, zkontrolujte, že používáte správný odkaz pro konkrétní jednotku.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Krok 4</strong>
-        <h3>Pojmenujte šablonu a zvolte téma</h3>
-        <p>Šablonu si srozumitelně pojmenujte a jako typ zprávy obvykle zvolte příjezd nebo komunikaci před příjezdem.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Krok 5</strong>
-        <h3>Naplánujte odeslání</h3>
-        <p>U nově vytvořené šablony zvolte <strong>Naplánovat odeslání šablony</strong> a nastavte počet dní před příjezdem.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Krok 6</strong>
-        <h3>Sladěte čas s nastavením v Superhostem</h3>
-        <p>Stejný počet dní před příjezdem nastavte i v části <strong>Automatizace</strong> v Superhostem. Jinak host po otevření odkazu nemusí vidět správnou rezervaci.</p>
-      </article>
-    </div>
-
-    <section class="card">
-      <h2>Jak poznáte, že je automatizace nastavená správně</h2>
-      <ul>
+      <h3>Otevřete nastavení zpráv</h3>
+<p>Na domovské stránce Extranetu Booking.com otevřete nabídku <strong>Ubytovací zařízení</strong> a potom <strong>Nastavení zpráv</strong>.</p>
+      <h3>Vytvořte novou šablonu</h3>
+<p>V části <strong>Šablony zpráv</strong> zvolte vytvoření nové šablony.</p>
+      <h3>Vložte odkaz z Superhostem</h3>
+<p>Do textu nové šablony vložte zkopírovaný odkaz pro hosty. Pokud máte v Booking.com jednu nemovitost s více jednotkami, zkontrolujte, že používáte správný odkaz pro konkrétní jednotku.</p>
+      <h3>Pojmenujte šablonu a zvolte téma</h3>
+<p>Šablonu si srozumitelně pojmenujte a jako typ zprávy obvykle zvolte příjezd nebo komunikaci před příjezdem.</p>
+      <h3>Naplánujte odeslání</h3>
+<p>U nově vytvořené šablony zvolte <strong>Naplánovat odeslání šablony</strong> a nastavte počet dní před příjezdem.</p>
+      <h3>Sladěte čas s nastavením v Superhostem</h3>
+<p>Stejný počet dní před příjezdem nastavte i v části <strong>Automatizace</strong> v Superhostem. Jinak host po otevření odkazu nemusí vidět správnou rezervaci.</p>
+    
+<h2>Jak poznáte, že je automatizace nastavená správně</h2>
+<ul>
         <li>v textu zprávy je správný odkaz pro konkrétní nemovitost</li>
         <li>šablona je navázaná na správnou nabídku nebo jednotku</li>
         <li>čas odeslání v OTA odpovídá počtu dní nastavených v Superhostem</li>
         <li>host po kliknutí na odkaz vidí svou rezervaci</li>
       </ul>
-    </section>
+<h2>Doporučené základní workflow</h2>
 
-    <h2 class="section-title">Doporučené základní workflow</h2>
-    <div class="grid-2">
-      <article class="step">
-        <strong class="kicker">Fáze 1</strong>
-        <h3>Zpráva po rezervaci</h3>
-        <p>Krátké potvrzení rezervace dává hostovi jistotu, že je vše v pořádku. V této fázi ale ještě nemusíte posílat všechnu administrativu najednou.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Fáze 2</strong>
-        <h3>Zpráva před příjezdem s formulářem</h3>
-        <p>Tohle je hlavní automatizace, kterou řeší tento článek. Právě tady posíláte odkaz na formulář nebo guestbook a sbíráte údaje potřebné pro provoz a legislativu.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Fáze 3</strong>
-        <h3>Instrukce k pobytu</h3>
-        <p>Podle typu provozu můžete navázat i samostatnou zprávou s informacemi k check-inu, vstupu do objektu nebo praktickým informacím k pobytu.</p>
-      </article>
-      <article class="step">
-        <strong class="kicker">Fáze 4</strong>
-        <h3>Zpráva po odjezdu</h3>
-        <p>Na konci pobytu můžete automatizaci zakončit poděkováním, výzvou k hodnocení nebo interním checklistem pro úklid a další návazné úkoly.</p>
-      </article>
-    </div>
-
-    <section class="card">
-      <h2>Jak začít jednoduše</h2>
-      <p>
+      <h3>Zpráva po rezervaci</h3>
+<p>Krátké potvrzení rezervace dává hostovi jistotu, že je vše v pořádku. V této fázi ale ještě nemusíte posílat všechnu administrativu najednou.</p>
+      <h3>Zpráva před příjezdem s formulářem</h3>
+<p>Tohle je hlavní automatizace, kterou řeší tento článek. Právě tady posíláte odkaz na formulář nebo guestbook a sbíráte údaje potřebné pro provoz a legislativu.</p>
+      <h3>Instrukce k pobytu</h3>
+<p>Podle typu provozu můžete navázat i samostatnou zprávou s informacemi k check-inu, vstupu do objektu nebo praktickým informacím k pobytu.</p>
+      <h3>Zpráva po odjezdu</h3>
+<p>Na konci pobytu můžete automatizaci zakončit poděkováním, výzvou k hodnocení nebo interním checklistem pro úklid a další návazné úkoly.</p>
+    
+<h2>Jak začít jednoduše</h2>
+<p>
         Na začátku není potřeba automatizovat všechno. Nejdřív dává největší smysl zprovoznit jednu dobře fungující zprávu
         před příjezdem, která hostovi pošle správný odkaz ve správný čas. Teprve potom má smysl rozšiřovat workflow dál.
       </p>
-      <div class="card-links">
-        <a class="next-link" href="./jak-vest-evidenci-hostu-a-pobytu-v-superhostem.html">Jak vést evidenci hostů a pobytů v Superhostem</a>
-        <a class="next-link" href="./jak-mesicne-zpracovat-poplatky-obci-v-superhostem.html">Jak měsíčně zpracovat poplatky obci v Superhostem</a>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Nejčastější chyby</h2>
-      <ul>
+<ul class="kb-article-link-list">
+<li><a href="./jak-vest-evidenci-hostu-a-pobytu-v-superhostem.html">Jak vést evidenci hostů a pobytů v Superhostem</a></li>
+<li><a href="./jak-mesicne-zpracovat-poplatky-obci-v-superhostem.html">Jak měsíčně zpracovat poplatky obci v Superhostem</a></li>
+</ul>
+<h2>Nejčastější chyby</h2>
+<ul>
         <li>do zprávy je vložený špatný odkaz nebo starý permalink</li>
         <li>jedna šablona je omylem přiřazená k více nabídkám</li>
         <li>počet dní v OTA nesedí s nastavením v Superhostem</li>
         <li>u Booking.com je použitý odkaz pro jinou jednotku než pro konkrétní rezervaci</li>
       </ul>
-      <div class="note">
+<aside class="kb-article-callout">
         Pokud máte krátké pobyty nebo last minute rezervace, je ještě důležitější zkontrolovat, že automatická zpráva odchází opravdu včas a host má po kliknutí co otevřít.
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Ověření a zdroje</h2>
-      <p>Tento článek jsme připravili jako praktický návod navázaný na logiku nastavení nemovitosti v Superhostem.</p>
-      <ul class="sources">
+      </aside>
+<h2>Ověření a zdroje</h2>
+<p>Tento článek jsme připravili jako praktický návod navázaný na logiku nastavení nemovitosti v Superhostem.</p>
+<ul>
               </ul>
-      <div class="meta">
+<aside class="kb-article-callout kb-article-callout-muted">
         <p><strong>Aktualizováno:</strong> 29. 3. 2026. Názvy sekcí v Airbnb a Booking.com se mohou měnit, ale logika nastavení zůstává stejná: správný odkaz, správná nabídka a správný čas odeslání.</p>
+      </aside>
+<h2>Chcete mít rezervace i v telefonu?</h2>
+<p>
+        Pokud automatizace navazují na rezervace, může se hodit mít stejný
+        přehled také v mobilním kalendáři.
+      </p>
+<a class="kb-article-next-cta" href="./kalendar-airbnb-v-telefonu.html">
+        <span class="kb-article-next-cta-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"></rect><path d="M12 18h.01"></path></svg></span>
+        <span>
+          <strong>Otevřít návod na kalendář v telefonu</strong>
+          <small>Navazující postup pro Apple Calendar, Google Calendar a další aplikace.</small>
+        </span>
+        <svg class="kb-article-next-cta-arrow" aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+      </a>
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Související odkazy</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Přehled</span>
+  <strong>Centrum pomoci</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-pridat-novou-nemovitost.html">
+  <span>Předchozí</span>
+  <strong>Jak přidat svou nemovitost</strong>
+</a>
+
+<a class="kb-article-related-card" href="./zakladni-legislativni-povinnosti-hostitele-v-cr.html">
+  <span>Další</span>
+  <strong>Základní legislativní povinnosti hostitele v ČR</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>Na této stránce</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
       </div>
-    </section>
-  </div>
-  <a class="back-to-top" href="#page-top" aria-label="Zpět nahoru" title="Nahoru">↑</a>
-</body>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhostem.cz</span>
+        <a href="./index.html">Centrum nápovědy</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Zpět nahoru" title="Nahoru">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../assets/kb-navigation.js"></script>
+  </body>
 </html>
