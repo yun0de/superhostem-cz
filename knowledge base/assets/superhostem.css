@@ -2878,6 +2878,44 @@ section {
   gap: 12px;
 }
 
+.kb-language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border: 1px solid hsl(var(--border));
+  border-radius: 999px;
+  background: color-mix(in srgb, hsl(var(--secondary)) 72%, hsl(var(--card)) 28%);
+}
+
+.kb-language-switcher a {
+  min-width: 34px;
+  min-height: 32px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease,
+    transform 120ms ease;
+}
+
+.kb-language-switcher a:hover {
+  color: hsl(var(--foreground));
+}
+
+.kb-language-switcher a.is-active {
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
 .kb-help-site-link {
   padding: 0 14px;
   border: 1px solid hsl(var(--border));
@@ -3479,6 +3517,16 @@ section {
 
   .kb-theme-toggle {
     padding: 3px;
+  }
+
+  .kb-language-switcher {
+    padding: 3px;
+  }
+
+  .kb-language-switcher a {
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 0.72rem;
   }
 
   .kb-theme-toggle button {
