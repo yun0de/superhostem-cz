@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to automate communications with guests</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Superhostem.cz Help Center">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Help Center</small>
+          </span>
+        </a>
+
+        <nav class="kb-help-nav" aria-label="Main navigation">
+          <a href="./index.html">Signpost</a>
+          <a href="./index.html#knihovna">Library</a>
+          <a href="#kb-article-related">Related</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Language"><a href="../jak-funguji-automatizace-v-superhostem.html">CZ</a><a href="./jak-funguji-automatizace-v-superhostem.html" class="is-active" aria-current="page">EN</a><a href="../vn/jak-funguji-automatizace-v-superhostem.html">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Switch color mode">
+            <button type="button" data-theme-option="light" aria-label="Bright mode" title="Bright mode"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="According to the system" title="According to the system"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">To the main website <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Automation and communication</p>
+          <h1 class="kb-article-title">How to automate communications with guests</h1>
+          <p class="kb-article-lead">The purpose of automation is for the guest to receive the link to the form or guestbook at the right time, and you did not have to send it manually with each booking.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Help Center</a>
+            <a href="./jak-pridat-novou-nemovitost.html">Previous article</a>
+            <a href="./zakladni-legislativni-povinnosti-hostitele-v-cr.html">Next article →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>What awaits you next?</strong>
+        <p>First, you copy the link for a specific property in Superhost, then you paste it into an automatic message in Airbnb or Booking.com, and finally you match the sending time with what you have set in the application.</p>
+</div>
+
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <h2>What to prepare in advance</h2>
+
+      <h3>Property in Superhostem</h3>
+<p>You only set up the automation when you have already established a specific property in the system.</p>
+      <h3>Guest link</h3>
+<p>You need a permalink or public link to send to guests in a message.</p>
+      <h3>Selected platform</h3>
+<p>Decide whether to set up the automatic message in Airbnb or Booking.com.</p>
+    
+<h2>Where to start in Superhost</h2>
+<p>
+        In the details of a specific property, open the section <strong>Automation</strong>. That's where you'll find the guest link
+        and setting how many days in advance reservations should be available to guests via this link.
+      </p>
+<ul>
+        <li>copy the guest link</li>
+        <li>set the number of days in advance when the reservation should be visible</li>
+        <li>save the settings before creating an automatic message in the OTA platform</li>
+      </ul>
+<aside class="kb-article-callout">
+        This setting must coincide with when the automatic message is sent on Airbnb or Booking.com. If you set a different number of days in the app and a different number of days in the OTA, the guest may not see the correct reservation after clicking.
+      </aside>
+<h2>How it looks in Airbnb news</h2>
+<div class="kb-article-media-grid">
+      <figure class="kb-article-figure">
+        <img src="../../assets/screens/messages1_cz.png" alt="Airbnb Messages with settings icon">
+        <figcaption>In Airbnb, you start in a section <strong>News</strong>. From there, open via the cogwheel <strong>Message settings</strong>.</figcaption>
+      </figure>
+      <figure class="kb-article-figure">
+        <img src="../../assets/screens/messages2_cz.png" alt="Airbnb Message settings with quick reply management">
+        <figcaption>In the message settings, you enter the <strong>Quick reply messages</strong>, where you create or edit templates.</figcaption>
+      </figure>
+      <figure class="kb-article-figure">
+        <img src="../../assets/screens/messages4_cz.png" alt="Airbnb panel Add details">
+        <figcaption>When editing a message, you can via <strong>Add details</strong> insert dynamic variables such as guest name or arrival date.</figcaption>
+      </figure>
+      <figure class="kb-article-figure">
+        <img src="../../assets/screens/messages3_cz.png" alt="Airbnb Create button">
+        <figcaption>Once done, you will create the template and then set it to the correct timing for the arrival.</figcaption>
+      </figure>
+    </div>
+<h2>Settings in Airbnb</h2>
+
+      <h3>Open Quick Reply Management</h3>
+<p>In Airbnb, go to messages with guests, open the gear and go to the section <strong>Manage quick responses</strong>.</p>
+      <h3>Create a new template</h3>
+<p>Create a new quick reply or automated message. It is recommended to have a separate template for each offer.</p>
+      <h3>Paste the text and link from Superhost</h3>
+<p>Paste your communication pattern into the text of the message and add the copied guest link from the section <strong>Automation</strong> in Superhost.</p>
+      <h3>Choose only one correct offer</h3>
+<p>In the template settings, check that it is assigned to only one specific menu. If you manage multiple offers, each should have its own template.</p>
+      <h3>Set the correct send time</h3>
+<p>For example, the recommended setting is <strong>3 days before arrival</strong>. It is important that the same number of days is also set in the link settings in Superhost.</p>
+      <h3>Check the final template</h3>
+<p>Before saving, check three things: correct link, correctly selected offer and correct send time.</p>
+    
+<h2>Settings in Booking.com</h2>
+
+      <h3>Open the message settings</h3>
+<p>On the homepage of the Booking.com Extranet, open the offer <strong>Accommodation facilities</strong> and then <strong>Message settings</strong>.</p>
+      <h3>Create a new template</h3>
+<p>In part <strong>Report templates</strong> choose to create a new template.</p>
+      <h3>Paste the link from Superhost</h3>
+<p>Paste the copied guest link into the text of the new template. If you have one property with multiple units on Booking.com, please check that you are using the correct link for the specific unit.</p>
+      <h3>Name the template and choose a theme</h3>
+<p>Give the template an understandable name and usually choose arrival or pre-arrival communication as the message type.</p>
+      <h3>Schedule a shipment</h3>
+<p>For the newly created template, choose <strong>Schedule template submission</strong> and set the number of days before arrival.</p>
+      <h3>Match the time with the settings in Superhost</h3>
+<p>Set the same number of days before arrival in the section <strong>Automation</strong> in Superhost. Otherwise, the guest may not see the correct reservation after opening the link.</p>
+    
+<h2>How do you know the automation is set up correctly?</h2>
+<ul>
+        <li>in the text of the message there is a correct link for a specific property</li>
+        <li>the template is bound to the correct menu or unit</li>
+        <li>the sending time in OTA corresponds to the number of days set in Superhost</li>
+        <li>the guest can see his reservation after clicking on the link</li>
+      </ul>
+<h2>Recommended basic workflow</h2>
+
+      <h3>Message after booking</h3>
+<p>A short booking confirmation gives the guest confidence that everything is in order. But you don't have to send all the administration at once at this stage.</p>
+      <h3>Pre-arrival message with form</h3>
+<p>This is the main automation that this article addresses. This is where you send the link to the form or guestbook and collect the data needed for operation and legislation.</p>
+      <h3>Instructions for stay</h3>
+<p>Depending on the type of operation, you can follow up with a separate message with information about check-in, entering the building or practical information about your stay.</p>
+      <h3>Message after departure</h3>
+<p>At the end of the stay, you can end the automation with a thank you, a call for evaluation or an internal checklist for cleaning and other follow-up tasks.</p>
+    
+<h2>How to get started simply</h2>
+<p>
+        There is no need to automate everything in the beginning. First, it makes the most sense to get one well-functioning message up and running
+        before arrival, which will send the guest the right link at the right time. Only then does it make sense to expand the workflow further.
+      </p>
+<ul class="kb-article-link-list">
+<li><a href="./jak-vest-evidenci-hostu-a-pobytu-v-superhostem.html">How to keep records of guests and stays in Superhostem</a></li>
+<li><a href="./jak-mesicne-zpracovat-poplatky-obci-v-superhostem.html">How to process monthly fees for the municipality in Superhost</a></li>
+</ul>
+<h2>The most common mistakes</h2>
+<ul>
+        <li>wrong link or old permalink is embedded in the message</li>
+        <li>one template is mistakenly assigned to multiple offers</li>
+        <li>the number of days in OTA does not match the setting in Superhost</li>
+        <li>at Booking.com, a link is used for a different unit than for a specific reservation</li>
+      </ul>
+<aside class="kb-article-callout">
+        If you have short stays or last minute bookings, it is even more important to check that the automated message goes out on time and the guest has something to open after clicking.
+      </aside>
+<h2>Verification and sources</h2>
+<p>We have prepared this article as a practical guide based on the logic of setting up a property in Superhost.</p>
+<aside class="kb-article-callout kb-article-callout-muted">
+        <p><strong>Updated:</strong> 29/03/2026. The names of the sections in Airbnb and Booking.com may change, but the logic of the settings remains the same: the right link, the right offer and the right send time.</p>
+      </aside>
+<h2>Do you want to make reservations on your phone?</h2>
+<p>
+        If the automations are connected to bookings, it may be useful to have the same one
+        overview also in the mobile calendar.
+      </p>
+<ul class="kb-article-link-list">
+<li><a href="./kalendar-airbnb-v-telefonu.html">Open the calendar guide on your phone</a></li>
+</ul>
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Related links</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Overview</span>
+  <strong>Help Center</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-pridat-novou-nemovitost.html">
+  <span>Previous</span>
+  <strong>How to add your property</strong>
+</a>
+
+<a class="kb-article-related-card" href="./zakladni-legislativni-povinnosti-hostitele-v-cr.html">
+  <span>Another one</span>
+  <strong>Basic legislative obligations of the host in the Czech Republic</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>On this page</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhost.cz</span>
+        <a href="./index.html">Help Center</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Back to top" title="Up">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../../assets/kb-navigation.js"></script>
+  </body>
+</html>

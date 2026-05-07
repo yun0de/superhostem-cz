@@ -256,12 +256,30 @@
     initPage();
   };
 
-  const softNavigate = async (targetUrl) => {
+  const getLanguageFallbackUrl = (link) => {
+    const language = (link.textContent || "").trim().toLowerCase();
+    const currentUrl = new URL(window.location.href);
+    const htmlRoot = currentUrl.pathname.match(/^(.*\/html)(?:\/|$)/)?.[1];
+    if (!htmlRoot) return null;
+
+    if (language === "cz") return `${currentUrl.origin}${htmlRoot}/index.html`;
+    if (language === "en") return `${currentUrl.origin}${htmlRoot}/en/index.html`;
+    if (language === "vn") return `${currentUrl.origin}${htmlRoot}/vn/index.html`;
+    return null;
+  };
+
+  const softNavigate = async (targetUrl, fallbackUrl = null) => {
     try {
       const response = await fetch(targetUrl, {
         headers: { "X-Requested-With": "kb-soft-nav" }
       });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      if (!response.ok) {
+        if (fallbackUrl && fallbackUrl !== targetUrl) {
+          await softNavigate(fallbackUrl);
+          return;
+        }
+        throw new Error(`HTTP ${response.status}`);
+      }
       const html = await response.text();
       const nextDocument = new DOMParser().parseFromString(html, "text/html");
       refreshPage(nextDocument, targetUrl);
@@ -291,7 +309,7 @@
         if (targetUrl.pathname === window.location.pathname && targetUrl.hash === window.location.hash) return;
 
         event.preventDefault();
-        softNavigate(targetUrl.href);
+        softNavigate(targetUrl.href, getLanguageFallbackUrl(link));
       });
     });
   };

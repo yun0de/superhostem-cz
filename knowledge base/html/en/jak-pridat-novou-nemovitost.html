@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to add your property</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Superhostem.cz Help Center">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Help Center</small>
+          </span>
+        </a>
+
+        <nav class="kb-help-nav" aria-label="Main navigation">
+          <a href="./index.html">Signpost</a>
+          <a href="./index.html#knihovna">Library</a>
+          <a href="#kb-article-related">Related</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Language"><a href="../jak-pridat-novou-nemovitost.html">CZ</a><a href="./jak-pridat-novou-nemovitost.html" class="is-active" aria-current="page">EN</a><a href="../vn/jak-pridat-novou-nemovitost.html">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Switch color mode">
+            <button type="button" data-theme-option="light" aria-label="Bright mode" title="Bright mode"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="According to the system" title="According to the system"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">To the main website <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Quick start</p>
+          <h1 class="kb-article-title">How to add your property</h1>
+          <p class="kb-article-lead">After the first login, adding a property is the main step that unlocks further work in the application. Once the first property is established, you can follow up on it by importing bookings, guest forms and other settings.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Help Center</a>
+            <a href="./prvni-prihlaseni-a-orientace-v-uctu.html">Previous step</a>
+            <a href="./jak-funguje-napojeni-pres-ical.html">Next step →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>What awaits you next?</strong>
+          <p>
+            You choose the method of establishing the property and then in its settings
+            you will go in three subsequent steps: fees to the municipality, Ubyport data
+            and finally iCal connection.
+          </p>
+</div>
+
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <h2>Where do you get to it?</h2>
+
+        <h3>Via the Real Estate section</h3>
+<p>
+            Open in the left menu <strong>Real estate</strong>. If still
+            you have nothing established, you will see an empty status
+            <strong>You have no properties yet</strong> and button
+            <strong>Add first property</strong>.
+          </p>
+        <h3>Via onboarding on Overview</h3>
+<p>
+            On the page <strong>Overview</strong> you will see a block for the first settings
+            real estate. You can fill in directly there
+            <strong>Property name</strong> a
+            <strong>Airbnb iCal URL</strong>.
+          </p>
+      
+<h2>What you will see in the Real Estate section</h2>
+<h2>Empty state after first entry</h2>
+<ul>
+          <li>button <strong>Synchronize all properties</strong>
+</li>
+          <li>button <strong>Add property</strong>
+</li>
+          <li>information <strong>You have no properties yet</strong>
+</li>
+          <li>button <strong>Add first property</strong>
+</li>
+          <li>link <strong>How to set up automatic forwarding</strong>
+</li>
+        </ul>
+<aside class="kb-article-callout">
+          After the establishment of the property, it is up to you to set it up. That's where he gives
+          the point is to continue straight through the three mandatory areas:
+          <strong>fees to the municipality</strong>, <strong>Ubyport data</strong> a
+          <strong>iCal</strong>.
+        </aside>
+<h2>How to proceed step by step</h2>
+
+        <p class="kb-article-step-label">Step 1</p>
+<h3>Open Properties or Onboarding</h3>
+<p>
+            If you want to go the classic route, click on in the menu
+            <strong>Real estate</strong> and use the button
+            <strong>Add property</strong> or
+            <strong>Add first property</strong>.
+          </p>
+<p>
+            If you already have an iCal from Airbnb, you can stay on the page
+            <strong>Overview</strong> and use the onboarding form.
+          </p>
+
+        <p class="kb-article-step-label">Step 2</p>
+<h3>Prepare the basic data</h3>
+<p>
+            Prepare at least before proceeding
+            <strong>property name</strong>. Ideally, you should also prepare
+            three pieces of information, which you will fill in immediately after in the property settings.
+          </p>
+<ul>
+            <li><strong>fees to the municipality</strong></li>
+            <li><strong>Ubyport ID and password</strong></li>
+            <li><strong>Airbnb iCal URL</strong></li>
+          </ul>
+
+        <p class="kb-article-step-label">Step 3</p>
+<h3>Create a property</h3>
+<p>
+            In onboarding after filling in the fields <strong>Property name</strong> a
+            <strong>Airbnb iCal URL</strong> you use the button
+            <strong>Create a property and import reservations</strong>.
+          </p>
+<p>
+            If you don't have iCal yet, first set up the property via
+            <strong>Real estate</strong> and immediately after that go to hers
+            settings where you will continue with the next three steps.
+          </p>
+
+        <p class="kb-article-step-label">Step 4</p>
+<h3>Fill out the fees to the municipality</h3>
+<p>
+            The first related part of the settings is the information k
+            <strong>fee to the municipality</strong>. A must have for every property
+            clear, if you have already registered, where do you submit the fees and
+            how you will send them.
+          </p>
+<p>
+            This step is also important so that you then at the end of the month
+            correctly generated the report that is sent to the city.
+          </p>
+<aside class="kb-article-tip">
+            <span class="kb-article-tip-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></span>
+            <span>Don't have these details?</span>
+            <a href="./jak-funguje-poplatek-z-pobytu.html">How about fees to the municipality</a>
+          </aside>
+
+        <p class="kb-article-step-label">Step 5</p>
+<h3>Fill in the Ubyport ID and password</h3>
+<p>
+            Once you have resolved the municipal fees, proceed to
+            <strong>Ubyport data</strong>. These are important for follow-up on
+            guest reporting and other administrative part of operation.
+          </p>
+<p>
+            If you don't have them on hand now, it's a good idea to prepare them as soon as possible,
+            so that the property settings remain complete. If you haven't already
+            Ubyport established at all, first you need to go through registration and
+            only then add the obtained login data to Superhostem.
+          </p>
+<ul>
+            <li><strong>Ubyport ID</strong></li>
+            <li><strong>Ubyport password</strong></li>
+          </ul>
+<aside class="kb-article-tip">
+            <span class="kb-article-tip-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></span>
+            <span>Don't have a Ubyport account or login?</span>
+            <a href="./jak-se-zaregistrovat-do-Ubyport.html">How to register for Ubyport</a>
+          </aside>
+
+        <p class="kb-article-step-label">Step 6</p>
+<h3>Finally, connect iCal</h3>
+<p>
+            The last follow-up part is <strong>iCal connection</strong>, which
+            ensures loading of reservations and synchronization of the calendar. Thanks to that
+            it will start filling in the reservation overview and the application will start working with
+            stays.
+          </p>
+<p>
+            If you're using Airbnb or another OTA source, insert the appropriate iCal
+            URL right in this property settings section.
+          </p>
+<aside class="kb-article-tip">
+            <span class="kb-article-tip-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></span>
+            <span>Don't have these details?</span>
+            <a href="./co-je-ical.html">How to get iCal</a>
+          </aside>
+<a href="./jak-funguje-napojeni-pres-ical.html">Continue to iCal and other settings</a>
+      
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Related links</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Overview</span>
+  <strong>Help Center</strong>
+</a>
+
+<a class="kb-article-related-card" href="./prvni-prihlaseni-a-orientace-v-uctu.html">
+  <span>Previous</span>
+  <strong>First login and account orientation</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-funguje-napojeni-pres-ical.html">
+  <span>Another one</span>
+  <strong>How to get and connect iCal from Airbnb and Booking</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>On this page</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhost.cz</span>
+        <a href="./index.html">Help Center</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Back to top" title="Up">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../../assets/kb-navigation.js"></script>
+  </body>
+</html>

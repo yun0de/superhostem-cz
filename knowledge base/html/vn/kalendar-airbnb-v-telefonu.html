@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Airbnb trên điện thoại của bạn 📱</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Trung tâm trợ giúp Superhostem.cz">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Trung tâm trợ giúp</small>
+          </span>
+        </a>
+
+        <nav class="kb-help-nav" aria-label="Điều hướng chính">
+          <a href="./index.html">Biển chỉ dẫn</a>
+          <a href="./index.html#knihovna">Thư viện</a>
+          <a href="#kb-article-related">Liên quan</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Ngôn ngữ"><a href="../kalendar-airbnb-v-telefonu.html">CZ</a><a href="../en/kalendar-airbnb-v-telefonu.html">EN</a><a href="./kalendar-airbnb-v-telefonu.html" class="is-active" aria-current="page">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Chuyển chế độ màu">
+            <button type="button" data-theme-option="light" aria-label="Chế độ sáng" title="Chế độ sáng"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="Theo hệ thống" title="Theo hệ thống"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Chế độ tối" title="Chế độ tối"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">Đến trang web chính <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Thuộc tính và lịch</p>
+          <h1 class="kb-article-title">Lịch Airbnb trên điện thoại của bạn 📱</h1>
+          <p class="kb-article-lead">Xuất thông tin đặt chỗ của bạn dưới dạng lịch iCal và theo dõi khách, giá cả và ngày trực tiếp trong Lịch Google, Lịch Apple hoặc ứng dụng khác.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Trung tâm trợ giúp</a>
+            <a href="./jak-funguje-napojeni-pres-ical.html">Bài viết trước</a>
+            <a href="./jak-funguje-prehled-rezervaci.html">Bài tiếp theo →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>Điều gì đang chờ đợi bạn tiếp theo?</strong>
+          <p>
+            Bài viết này giải thích nơi lấy URL iCal, việc cần làm với iCal
+            đồng bộ hóa và cách thêm lịch vào iPhone, Android hoặc
+            Lịch Google.
+          </p>
+</div>
+
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <h2>Cách kết nối iCal hoạt động</h2>
+<p>
+          Xuất iCal đóng vai trò là liên kết lịch đọc mà bạn chèn vào
+          các ứng dụng bên ngoài. Nhờ đó, bạn có thể xem các đặt phòng từ Superhost trong
+          điện thoại, máy tính hoặc lịch nhóm chung của bạn.
+        </p>
+<p>
+          Xuất khẩu này chủ yếu phù hợp cho tổng quan. Chỉ riêng iCal không giải quyết được toàn bộ vấn đề
+          quản lý đặt phòng hoặc chỉnh sửa lưu trú trong lịch bên ngoài.
+        </p>
+<a href="./jak-funguje-napojeni-pres-ical.html">Đọc thêm trong trung tâm trợ giúp</a>
+<h2>Những gì có thể được hiển thị trong lịch</h2>
+
+        <h3>Tên khách</h3>
+<p>
+            Bạn có thể viết tên khách mời vào tên sự kiện để nó đến trước
+            nhìn rõ ràng ai đang đến.
+          </p>
+        <h3>Số lượng khách</h3>
+<p>
+            Nó rất hữu ích cho việc định hướng nhanh chóng về số lượng người được chỉ định khi đặt chỗ.
+          </p>
+        <h3>Giá đặt chỗ</h3>
+<p>
+            Nếu bật lên bạn cũng sẽ thấy giá trị đặt chỗ trong sự kiện trên lịch
+            để có cái nhìn tổng quan nhanh chóng.
+          </p>
+        <h3>Tên tài sản</h3>
+<p>
+            Thực tế đặc biệt khi bạn đang xem một lịch
+            nhiều đối tượng cùng một lúc.
+          </p>
+      
+<h2>URL iCal của bạn</h2>
+<p>
+          Bạn sao chép và dán địa chỉ này vào Lịch Google, Lịch Apple
+          hoặc các ứng dụng khác hỗ trợ iCal. Nếu bạn thay đổi nội dung xuất,
+          sao chép lại URL mới.
+        </p>
+<aside class="kb-article-callout">
+          Ví dụ xuất khẩu:
+          <strong>
+            https://www.superhostem.cz/api/ical/?...showGuestName=1&amp;hiển thịGiá=1&amp;showGuestCount=1&amp;showPropertyName=1
+          </strong>
+        </aside>
+<h2>Cách thêm Lịch vào iPhone</h2>
+
+        <h3>Sao chép URL lịch</h3>
+<p>
+            Trong Superhost, sử dụng nút sao chép URL iCal để xác minh
+            Như vậy là bạn đã có mẫu link cuối cùng theo nội dung xuất đã chọn.
+          </p>
+        <h3>Mở cài đặt</h3>
+<p>
+            Mở ứng dụng trên iPhone của bạn <strong>Cài đặt</strong>, ở đâu
+            họ quản lý tài khoản hệ thống và lịch.
+          </p>
+        <h3>Đi tới Lịch</h3>
+<p>
+            Trong danh sách cài đặt, mở phần <strong>Lịch</strong> một
+            tiếp tục quản lý tài khoản
+          </p>
+        <h3>Thêm tài khoản</h3>
+<p>
+            Bấm vào <strong>Tài khoản → Thêm tài khoản → Khác → Thêm người đăng ký
+            lịch</strong>.
+          </p>
+        <h3>Dán URL và lưu</h3>
+<p>
+            Dán URL đã sao chép, nhấp vào <strong>Một cái khác</strong> và sau đó
+            trên <strong>Lưu</strong>. Lịch sẽ tự động bắt đầu
+            đồng bộ hóa.
+          </p>
+      
+<h2>Xem trước trong Lịch iPhone</h2>
+<div class="kb-article-media-grid">
+        <figure class="kb-article-figure kb-article-figure-phone">
+          <img src="../../assets/screens/ical-phone-calendar-preview.png" alt="Đặt chỗ từ Superhost được hiển thị trong Lịch iPhone">
+          <figcaption>
+            Đây là cách đặt chỗ sau khi thêm iCal xuất vào iPhone
+            Lịch. Trong các sự kiện bạn có thể thấy, ví dụ: tên của khách, số
+            khách hoặc giá đặt phòng theo cài đặt xuất đã chọn.
+          </figcaption>
+        </figure>
+        <figure class="kb-article-figure kb-article-figure-phone">
+          <img src="../../assets/screens/ical-phone-calendars-list.png" alt="Danh sách lịch trong Calendar trên iPhone với tùy chọn Add Calendar">
+          <figcaption>
+            Trong Lịch trên iPhone, bạn mở danh sách lịch và tiếp tục
+            <strong>Thêm lịch</strong>, từ đó bạn thêm đăng ký mới
+            lịch.
+          </figcaption>
+        </figure>
+        <figure class="kb-article-figure">
+          <img src="../../assets/screens/ical-phone-calendar-button.png" alt="Nút Lịch trong Lịch iPhone">
+          <figcaption>
+            Sử dụng nút lịch bên dưới để nhanh chóng mở cái nhìn tổng quan về tất cả
+            lịch được kết nối và kiểm tra xem quá trình xuất mới có hoạt động hay không.
+          </figcaption>
+        </figure>
+      </div>
+<h2>Cách thêm vào Lịch Google</h2>
+<aside class="kb-article-callout kb-article-note">
+<strong>Android: một lưu ý quan trọng</strong>
+<p>
+          Nếu bạn đang sử dụng điện thoại Android và ứng dụng
+          <strong>Lịch Google</strong>, không thể thêm lịch iCal mới
+          trực tiếp trong ứng dụng di động. Bạn cần thêm nó vào
+          <strong>máy tính để bàn</strong> thông qua <strong>lịch.google.com</strong>.
+        </p>
+</aside>
+<aside class="kb-article-callout">
+          Sau khi bạn thêm lịch vào Lịch Google trên web dưới cùng một
+          Tài khoản Google, thông thường sau khi đồng bộ hóa nó cũng sẽ xuất hiện trên điện thoại với
+          Android.
+        </aside>
+<h2>Cách thêm vào điện thoại Android</h2>
+
+        <h3>Sao chép URL iCal trong Superhost</h3>
+<p>
+            Đầu tiên copy link xuất lịch có trong Superhost
+            của tất cả các thông số bạn muốn hiển thị trong tên sự kiện.
+          </p>
+        <h3>Mở Lịch Google trên máy tính của bạn</h3>
+<p>
+            Trên máy tính để bàn hoặc máy tính xách tay của bạn, hãy truy cập
+            <strong>lịch.google.com</strong> và đăng nhập bằng cùng một Google
+            tài khoản bạn sử dụng trên điện thoại Android của mình.
+          </p>
+        <h3>Thêm lịch từ một URL</h3>
+<p>
+            Trong bảng điều khiển bên trái, nhấp vào <strong>+</strong> bên cạnh
+            <strong>Thêm lịch</strong>, chọn <strong>Từ URL</strong> một
+            dán liên kết iCal đã sao chép.
+          </p>
+        <h3>Đợi điện thoại đồng bộ</h3>
+<p>
+            Sau khi thêm Lịch Google vào web, lịch sau một thời gian
+            cũng sẽ xuất hiện trong ứng dụng Lịch Google trên Android nếu bạn
+            đăng nhập bằng cùng một tài khoản.
+          </p>
+      
+<h2>Hướng dẫn dành cho máy tính để bàn dành cho người dùng Android</h2>
+<p>
+          Quy trình cũng giống như cách thêm lịch ngoài vào Google thông thường
+          Lịch, nhưng điều quan trọng là phải thực hiện trên máy tính thay vì trên điện thoại.
+        </p>
+<p>
+          Liên kết trực tiếp đến trang:
+          <a href="https://calendar.google.com/calendar/u/0/r/settings/addbyurl" target="_blank" rel="noreferrer">Mở Lịch Google: Thêm lịch từ URL</a>
+        </p>
+<h2>Cách thêm vào Lịch Google trên máy tính</h2>
+
+        <h3>Sao chép URL lịch</h3>
+<p>
+            Sử dụng cùng một URL iCal mà Superhost tạo cho URL đã chọn
+            hình thức xuất khẩu.
+          </p>
+        <h3>Mở Lịch Google</h3>
+<p>
+            đi đến
+            <a href="https://calendar.google.com/" target="_blank" rel="noreferrer"><strong>lịch.google.com</strong></a>
+            và đăng nhập vào tài khoản của bạn.
+          </p>
+        <h3>Thêm lịch từ một URL</h3>
+<p>
+            Bấm vào <strong>+</strong> bên cạnh <strong>Thêm lịch</strong>
+            và chọn một tùy chọn <strong>Từ URL</strong>.
+          </p>
+        <h3>Chèn và xác nhận đăng ký</h3>
+<p>
+            Dán URL và nhấp vào <strong>Thêm lịch</strong>. Đặt chỗ
+            sau đó sẽ tự động xuất hiện.
+          </p>
+      
+<div class="kb-article-media-grid">
+        <figure class="kb-article-figure">
+          <img src="../../assets/screens/google-calendar-from-url-settings.png" alt="Lịch Google trên máy tính trong phần Thêm lịch và tùy chọn From URL">
+          <figcaption>
+            Mở Lịch Google trên web trên máy tính của bạn
+            <strong>Thêm lịch → Từ URL</strong> và vào sân
+            <strong>URL của lịch</strong> bạn dán liên kết iCal đã sao chép từ
+            Siêu chủ nhà. Liên kết trực tiếp:
+            <a href="https://calendar.google.com/calendar/u/0/r/settings/addbyurl" target="_blank" rel="noreferrer">Thêm lịch</a>.
+          </figcaption>
+        </figure>
+      </div>
+<h2>Cài đặt nội dung lịch</h2>
+<p>
+          Bạn có thể chọn thông tin nào sẽ được hiển thị trong lịch. Thứ hai
+          sao chép URL mới mỗi khi bạn thay đổi cài đặt vì tham số xuất
+          được phản ánh trực tiếp trong địa chỉ lịch.
+        </p>
+<ul>
+          <li>tên khách</li>
+          <li>số lượng khách</li>
+          <li>giá đặt trước</li>
+          <li>tên tài sản</li>
+        </ul>
+<h2>Cần chú ý điều gì</h2>
+<ul>
+          <li>sao chép URL lịch mới sau khi thay đổi cài đặt xuất</li>
+          <li>một số ứng dụng cập nhật iCal bị chậm trễ</li>
+          <li>
+            việc xuất dữ liệu nhằm mục đích tổng quan về đặt chỗ, không phải để quản lý toàn bộ thời gian lưu trú
+          </li>
+          <li>
+            nếu bạn quản lý nhiều thuộc tính, bạn cũng nên chuyển đổi tên
+            bất động sản
+          </li>
+        </ul>
+<aside class="kb-article-callout">
+          Xuất iCal cũng hoạt động trong Lịch Apple, Outlook và các ứng dụng khác,
+          hỗ trợ thêm lịch từ một URL.
+        </aside><aside class="kb-article-callout">
+          Theo trợ giúp hiện tại của Google, lịch mới được thêm từ URL thông qua
+          trình duyệt máy tính. Ứng dụng di động Lịch Google dành cho Android
+          không hỗ trợ thêm lịch mới từ URL trực tiếp trên điện thoại.
+        </aside>
+<h2>Xác minh và nguồn</h2>
+<p>
+          Quy trình Android trong bài viết này dựa trên trợ giúp chính thức hiện tại
+          Lịch Google để làm việc với lịch từ URL.
+        </p>
+<ul>
+          <li>
+            <a href="https://support.google.com/calendar/answer/37100?hl=en" target="_blank" rel="noreferrer">Trợ giúp về Lịch Google: Đăng ký lịch của người khác</a>
+          </li>
+        </ul>
+<aside class="kb-article-callout kb-article-callout-muted">
+          <p>
+            <strong>Đã cập nhật:</strong> 18/04/2026. Google chính thức
+            trợ giúp nói rằng việc thêm lịch mới cần phải được thực hiện trong
+            trình duyệt trên máy tính chứ không phải trực tiếp trong ứng dụng Google Calendar pro
+            Android, iPhone hoặc iPad.
+          </p>
+        </aside>
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Liên kết liên quan</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Tổng quan</span>
+  <strong>Trung tâm trợ giúp</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-funguje-napojeni-pres-ical.html">
+  <span>trước đó</span>
+  <strong>Cách nhận và kết nối iCal từ Airbnb và Booking</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-funguje-prehled-rezervaci.html">
+  <span>Một cái khác</span>
+  <strong>Cách thức hoạt động của tổng quan đặt phòng</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>Trên trang này</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhost.cz</span>
+        <a href="./index.html">Trung tâm trợ giúp</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Quay lại đầu trang" title="Hướng lên">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../../assets/kb-navigation.js"></script>
+  </body>
+</html>

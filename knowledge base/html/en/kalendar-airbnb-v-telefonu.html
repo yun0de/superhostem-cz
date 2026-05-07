@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb calendar on your phone 📱</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Superhostem.cz Help Center">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Help Center</small>
+          </span>
+        </a>
+
+        <nav class="kb-help-nav" aria-label="Main navigation">
+          <a href="./index.html">Signpost</a>
+          <a href="./index.html#knihovna">Library</a>
+          <a href="#kb-article-related">Related</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Language"><a href="../kalendar-airbnb-v-telefonu.html">CZ</a><a href="./kalendar-airbnb-v-telefonu.html" class="is-active" aria-current="page">EN</a><a href="../vn/kalendar-airbnb-v-telefonu.html">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Switch color mode">
+            <button type="button" data-theme-option="light" aria-label="Bright mode" title="Bright mode"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="According to the system" title="According to the system"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">To the main website <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Properties and calendars</p>
+          <h1 class="kb-article-title">Airbnb calendar on your phone 📱</h1>
+          <p class="kb-article-lead">Export your reservations as an iCal calendar and keep track of guests, prices and dates directly in Google Calendar, Apple Calendar or another application.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Help Center</a>
+            <a href="./jak-funguje-napojeni-pres-ical.html">Previous article</a>
+            <a href="./jak-funguje-prehled-rezervaci.html">Next article →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>What awaits you next?</strong>
+          <p>
+            This article explains where to get iCal URLs, what to do with iCal
+            syncs and how to add your calendar to your iPhone, Android or
+            Google Calendar.
+          </p>
+</div>
+
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <h2>How iCal connection works</h2>
+<p>
+          iCal export serves as a reading calendar link that you insert into
+          external applications. Thanks to this, you can view reservations from Superhost in
+          your phone, computer or shared team calendar.
+        </p>
+<p>
+          This export is mainly suitable for overview. iCal alone does not solve the full problem
+          management of reservations or editing of stays in an external calendar.
+        </p>
+<a href="./jak-funguje-napojeni-pres-ical.html">Read more in the help center</a>
+<h2>What can be displayed in the calendar</h2>
+
+        <h3>Guest name</h3>
+<p>
+            You can write the name of the guest in the name of the event so that it comes first
+            look clear who is coming.
+          </p>
+        <h3>Number of guests</h3>
+<p>
+            It is useful for a quick orientation of how many people are indicated on the reservation.
+          </p>
+        <h3>Booking price</h3>
+<p>
+            If you turn it on, you will also see the value of the reservation in the calendar event
+            for a quick overview.
+          </p>
+        <h3>Property name</h3>
+<p>
+            Practical especially when you are viewing one calendar
+            multiple objects at once.
+          </p>
+      
+<h2>Your iCal URL</h2>
+<p>
+          You copy and paste this address into Google Calendar, Apple Calendar
+          or other applications that support iCal. If you change the content of the export,
+          copy the new URL again.
+        </p>
+<aside class="kb-article-callout">
+          Export example:
+          <strong>
+            https://www.superhostem.cz/api/ical/?...showGuestName=1&amp;showPrice=1&amp;showGuestCount=1&amp;showPropertyName=1
+          </strong>
+        </aside>
+<h2>How to add Calendars to iPhone</h2>
+
+        <h3>Copy the calendar URL</h3>
+<p>
+            In Superhost, use the iCal URL copy button to verify
+            that you have the final form of the link according to the selected export content.
+          </p>
+        <h3>Open Settings</h3>
+<p>
+            Open the app on your iPhone <strong>Settings</strong>, where
+            they manage system accounts and calendars.
+          </p>
+        <h3>Go to Calendar</h3>
+<p>
+            In the list of settings, open the section <strong>Calendar</strong> a
+            continue to account management.
+          </p>
+        <h3>Add an account</h3>
+<p>
+            Click on <strong>Accounts → Add account → Other → Add subscriber
+            calendar</strong>.
+          </p>
+        <h3>Paste the URL and save</h3>
+<p>
+            Paste the copied URL, click on <strong>Another one</strong> and then
+            on <strong>Save</strong>. The calendar will start automatically
+            synchronize.
+          </p>
+      
+<h2>Preview in iPhone Calendar</h2>
+<div class="kb-article-media-grid">
+        <figure class="kb-article-figure kb-article-figure-phone">
+          <img src="../../assets/screens/ical-phone-calendar-preview.png" alt="Reservations from Superhost displayed in iPhone Calendar">
+          <figcaption>
+            This is how reservations look after adding iCal export to iPhone
+            Calendars. In the events you can see, for example, the name of the guest, the number
+            guests or the price of the reservation according to the selected export settings.
+          </figcaption>
+        </figure>
+        <figure class="kb-article-figure kb-article-figure-phone">
+          <img src="../../assets/screens/ical-phone-calendars-list.png" alt="List of calendars in iPhone Calendar with Add Calendar option">
+          <figcaption>
+            In iPhone Calendar, you open the list of calendars and continue through
+            <strong>Add Calendar</strong>, from where you then add a new subscription
+            calendar.
+          </figcaption>
+        </figure>
+        <figure class="kb-article-figure">
+          <img src="../../assets/screens/ical-phone-calendar-button.png" alt="Calendars button in iPhone Calendar">
+          <figcaption>
+            Use the calendars button below to quickly open an overview of all
+            connected calendars and check that the new export is active.
+          </figcaption>
+        </figure>
+      </div>
+<h2>How to add to Google Calendar</h2>
+<aside class="kb-article-callout kb-article-note">
+<strong>Android: an important note</strong>
+<p>
+          If you are using an Android phone and the app
+          <strong>Google Calendar</strong>, a new iCal calendar cannot be added
+          directly in the mobile application. You need to add it to the
+          <strong>desktop computer</strong> through <strong>calendar.google.com</strong>.
+        </p>
+</aside>
+<aside class="kb-article-callout">
+          Once you add the calendar in the web Google Calendar under the same
+          Google account, usually after synchronization it will also appear on the phone with
+          Android.
+        </aside>
+<h2>How to add to Android phone</h2>
+
+        <h3>Copy the iCal URL in Superhost</h3>
+<p>
+            First, copy the export link of the calendar including in Superhost
+            of all the parameters you want to display in event names.
+          </p>
+        <h3>Open Google Calendar on your computer</h3>
+<p>
+            On your desktop or laptop, go to
+            <strong>calendar.google.com</strong> and sign in with the same Google
+            the account you use on your Android phone.
+          </p>
+        <h3>Add a calendar from a URL</h3>
+<p>
+            In the left panel, click on <strong>+</strong> next to
+            <strong>More calendars</strong>, select <strong>From URL</strong> a
+            paste the copied iCal link.
+          </p>
+        <h3>Wait for the phone to sync</h3>
+<p>
+            After adding to the web Google Calendar, the calendar after a while
+            will also appear in the Google Calendar app on Android if you are
+            login with the same account.
+          </p>
+      
+<h2>Desktop guide for Android users</h2>
+<p>
+          The procedure is the same as for adding an external calendar to Google normally
+          Calendar, but it's important to do it on your computer instead of your phone.
+        </p>
+<p>
+          Direct link to the page:
+          <a href="https://calendar.google.com/calendar/u/0/r/settings/addbyurl" target="_blank" rel="noreferrer">Open Google Calendar: Add calendar from URL</a>
+        </p>
+<h2>How to add to Google Calendar on a computer</h2>
+
+        <h3>Copy the calendar URL</h3>
+<p>
+            Use the same iCal URL that Superhost generates for the selected one
+            form of export.
+          </p>
+        <h3>Open Google Calendar</h3>
+<p>
+            Go to
+            <a href="https://calendar.google.com/" target="_blank" rel="noreferrer"><strong>calendar.google.com</strong></a>
+            and sign in to your account.
+          </p>
+        <h3>Add a calendar from a URL</h3>
+<p>
+            Click on <strong>+</strong> next to <strong>More calendars</strong>
+            and select an option <strong>From URL</strong>.
+          </p>
+        <h3>Insert and confirm the subscription</h3>
+<p>
+            Paste the URL and click on <strong>Add a calendar</strong>. Reservation
+            will then appear automatically.
+          </p>
+      
+<div class="kb-article-media-grid">
+        <figure class="kb-article-figure">
+          <img src="../../assets/screens/google-calendar-from-url-settings.png" alt="Google Calendar on the computer in the Add calendar section and the From URL option">
+          <figcaption>
+            Open Google Calendar on the web on your computer
+            <strong>Add calendar → From URL</strong> and into the field
+            <strong>URL of calendar</strong> you paste the copied iCal link from
+            Superhost. Direct link:
+            <a href="https://calendar.google.com/calendar/u/0/r/settings/addbyurl" target="_blank" rel="noreferrer">Add calendar</a>.
+          </figcaption>
+        </figure>
+      </div>
+<h2>Calendar content settings</h2>
+<p>
+          You can choose what information should be displayed in the calendar. Mon
+          copy a new URL every time you change the settings because the export parameters
+          are reflected directly in the calendar address.
+        </p>
+<ul>
+          <li>guest name</li>
+          <li>number of guests</li>
+          <li>reservation price</li>
+          <li>property name</li>
+        </ul>
+<h2>What to watch out for</h2>
+<ul>
+          <li>copy the new calendar URL after changing the export settings</li>
+          <li>some applications update iCal with a delay</li>
+          <li>
+            the export is intended for an overview of reservations, not for full management of stays
+          </li>
+          <li>
+            if you manage multiple properties, it is worth switching on the name as well
+            real estate
+          </li>
+        </ul>
+<aside class="kb-article-callout">
+          iCal export also works in Apple Calendar, Outlook and other applications,
+          which support adding a calendar from a URL.
+        </aside><aside class="kb-article-callout">
+          According to Google's current help, a new calendar is added from a URL via
+          computer browser. Google Calendar mobile app for Android
+          does not support adding new calendar from URL directly on phone.
+        </aside>
+<h2>Verification and sources</h2>
+<p>
+          The Android procedure in this article is based on the current official help
+          Google Calendar for working with a calendar from a URL.
+        </p>
+<ul>
+          <li>
+            <a href="https://support.google.com/calendar/answer/37100?hl=en" target="_blank" rel="noreferrer">Google Calendar Help: Subscribe to someone else's calendar</a>
+          </li>
+        </ul>
+<aside class="kb-article-callout kb-article-callout-muted">
+          <p>
+            <strong>Updated:</strong> 18/04/2026. Google in official
+            the help says that adding a new calendar needs to be done in
+            computer browser and not directly in the Google Calendar pro application
+            Android, iPhone or iPad.
+          </p>
+        </aside>
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Related links</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Overview</span>
+  <strong>Help Center</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-funguje-napojeni-pres-ical.html">
+  <span>Previous</span>
+  <strong>How to get and connect iCal from Airbnb and Booking</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-funguje-prehled-rezervaci.html">
+  <span>Another one</span>
+  <strong>How the booking overview works</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>On this page</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhost.cz</span>
+        <a href="./index.html">Help Center</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Back to top" title="Up">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../../assets/kb-navigation.js"></script>
+  </body>
+</html>

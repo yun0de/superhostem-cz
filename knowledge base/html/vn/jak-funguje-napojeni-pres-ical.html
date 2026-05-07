@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cách nhận và kết nối iCal từ Airbnb và Booking</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Trung tâm trợ giúp Superhostem.cz">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Trung tâm trợ giúp</small>
+          </span>
+        </a>
+
+        <nav class="kb-help-nav" aria-label="Điều hướng chính">
+          <a href="./index.html">Biển chỉ dẫn</a>
+          <a href="./index.html#knihovna">Thư viện</a>
+          <a href="#kb-article-related">Liên quan</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Ngôn ngữ"><a href="../jak-funguje-napojeni-pres-ical.html">CZ</a><a href="../en/jak-funguje-napojeni-pres-ical.html">EN</a><a href="./jak-funguje-napojeni-pres-ical.html" class="is-active" aria-current="page">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Chuyển chế độ màu">
+            <button type="button" data-theme-option="light" aria-label="Chế độ sáng" title="Chế độ sáng"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="Theo hệ thống" title="Theo hệ thống"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Chế độ tối" title="Chế độ tối"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">Đến trang web chính <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Thuộc tính và lịch</p>
+          <h1 class="kb-article-title">Cách nhận và kết nối iCal từ Airbnb và Booking</h1>
+          <p class="kb-article-lead">iCal là cách nhanh nhất để đưa ngày đặt phòng và chặn đầu tiên của bạn lên Superhost. Hướng dẫn này đề cập đến hai tình huống phổ biến nhất: cách tìm iCal trên Airbnb và cách lấy nó từ Booking.com.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Trung tâm trợ giúp</a>
+            <a href="./jak-pridat-novou-nemovitost.html">Bài viết trước</a>
+            <a href="./kalendar-airbnb-v-telefonu.html">Bài tiếp theo →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>Điều gì đang chờ đợi bạn tiếp theo?</strong>
+          <p>
+            Đầu tiên bạn copy link iCal từ Airbnb hoặc Booking, sau đó nó
+            bạn đặt cài đặt thuộc tính trong Superhost và cuối cùng
+            bạn kiểm tra xem lịch đã được viết đúng chính tả chưa.
+          </p>
+</div>
+
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <section class="kb-article-topic-block">
+            <h2>Những gì iCal có thể và không thể làm</h2>
+
+        <h3>iCal thường chuyển những gì</h3>
+<ul>
+            <li>ngày đến và đi</li>
+            <li>cuộc hẹn bận hoặc bị chặn</li>
+            <li>nhận dạng sự kiện cơ bản</li>
+          </ul>
+        <h3>Những gì iCal thường không chuyển</h3>
+<ul>
+            <li>giá đặt chỗ</li>
+            <li>số tiền hoa hồng và phí</li>
+            <li>thông tin khách đầy đủ</li>
+          </ul>
+      
+<h2>Khi nào nên sử dụng iCal</h2>
+<p>
+          iCal có ý nghĩa nhất trong thời gian đầu khi bạn muốn kết nối nhanh chóng
+          lịch với bất động sản. Nếu bạn muốn làm việc với những cái chi tiết hơn
+          dữ liệu đặt chỗ, tiếp theo là chuyển tiếp email và tự động hóa.
+        </p>
+            </section>
+            <section class="kb-article-topic-block">
+<h2>Nó trông như thế nào trong Airbnb</h2>
+<div class="kb-article-media-grid">
+        <figure class="kb-article-figure">
+          <img src="../../assets/screens/ical1_cz.png" alt="Lịch Airbnb bằng tiếng Séc với phần Lịch">
+          <figcaption>
+            Trong Airbnb, bạn bắt đầu ở phần điều hướng trên cùng của tab
+            <strong>Lịch</strong>. Đây là nơi bạn đến phần cài đặt
+            tính khả dụng và liên kết lịch.
+          </figcaption>
+        </figure>
+        <figure class="kb-article-figure">
+          <img src="../../assets/screens/ical3_eng.png" alt="Cài đặt tình trạng phòng trống của Airbnb với mục Kết nối lịch">
+          <figcaption>
+            Một phần <strong>Cài đặt sẵn có</strong> đi xuống thấp hơn cho đến khi
+            bạn sẽ không nhìn thấy khối <strong>Kết nối lịch</strong> và sự lựa chọn
+            <strong>Kết nối với một trang web khác</strong>.
+          </figcaption>
+        </figure>
+      </div>
+<h2>Cách nhận iCal từ Airbnb</h2>
+
+        <h3>Mở Lịch trên Airbnb</h3>
+<p>
+            Theo trợ giúp chính thức hiện tại của Airbnb, bạn bắt đầu trong phần
+            <strong>Lịch</strong> và chọn danh sách cụ thể mà bạn muốn
+            để kết nối
+          </p>
+        <h3>Đi đến tình trạng sẵn có</h3>
+<p>
+            Mở phần trong lịch của danh sách nhất định
+            <strong>sẵn có</strong>. Đó là nơi Airbnb hiện đang ẩn náu
+            kết nối với các lịch khác.
+          </p>
+        <h3>Chọn Kết nối với trang web khác</h3>
+<p>
+            Dưới <strong>Kết nối lịch</strong> bấm vào
+            <strong>Kết nối với một trang web khác</strong>. Airbnb sẽ cho bạn thấy
+            liên kết lịch mà bạn có thể xuất.
+          </p>
+        <h3>Copy toàn bộ link iCal</h3>
+<p>
+            Sao chép toàn bộ địa chỉ, không chỉ một phần của nó. Airbnb tuyên bố cụ thể rằng
+            mặt khác, để nhập, nó phải là một URL kết thúc bằng
+            <strong>.ics</strong>.
+          </p>
+      
+            </section>
+            <section class="kb-article-topic-block">
+<h2>Cách nhận iCal từ Booking.com</h2>
+
+        <h3>Mở extranet Booking.com</h3>
+<p>
+            Đăng nhập vào extranet của Booking.com và mở một đối tượng cụ thể,
+            mà bạn muốn liên kết.
+          </p>
+        <h3>Đi tới Lịch hoặc Lịch &amp; Định giá</h3>
+<p>
+            Tùy thuộc vào phiên bản hiện tại của extranet, hãy chạy qua
+            <strong>Giá &amp; Sẵn có → Lịch</strong>, hoặc trực tiếp đến
+            <strong>Lịch &amp; Định giá</strong>.
+          </p>
+        <h3>Mở lịch đồng bộ</h3>
+<p>
+            Mở trong lịch <strong>Đồng bộ hóa lịch</strong> và chọn
+            <strong>Thêm kết nối lịch</strong>. Điều này sẽ mở Đặt chỗ
+            thuật sĩ để kết nối với lịch khác.
+          </p>
+        <h3>Hoàn tất xuất lịch</h3>
+<p>
+            Trong trình hướng dẫn, nhấp vào <strong>Sao chép liên kết</strong> và sao chép của bạn
+            Liên kết iCal của Booking.com. Dưới <strong>Tùy chọn xuất</strong> nó xảy ra
+            có thể chọn xem bạn chỉ muốn xuất ngày dành riêng hay
+            và ngày đóng cửa.
+          </p>
+        <h3>Kiểm tra trạng thái ổ đĩa và liên kết chính xác</h3>
+<p>
+            Nếu bạn có nhiều phòng hoặc đơn vị, hãy xác minh rằng bạn đang dùng iCal ngay lập tức
+            cho thuộc tính cụ thể mà bạn đang kết nối. Sau khi hoàn thành, ở
+            Một extranet thường hiển thị trạng thái kết nối, ví dụ
+            <strong>Kích hoạt</strong> hoặc <strong>được rồi</strong>.
+          </p>
+      
+            </section>
+            <section class="kb-article-topic-block">
+<h2>Bạn có thể lấy đi những gì từ nó một cách thực tế?</h2>
+<p>
+          Tại Airbnb, nhờ ảnh chụp màn hình, chúng tôi đã xác nhận được luồng hiện tại
+          <strong>Lịch</strong> một <strong>Cài đặt sẵn có</strong>. bạn
+          Booking.com tuân theo logic tương tự: mở lịch, tìm
+          đồng bộ hóa lịch và sao chép liên kết xuất cho các lịch cụ thể
+          đơn vị.
+        </p>
+            </section>
+            <section class="kb-article-topic-block">
+<h2>Cách chèn iCal vào Superhost</h2>
+
+        <h3>Mở chi tiết tài sản</h3>
+<p>
+            Trong Superhost, bạn mở một thuộc tính cụ thể mà bạn vừa
+            bạn đặt.
+          </p>
+        <h3>Tìm phần dành cho lịch hoặc iCal</h3>
+<p>
+            Trong cài đặt thuộc tính, hãy chuyển đến phần tài nguyên được thêm vào
+            lịch.
+          </p>
+        <h3>Dán URL iCal</h3>
+<p>
+            Dán địa chỉ đã sao chép từ Airbnb hoặc Booking vào trường iCal và
+            ghi rõ nguồn, ví dụ:
+            <strong>Airbnb</strong> hoặc <strong>Đặt chỗ</strong>.
+          </p>
+        <h3>Lưu cài đặt và kiểm tra đồng bộ hóa</h3>
+<p>
+            Sau khi lưu, hãy xác minh rằng việc đặt trước hoặc chặn đã được ghi vào
+            lịch tài sản.
+          </p>
+      
+            </section>
+            <section class="kb-article-topic-block">
+<h2>Cần chú ý điều gì</h2>
+<ul>
+          <li>luôn sao chép toàn bộ liên kết iCal, không chỉ một phần của nó</li>
+          <li>
+            đối với nhiều đơn vị, hãy đảm bảo bạn khớp đúng lịch với đúng lịch
+            bất động sản
+          </li>
+          <li>iCal không truyền giá hoặc thông tin tài chính đầy đủ</li>
+          <li>
+            nếu không có gì sai, hãy kiểm tra xem liên kết có hợp lệ hay không
+            cũ
+          </li>
+          <li>
+            tại Airbnb hôm nay, hãy tin tưởng rằng tuyến đường chính thức sẽ dẫn qua
+            <strong>Lịch → Sẵn có → Kết nối lịch</strong>
+          </li>
+          <li>
+            tại Booking.com, tên của các phần khác nhau tùy theo phiên bản extranet, nhưng
+            hiện tại bạn di chuyển thường xuyên nhất <strong>Lịch</strong>,
+            <strong>Lịch &amp; Định giá</strong> một
+            <strong>Đồng bộ hóa lịch</strong>
+          </li>
+        </ul>
+<aside class="kb-article-callout">
+          Nếu bạn không chỉ cần chặn ngày mà còn cần dữ liệu chi tiết hơn về
+          đặt chỗ, theo dõi iCal, thường là chuyển tiếp email và những thứ khác
+          tự động hóa.
+        </aside>
+            </section>
+            <section class="kb-article-topic-block kb-article-topic-block-muted">
+<h2>Xác minh và nguồn</h2>
+<p>
+          Bài viết này là hướng dẫn thực tế theo quy trình thông thường ở Airbnb và
+          Đặt chỗ.com. Giao diện của các nền tảng có thể thay đổi nên có thể đếm được
+          với sự khác biệt nhỏ trong tên phần.
+        </p>
+<ul>
+          <li>
+            <a href="https://www.airbnb.com/help/article/99" target="_blank" rel="noreferrer">Trợ giúp Airbnb: Đồng bộ hóa lịch chủ nhà của bạn với các trang web khác</a>
+          </li>
+          <li>
+            <a href="https://partner.booking.com/en-gb/help/rates-availability/extranet-calendar/syncing-your-bookingcom-calendar-third-party-calendars" target="_blank" rel="noreferrer">Trung tâm đối tác của Booking.com: Đồng bộ hóa lịch Booking.com của bạn với
+              lịch của bên thứ ba</a>
+          </li>
+          <li>
+            <a href="https://help.parkwith.us/settings--integrations/bjC7KLQXqS9fYYmxFeVAiv/how-to-sync-your-bookingcom-listing/5iuTesEA9XBAFTciVmaxW6" target="_blank" rel="noreferrer">Hướng dẫn đối tác trích dẫn quy trình đồng bộ hóa Booking.com hiện tại</a>
+          </li>
+        </ul>
+<aside class="kb-article-callout kb-article-callout-muted">
+          <p>
+            <strong>Đã cập nhật:</strong> 29/03/2026. Chúng tôi là một phần của Airbnb
+            được xác minh dựa trên trợ giúp chính thức hiện tại. Chúng tôi đang ở Booking.com
+            luồng hiện tại đã được xác minh dựa trên URL của Trung tâm đối tác và được trích dẫn công khai
+            hướng dẫn của đối tác; trợ giúp đối tác chính thức đã hết đăng nhập
+            bị giới hạn một phần, vì vậy tên mặt hàng chính xác có thể thay đổi tùy theo
+            phiên bản extranet.
+          </p>
+        </aside>
+            </section>
+            <section class="kb-article-topic-block">
+<h2>Bạn có muốn đặt chỗ trên điện thoại của bạn?</h2>
+<p>
+          Nếu bạn đã sử dụng iCal hoặc đã sẵn sàng xuất, bạn có thể
+          Xem các lượt đặt chỗ trong Lịch Apple, Lịch Google hoặc các lịch khác
+          ứng dụng hỗ trợ iCal.
+        </p>
+<a class="kb-article-next-cta" href="./kalendar-airbnb-v-telefonu.html">
+          <span class="kb-article-next-cta-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"></rect><path d="M12 18h.01"></path></svg></span>
+          <span>
+            <strong>Mở hướng dẫn lịch trên điện thoại của bạn</strong>
+            <small>Quy trình theo dõi dành cho Lịch Apple, Lịch Google và các ứng dụng khác.</small>
+          </span>
+          <svg class="kb-article-next-cta-arrow" aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+        </a>
+            </section>
+            <section class="kb-article-topic-block">
+<h2>Bạn có muốn tự động hóa công việc khác không?</h2>
+<p>
+          iCal sẽ trợ giúp về lịch. Nhưng nếu bạn không muốn dữ liệu từ việc đặt chỗ
+          viết lại theo cách thủ công, sau đó là quá trình xử lý e-mail tự động và
+          giao tiếp với khách.
+        </p>
+<a class="kb-article-next-cta" href="./jak-funguje-email-forwarding.html">
+          <span class="kb-article-next-cta-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span>
+          <span>
+            <strong>Tự động hóa việc hoàn thành dữ liệu từ e-mail</strong>
+            <small>Tính năng chuyển tiếp email sẽ giúp lấy lại dữ liệu từ email đặt chỗ để bạn không phải điền thủ công.</small>
+          </span>
+          <svg class="kb-article-next-cta-arrow" aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+        </a>
+<a class="kb-article-next-cta" href="./jak-funguji-automatizace-v-superhostem.html">
+          <span class="kb-article-next-cta-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg></span>
+          <span>
+            <strong>Tự động liên lạc với khách</strong>
+            <small>Thiết lập tính năng tự động hóa cho tin nhắn và các bước thường lệ khi lưu trú.</small>
+          </span>
+          <svg class="kb-article-next-cta-arrow" aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+        </a>
+            </section>
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Liên kết liên quan</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Tổng quan</span>
+  <strong>Trung tâm trợ giúp</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-pridat-novou-nemovitost.html">
+  <span>trước đó</span>
+  <strong>Cách thêm tài sản của bạn</strong>
+</a>
+
+<a class="kb-article-related-card" href="./kalendar-airbnb-v-telefonu.html">
+  <span>Một cái khác</span>
+  <strong>Lịch Airbnb trên điện thoại của bạn 📱</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>Trên trang này</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhost.cz</span>
+        <a href="./index.html">Trung tâm trợ giúp</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Quay lại đầu trang" title="Hướng lên">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../../assets/kb-navigation.js"></script>
+  </body>
+</html>

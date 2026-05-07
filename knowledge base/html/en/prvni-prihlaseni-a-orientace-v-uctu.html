@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First login and account orientation</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Superhostem.cz Help Center">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Help Center</small>
+          </span>
+        </a>
+
+        <nav class="kb-help-nav" aria-label="Main navigation">
+          <a href="./index.html">Signpost</a>
+          <a href="./index.html#knihovna">Library</a>
+          <a href="#kb-article-related">Related</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Language"><a href="../prvni-prihlaseni-a-orientace-v-uctu.html">CZ</a><a href="./prvni-prihlaseni-a-orientace-v-uctu.html" class="is-active" aria-current="page">EN</a><a href="../vn/prvni-prihlaseni-a-orientace-v-uctu.html">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Switch color mode">
+            <button type="button" data-theme-option="light" aria-label="Bright mode" title="Bright mode"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="According to the system" title="According to the system"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">To the main website <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Quick start</p>
+          <h1 class="kb-article-title">First login and account orientation</h1>
+          <p class="kb-article-lead">After logging in, the Overview section opens. If you don't have any property registered yet, you will see the welcome block! Let's set up your first property.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Help Center</a>
+            <a href="./jak-pridat-novou-nemovitost.html">Next step →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>What awaits you next?</strong>
+        <p>The most common next way is: find your way in the menu → add the first property → connect iCal or email forwarding → check reservations.</p>
+</div>
+
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <h2>Next recommended steps</h2>
+
+      <h3>Add first property</h3>
+<p>The most important first step. Without the first property, you won't see bookings or other follow-up dates.</p>
+<a href="./jak-pridat-novou-nemovitost.html">Open the manual</a>
+      <h3>Get and insert iCal</h3>
+<p>If you use Airbnb or another OTA calendar, prepare an iCal URL and connect the first booking source.</p>
+<a href="./jak-funguje-napojeni-pres-ical.html">How iCal works</a>
+      <h3>Check profile</h3>
+<p>After logging in for the first time, it makes sense to check your name, phone, language and other basic account information.</p>
+<a href="./jak-upravit-profil-v-nastaveni.html">Edit profile</a>
+    
+<h2>What you will see on the dashboard</h2>
+<ul>
+        <li>section <strong>Overview</strong>
+</li>
+        <li>initial block to set up the first property</li>
+        <li>option <strong>Import from Airbnb calendar</strong>
+</li>
+        <li>option <strong>Automatic email forwarding</strong>
+</li>
+        <li>option <strong>Create property manually</strong>
+</li>
+      </ul>
+<h2>How to proceed step by step</h2>
+
+      <p class="kb-article-step-label">Step 1</p>
+<h3>Stay in the Overview section</h3>
+<p>After logging in, stay in this initial block. It's the fastest way to set up your first working property.</p>
+<p>Section <strong>Overview</strong> it's also where you can quickly see your account status and next recommended steps.</p>
+      <p class="kb-article-step-label">Step 2</p>
+<h3>Know what you will deal with now and what later</h3>
+<p>Now you mainly need two parts for the initial setup: <strong>Real estate</strong> a <strong>Reservation</strong>.</p>
+<p>V <strong>Real estate</strong> you set up the first property and related data that are needed for the further functioning of the system. V <strong>Reservations</strong> then for each reservation you will find a link to the form that is sent to the guests and the management of the completed data from the guests.</p>
+<p><strong>Reports</strong>, <strong>Fees to the municipality</strong>, <strong>Imports</strong>, <strong>iCal export</strong> and part <strong>Settings</strong> no need to solve it at the very first start.</p>
+      <p class="kb-article-step-label">Step 3</p>
+<h3>Choose the appropriate connection method at the beginning</h3>
+<p>In the beginning, it makes sense to count mainly on the following two options:</p>
+<ul>
+          <li>
+<strong>iCal connection</strong> is a convenient first step to quickly launch and retrieve basic booking data</li>
+          <li>
+<strong>automatic email forwarding</strong> we recommend solving it after iCal, because thanks to it the application can work with more data and pre-fill part of the information for you</li>
+        </ul>
+<p>In practice, this means: first connect the calendar, and only then add email forwarding as another layer.</p>
+      <p class="kb-article-step-label">Step 4</p>
+<h3>Proceed directly to the next practical step</h3>
+<p>Don't try to solve everything at once after the first login. The first practical article should always be about creating the first property and connecting the first data source.</p>
+<p>
+          Continue to the article
+          <a href="./jak-pridat-novou-nemovitost.html">How to add a new property</a>.
+        </p>
+    
+<aside class="kb-article-callout">
+      The most common mistake is that the user skips the onboarding after logging in and starts clicking chaotically to other sections.
+      Better to stick to a simple sequence: <strong>login → first property → iCal or forwarding → reservation</strong>.
+    </aside>
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Related links</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Overview</span>
+  <strong>Help Center</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-pridat-novou-nemovitost.html">
+  <span>Another one</span>
+  <strong>How to add your property</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>On this page</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhost.cz</span>
+        <a href="./index.html">Help Center</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Back to top" title="Up">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../../assets/kb-navigation.js"></script>
+  </body>
+</html>

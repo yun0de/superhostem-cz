@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to keep records of guests and stays in Superhostem</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Superhostem.cz Help Center">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Help Center</small>
+          </span>
+        </a>
+
+        <nav class="kb-help-nav" aria-label="Main navigation">
+          <a href="./index.html">Signpost</a>
+          <a href="./index.html#knihovna">Library</a>
+          <a href="#kb-article-related">Related</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Language"><a href="../jak-vest-evidenci-hostu-a-pobytu-v-superhostem.html">CZ</a><a href="./jak-vest-evidenci-hostu-a-pobytu-v-superhostem.html" class="is-active" aria-current="page">EN</a><a href="../vn/jak-vest-evidenci-hostu-a-pobytu-v-superhostem.html">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Switch color mode">
+            <button type="button" data-theme-option="light" aria-label="Bright mode" title="Bright mode"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="According to the system" title="According to the system"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">To the main website <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Automation and communication</p>
+          <h1 class="kb-article-title">How to keep records of guests and stays in Superhostem</h1>
+          <p class="kb-article-lead">In Superhost, domovní kniha follows up on reservations, guestbook and information that guests fill in before arrival. Thanks to this, you do not have to rewrite the data manually in a separate document and you have them linked to a specific stay.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Help Center</a>
+            <a href="./proc-vest-evidenci-hostu-a-pobytu.html">Previous article</a>
+            <a href="./jak-funguji-automatizace-v-superhostem.html">Next article →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>What awaits you next?</strong>
+        <p>
+          First, check that you have the guestbook and automation set up correctly,
+          then you verify the filled-in data for reservations and the resulting guest records.
+        </p>
+</div>
+
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <h2>What must work beforehand</h2>
+
+      <h3>Booking in the system</h3>
+<p>domovní kniha in Superhost stands on correctly loaded reservations and their details.</p>
+      <h3>Guestbook or guest form</h3>
+<p>You need a way to collect data from guests before they arrive or at check-in.</p>
+      <h3>Communication set up</h3>
+<p>Automation needs to send guests the right link at the right time so they can fill out the information.</p>
+    
+<h2>Where to start in Superhost</h2>
+<p>
+        You practically start with reservations and follow-up communication with the guest. In the booking you can see
+        if the guest has filled in the necessary information, and you can follow up on the guestbook or form,
+        which was sent to him.
+      </p>
+<ul>
+        <li>check that the reservation in the system matches the actual stays</li>
+        <li>verify that the guest received the correct link to the form or guestbook</li>
+        <li>when making a reservation, make sure that the filled-in information is complete</li>
+        <li>you can generate guest and stay records at any time after selecting a period <strong>from–to</strong>
+</li>
+      </ul>
+<h2>How it works in practice</h2>
+
+      <h3>Send the guest a link via automation</h3>
+<p>The guest will receive a link to the form or guestbook before arrival. This is where data collection for guest registration begins.</p>
+
+      <h3>The guest completes the details of the stay</h3>
+<p>Once the guest fills out the form, the data is linked to a specific reservation. You don't have to look for them sideways outside the system.</p>
+
+      <h3>Check the reservation and completeness of the data</h3>
+<p>For a specific reservation, verify that the data you need for guest registration and other related obligations is not missing. You can then generate an overview for the selected period by date at any time <strong>from–to</strong>.</p>
+
+      <h3>Work with records continuously, not retrospectively</h3>
+<p>The biggest advantage of Superhost is that you collect data continuously during normal work with reservations. This eliminates later manual rewriting into a separate domovní kniha.</p>
+    
+<h2>What to look out for</h2>
+<ul>
+        <li>the guest really got the right link to the form or guestbook</li>
+        <li>the reservation is correctly assigned to a specific property in the system</li>
+        <li>the stay includes the data you need for guest registration</li>
+        <li>the automation leaves in time so that the guest has time to complete the data before arrival</li>
+      </ul>
+<h2>What does this article follow up on?</h2>
+<p>
+        If you first need to clarify why you should solve the domovní kniha at all and what it is for,
+        start with an explanatory article. In order to correctly send the link to guests, an article on automation follows.
+      </p>
+<ul class="kb-article-link-list">
+<li><a href="./proc-vest-evidenci-hostu-a-pobytu.html">Why keep records of guests and stays</a></li>
+<li><a href="./jak-funguji-automatizace-v-superhostem.html">How to automate communications with guests</a></li>
+</ul>
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Related links</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Overview</span>
+  <strong>Help Center</strong>
+</a>
+
+<a class="kb-article-related-card" href="./proc-vest-evidenci-hostu-a-pobytu.html">
+  <span>Previous</span>
+  <strong>Why keep records of guests and stays</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-funguji-automatizace-v-superhostem.html">
+  <span>Another one</span>
+  <strong>How to automate communications with guests</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>On this page</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhost.cz</span>
+        <a href="./index.html">Help Center</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Back to top" title="Up">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../../assets/kb-navigation.js"></script>
+  </body>
+</html>

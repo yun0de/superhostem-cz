@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center | Superhostem.cz</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-help">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Superhostem.cz Help Center">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Help Center</small>
+          </span>
+        </a>
+
+        <nav class="kb-help-nav" aria-label="Main navigation">
+          <a href="#zacatek">Quick start</a>
+          <a href="#knihovna">Library</a>
+          <a href="#nejctenejsi">Most read</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Language"><a href="../index.html">CZ</a><a href="./index.html" class="is-active" aria-current="page">EN</a><a href="../vn/index.html">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Change color mode">
+            <button type="button" data-theme-option="light" aria-label="Light mode" title="Light mode"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="System mode" title="System mode"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">Main website <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="prehled" class="kb-help-hero">
+        <div class="kb-help-hero-bg" aria-hidden="true"></div>
+        <div class="kb-help-container kb-help-hero-inner">
+          <p class="kb-help-kicker">Documentation for short-term rental hosts</p>
+          <h1>How can we help?</h1>
+          <p class="kb-help-lead">
+            Search a guide, review the recommended first steps, or choose the area you are working on.
+          </p>
+
+          <div class="kb-help-search" role="search">
+            <label class="sr-only" for="kb-search-input">Search the Help Center</label>
+            <span class="kb-help-search-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></span>
+            <input id="kb-search-input" type="search" aria-label="Search articles, topics, or keywords" autocomplete="off">
+            <span class="kb-help-search-hint" aria-hidden="true">Search articles, topics, or questions...</span>
+            <kbd>⌘ K</kbd>
+          </div>
+
+          <div class="kb-help-popular" aria-label="Popular searches">
+            <span>Popular searches:</span>
+            <a href="./jak-funguje-napojeni-pres-ical.html">iCal</a>
+            <a href="./jak-funguje-poplatek-z-pobytu.html">Local stay fee</a>
+            <a href="./jak-funguji-automatizace-v-superhostem.html">Automation</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="kb-help-container kb-help-main">
+        <section id="zacatek" class="kb-help-section">
+          <div class="kb-help-section-head">
+            <div>
+              <span>1.</span>
+              <h2>Quick start</h2>
+            </div>
+            <p>First steps for a new account, first property, and operating setup.</p>
+          </div>
+
+          <div class="kb-help-quick-grid">
+            <article class="kb-help-step" data-search-text="první přihlášení orientace účet">
+              <span>1</span>
+              <h3>Starting point</h3>
+              <p>Find your way around the account and see where to start after the first login.</p>
+              <a href="./prvni-prihlaseni-a-orientace-v-uctu.html">Open guide</a>
+            </article>
+
+            <article class="kb-help-step" data-search-text="nová nemovitost přidat první">
+              <span>2</span>
+              <h3>First property</h3>
+              <p>Prepare the base for reservations, calendar, and further setup.</p>
+              <a href="./jak-pridat-novou-nemovitost.html">Add property</a>
+            </article>
+
+            <article class="kb-help-step" data-search-text="ical kalendář napojení rezervací automatizace">
+              <span>3</span>
+              <h3>Calendar and routines</h3>
+              <p>Connect iCal and set up automation for daily operations.</p>
+              <a href="./jak-funguje-napojeni-pres-ical.html">How iCal works</a>
+            </article>
+          </div>
+        </section>
+
+        <section id="knihovna" class="kb-help-section">
+          <div class="kb-help-section-head kb-help-section-head-compact">
+            <div>
+              <span>2.</span>
+              <h2>Knowledge library</h2>
+            </div>
+            <p>Topics grouped by the work hosts usually handle.</p>
+          </div>
+
+          <div class="kb-help-bento">
+            <article class="kb-help-topic kb-help-topic-featured" data-search-text="rezervace kalendář ical airbnb booking telefon detail pobytu evidence email forwarding">
+              <div class="kb-help-topic-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg></div>
+              <h3>Reservation and calendar management</h3>
+              <p>iCal connection, reservations, stay detail, and Airbnb calendar work.</p>
+              <ul>
+                <li><a href="./jak-funguje-napojeni-pres-ical.html">How iCal connection works</a></li>
+                <li><a href="./jak-funguje-prehled-rezervaci.html">How reservation overview works</a></li>
+                <li><a href="./co-vsechno-najdu-v-detailu-rezervace.html">What you can find in reservation detail</a></li>
+                <li><a href="./jak-funguje-email-forwarding.html">Email forwarding</a></li>
+                <li><a href="./proc-vest-evidenci-hostu-a-pobytu.html">domovní kniha: why keep guest and stay records</a></li>
+                <li><a href="./kalendar-airbnb-v-telefonu.html">Airbnb calendar on your phone</a></li>
+              </ul>
+            </article>
+
+            <article class="kb-help-topic" data-search-text="nastavení účet profil první přihlášení">
+              <div class="kb-help-topic-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.09a2 2 0 0 1-1-1.74v-.51a2 2 0 0 1 1-1.72l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2Z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+              <h3>Settings and account</h3>
+              <p>Basic orientation and profile editing.</p>
+              <a href="./prvni-prihlaseni-a-orientace-v-uctu.html">First login</a>
+              <a href="./jak-upravit-profil-v-nastaveni.html">Edit profile</a>
+            </article>
+
+            <article class="kb-help-topic" data-search-text="komunikace hosté automatizace evidence">
+              <div class="kb-help-topic-icon kb-help-topic-icon-blue" aria-hidden="true"><svg viewbox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></div>
+              <h3>Guest communication</h3>
+              <p>Messages, automation, and operating records.</p>
+              <a href="./jak-funguji-automatizace-v-superhostem.html">Automation</a>
+              <a href="./jak-vest-evidenci-hostu-a-pobytu-v-superhostem.html">Guest and stay records in Superhostem</a>
+              <a href="./jak-mesicne-zpracovat-poplatky-obci-v-superhostem.html">Monthly municipal agenda</a>
+            </article>
+
+            <article class="kb-help-topic" data-search-text="legislativa poplatky dph ubyport povinnosti superhostem">
+              <div class="kb-help-topic-icon kb-help-topic-icon-amber" aria-hidden="true"><svg viewbox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path></svg></div>
+              <h3>Legislation and duties</h3>
+              <p>Czech host duties and monthly agenda.</p>
+              <a href="./zakladni-legislativni-povinnosti-hostitele-v-cr.html">Host duties</a>
+              <a href="./jak-se-zaregistrovat-do-Ubyport.html">Ubyport registration</a>
+              <a href="./jak-resit-dph-u-airbnb-a-booking.html">VAT for Airbnb and Booking.com</a>
+              <a href="./co-je-superhostem-a-co-vam-pomuze-resit.html">What Superhostem is</a>
+            </article>
+
+            <article class="kb-help-topic kb-help-topic-alert" data-search-text="problémy kalendář nenačítá rezervace chybí faq pojmy ical blokace">
+              <div class="kb-help-topic-icon kb-help-topic-icon-red" aria-hidden="true"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg></div>
+              <h3>FAQ and troubleshooting</h3>
+              <p>Terms, common questions, and operating issues.</p>
+              <a href="./co-je-ical.html">What iCal is</a>
+              <a href="./jaky-je-rozdil-mezi-rezervaci-a-blokaci-terminu.html">Reservation vs. blocked date</a>
+              <a href="./co-delat-kdyz-se-kalendar-nenacita.html">When calendar does not load</a>
+              <a href="./co-delat-kdyz-chybi-rezervace.html">When a reservation is missing</a>
+            </article>
+          </div>
+        </section>
+
+        <section id="nejctenejsi" class="kb-help-section kb-help-split">
+          <div class="kb-help-section-head">
+            <div>
+              <span>3.</span>
+              <h2>Most read</h2>
+            </div>
+            <p>Articles hosts most often return to.</p>
+          </div>
+
+          <div class="kb-help-list">
+            <a class="kb-help-list-row" href="./jak-funguje-napojeni-pres-ical.html" data-search-text="ical napojení rezervace">
+              <span>01</span>
+              <strong>How iCal connection works</strong>
+              <em>Calendar</em>
+            </a>
+            <a class="kb-help-list-row" href="./jak-funguje-poplatek-z-pobytu.html" data-search-text="poplatek pobytu obec">
+              <span>02</span>
+              <strong>How local stay fee works</strong>
+              <em>Legislation</em>
+            </a>
+            <a class="kb-help-list-row" href="./jak-funguji-automatizace-v-superhostem.html" data-search-text="automation guest communication">
+              <span>03</span>
+              <strong>How automation works in Superhostem</strong>
+              <em>Automation</em>
+            </a>
+          </div>
+        </section>
+
+        <p class="kb-empty-state" hidden>
+          No results found. Try a shorter term, for example “iCal”, “Ubyport”, or “domovní kniha”.
+        </p>
+      </div>
+
+      <section class="kb-help-support">
+        <div class="kb-help-container">
+          <h2>Did not find what you need?</h2>
+          <p>Contact us. We will help choose the right workflow or add a missing guide.</p>
+          <div>
+            <a class="kb-help-primary" href="https://www.superhostem.cz/#contact">Contact support</a>
+            <a class="kb-help-secondary" href="./index.html">Back to overview</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="kb-help-footer">
+      <div class="kb-help-container">
+        <span>© Superhostem.cz</span>
+        <a href="https://www.superhostem.cz/">Main website</a>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        const setPreference = (preference) => {
+          localStorage.setItem(storageKey, preference);
+          applyTheme(preference);
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => setPreference(button.dataset.themeOption));
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+      })();
+    </script>
+      <script src="../../assets/kb-navigation.js"></script>
+  </body>
+</html>

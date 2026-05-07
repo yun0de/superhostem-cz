@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cách xử lý phí hàng tháng cho đô thị trong Superhost</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Trung tâm trợ giúp Superhostem.cz">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Trung tâm trợ giúp</small>
+          </span>
+        </a>
+
+        <nav class="kb-help-nav" aria-label="Điều hướng chính">
+          <a href="./index.html">Biển chỉ dẫn</a>
+          <a href="./index.html#knihovna">Thư viện</a>
+          <a href="#kb-article-related">Liên quan</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Ngôn ngữ"><a href="../jak-mesicne-zpracovat-poplatky-obci-v-superhostem.html">CZ</a><a href="../en/jak-mesicne-zpracovat-poplatky-obci-v-superhostem.html">EN</a><a href="./jak-mesicne-zpracovat-poplatky-obci-v-superhostem.html" class="is-active" aria-current="page">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Chuyển chế độ màu">
+            <button type="button" data-theme-option="light" aria-label="Chế độ sáng" title="Chế độ sáng"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="Theo hệ thống" title="Theo hệ thống"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Chế độ tối" title="Chế độ tối"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">Đến trang web chính <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Tự động hóa và truyền thông</p>
+          <h1 class="kb-article-title">Cách xử lý phí hàng tháng cho đô thị trong Superhost</h1>
+          <p class="kb-article-lead">Trong phần Phí thành phố, bạn có thể kiểm tra phép tính cho từng thuộc tính, tải xuống bản PDF để xác minh, gửi báo cáo qua hộp dữ liệu và chuẩn bị thanh toán qua mã QR.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Trung tâm trợ giúp</a>
+            <a href="./jak-funguji-automatizace-v-superhostem.html">Bài viết trước</a>
+            <a href="./jak-funguje-poplatek-z-pobytu.html">Bài tiếp theo →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>Điều quan trọng cần biết</strong>
+        <p>
+          Bạn luôn trả phí <strong>tháng trước</strong>, không phải cho cái hiện tại. Do đó Superhost theo mặc định
+          hiển thị tháng trước để khớp với khoảng thời gian thường được phục vụ và thanh toán.
+        </p>
+</div>
+
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <h2>Trước khi bạn bắt đầu</h2>
+
+      <h3>Đặt chính xác dữ liệu làng</h3>
+<p>Bạn phải có tỷ lệ, tài khoản đô thị và các tài liệu khác được nêu chi tiết về tài sản cụ thể.</p>
+      <h3>Đã chọn đúng tháng</h3>
+<p>Kiểm tra khoảng thời gian mà bạn thực sự đang báo cáo. Theo mặc định, đó là tháng trước.</p>
+      <h3>Kiểm tra trước khi vận chuyển</h3>
+<p>Tải xuống bản PDF và kiểm tra chính xác những gì đang được gửi đến văn phòng ngay cả trước khi nhận hoặc thanh toán.</p>
+    
+<h2>Bắt đầu từ đâu trong ứng dụng</h2>
+<p>
+        Mở ở menu bên trái <strong>Lệ phí cho chính quyền thành phố</strong>. Ở trên cùng, bạn sẽ thấy lựa chọn tháng, thời hạn nộp bài,
+        một bản tóm tắt cho tất cả các thuộc tính và bên dưới các thẻ thuộc tính riêng lẻ đó.
+      </p>
+<ul>
+        <li>ở trên cùng, bạn chọn tháng mà bạn xử lý việc báo cáo và thanh toán</li>
+        <li>trong phần tóm tắt, bạn sẽ nhanh chóng thấy tổng số tiền cho tất cả các thuộc tính</li>
+        <li>đối với mỗi tài sản, sau đó bạn sẽ tìm thấy một bản PDF, gửi theo thẻ ngày và thanh toán QR</li>
+      </ul>
+<h2>Cách tiến hành mỗi tháng</h2>
+
+      <h3>Hãy chắc chắn rằng bạn đang làm việc với tháng trước</h3>
+<p>Lệ phí cho chính quyền thành phố thường được nộp và thanh toán cho tháng trước. Đó là lý do tại sao Superhost hiển thị khoảng thời gian vừa qua theo mặc định chứ không phải tháng hiện tại.</p>
+<p>Nếu bạn chuyển tháng theo cách thủ công, hãy luôn kiểm tra xem bạn có đang thực sự xử lý đúng kỳ nộp hồ sơ hay không.</p>
+
+      <h3>Xem bản tóm tắt cho tất cả các thuộc tính</h3>
+<p>Ở đầu trang, bạn sẽ thấy tổng số tiền cho tháng đã chọn và trạng thái thanh toán. Nhờ đó, bạn sẽ nhanh chóng biết số tiền đang chờ bạn gửi và thanh toán.</p>
+
+      <h3>Mở chi tiết của một thuộc tính cụ thể</h3>
+<p>Đối với mỗi chỗ nghỉ, hãy kiểm tra số đêm, số khách trả tiền, số khách được miễn và số tiền thu được. Báo cáo hàng tháng cho đô thị bao gồm dữ liệu này.</p>
+
+      <h3>Tải xuống bản PDF để xác minh</h3>
+<p>Vui lòng tải về trước khi đăng <strong>PDF</strong> và xem xét chính xác những gì sẽ được gửi đến văn phòng. Đây là lần kiểm tra nhanh nhất trước khi gửi thẻ dữ liệu và trước khi thanh toán.</p>
+
+      <h3>Gửi báo cáo qua hộp dữ liệu</h3>
+<p>Sau khi kiểm tra, bạn có thể sử dụng nút <strong>Gửi theo ngày</strong>. Superhost sẽ soạn sẵn tin nhắn để bạn gửi lên văn phòng nên bạn không cần phải viết thủ công mọi thứ ngay từ đầu.</p>
+
+      <h3>Thanh toán phí qua mã QR</h3>
+<p>Sử dụng nút để thanh toán <strong>thanh toán QR</strong>. Khoản thanh toán của bạn sẽ mở với thông tin chi tiết đã sẵn sàng, vì vậy bạn chỉ cần kiểm tra số tiền và gửi số tiền đó từ ứng dụng ngân hàng của mình.</p>
+
+      <h3>Kiểm tra xem mọi thứ đã được xử lý chưa</h3>
+<p>Sau khi vận chuyển và thanh toán, hãy kiểm tra trạng thái của tài sản cụ thể. Nhờ đó, bạn có thể thấy ngay những gì đã được thực hiện và những gì vẫn còn phải hoàn thành.</p>
+
+      <h3>Nếu số tiền không khớp, trước tiên hãy điều chỉnh cài đặt thuộc tính</h3>
+<p>Bạn đặt mức giá và dữ liệu khác để tính phí trong <strong>Cài đặt thuộc tính</strong>. Nếu có gì đó không phù hợp, đừng bắt đầu sửa nó cho đến khi gửi hàng tháng mà hãy kiểm tra cài đặt của thuộc tính cụ thể trước.</p>
+    
+<h2>Cần chú ý điều gì</h2>
+<ul>
+        <li>không nộp tháng hiện tại nếu chính quyền thành phố dự kiến nộp tháng trước</li>
+        <li>luôn tải xuống bản PDF và kiểm tra tài liệu trước khi xuất hóa đơn và thanh toán</li>
+        <li>nếu số tiền không khớp, hãy kiểm tra tỷ lệ trong cài đặt thuộc tính cụ thể</li>
+        <li>đối với nhiều thuộc tính, hãy kiểm tra từng tab riêng biệt, không chỉ phần tóm tắt tổng thể</li>
+      </ul>
+<h2>Thủ tục này dẫn đến điều gì?</h2>
+<p>
+        Bài viết này đề cập đến công việc thực tế hàng tháng trong ứng dụng. Nếu bạn vẫn cần làm rõ nghĩa vụ,
+        đăng ký và thông tin từ chính quyền thành phố, trước tiên hãy bắt đầu với bài viết về phí cư trú.
+      </p>
+<ul class="kb-article-link-list"><li><a href="./jak-funguje-poplatek-z-pobytu.html">Phí lưu trú hoạt động như thế nào</a></li></ul>
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Liên kết liên quan</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Tổng quan</span>
+  <strong>Trung tâm trợ giúp</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-funguji-automatizace-v-superhostem.html">
+  <span>trước đó</span>
+  <strong>Cách tự động liên lạc với khách</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-funguje-poplatek-z-pobytu.html">
+  <span>Một cái khác</span>
+  <strong>Phí lưu trú hoạt động như thế nào</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>Trên trang này</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhost.cz</span>
+        <a href="./index.html">Trung tâm trợ giúp</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Quay lại đầu trang" title="Hướng lên">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../../assets/kb-navigation.js"></script>
+  </body>
+</html>

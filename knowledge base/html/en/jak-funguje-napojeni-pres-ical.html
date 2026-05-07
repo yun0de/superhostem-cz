@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to get and connect iCal from Airbnb and Booking</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Superhostem.cz Help Center">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Help Center</small>
+          </span>
+        </a>
+
+        <nav class="kb-help-nav" aria-label="Main navigation">
+          <a href="./index.html">Signpost</a>
+          <a href="./index.html#knihovna">Library</a>
+          <a href="#kb-article-related">Related</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Language"><a href="../jak-funguje-napojeni-pres-ical.html">CZ</a><a href="./jak-funguje-napojeni-pres-ical.html" class="is-active" aria-current="page">EN</a><a href="../vn/jak-funguje-napojeni-pres-ical.html">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Switch color mode">
+            <button type="button" data-theme-option="light" aria-label="Bright mode" title="Bright mode"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="According to the system" title="According to the system"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">To the main website <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Properties and calendars</p>
+          <h1 class="kb-article-title">How to get and connect iCal from Airbnb and Booking</h1>
+          <p class="kb-article-lead">iCal is the fastest way to get your first booking and block dates to Superhost. This tutorial addresses the two most common situations: how to find iCal on Airbnb and how to get it from Booking.com.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Help Center</a>
+            <a href="./jak-pridat-novou-nemovitost.html">Previous article</a>
+            <a href="./kalendar-airbnb-v-telefonu.html">Next article →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>What awaits you next?</strong>
+          <p>
+            First you copy the iCal link from Airbnb or Booking, then it
+            you put in the property settings in Superhost and finally
+            you check that the calendar has been spelled correctly.
+          </p>
+</div>
+
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <section class="kb-article-topic-block">
+            <h2>What iCal can and can't do</h2>
+
+        <h3>What iCal normally transfers</h3>
+<ul>
+            <li>date of arrival and departure</li>
+            <li>busy or blocked appointments</li>
+            <li>basic event identification</li>
+          </ul>
+        <h3>What iCal doesn't usually transfer</h3>
+<ul>
+            <li>the price of the reservation</li>
+            <li>amount of commission and fees</li>
+            <li>complete guest details</li>
+          </ul>
+      
+<h2>When to use iCal</h2>
+<p>
+          iCal makes the most sense in the beginning when you want to connect quickly
+          calendar with real estate. If you want to work with more detailed ones
+          reservation data, followed by email forwarding and automation.
+        </p>
+            </section>
+            <section class="kb-article-topic-block">
+<h2>What it looks like in Airbnb</h2>
+<div class="kb-article-media-grid">
+        <figure class="kb-article-figure">
+          <img src="../../assets/screens/ical1_cz.png" alt="Airbnb calendar in Czech with the Calendar section">
+          <figcaption>
+            In Airbnb, you start in the top navigation on the tab
+            <strong>Calendar</strong>. This is where you get to the settings
+            availability and to link calendars.
+          </figcaption>
+        </figure>
+        <figure class="kb-article-figure">
+          <img src="../../assets/screens/ical3_eng.png" alt="Airbnb availability settings with the item Connect calendars">
+          <figcaption>
+            In part <strong>Availability settings</strong> go lower until
+            you won't see the block <strong>Connect calendars</strong> and choice
+            <strong>Connect to another website</strong>.
+          </figcaption>
+        </figure>
+      </div>
+<h2>How to get iCal from Airbnb</h2>
+
+        <h3>Open Calendar on Airbnb</h3>
+<p>
+            According to Airbnb's current official help, you start in the section
+            <strong>Calendar</strong> and select the specific listing you want
+            to connect
+          </p>
+        <h3>Go to Availability</h3>
+<p>
+            Open the section in the calendar of the given listing
+            <strong>Availability</strong>. That's where Airbnb is currently hiding
+            connection with other calendars.
+          </p>
+        <h3>Select Connect to another website</h3>
+<p>
+            Under <strong>Connect calendars</strong> click on
+            <strong>Connect to another website</strong>. Airbnb will show you
+            calendar link that you can export.
+          </p>
+        <h3>Copy the entire iCal link</h3>
+<p>
+            Copy the entire address, not just part of it. Airbnb specifically states that
+            for import on the other hand it should be a URL ending in
+            <strong>.ics</strong>.
+          </p>
+      
+            </section>
+            <section class="kb-article-topic-block">
+<h2>How to get iCal from Booking.com</h2>
+
+        <h3>Open the Booking.com Extranet</h3>
+<p>
+            Log in to the Booking.com Extranet and open a specific object,
+            that you want to link.
+          </p>
+        <h3>Go to Calendar or Calendar &amp; Pricing</h3>
+<p>
+            Depending on the current version of the Extranet, run either via
+            <strong>Rates &amp; Availability → Calendar</strong>, or directly to
+            <strong>Calendar &amp; Pricing</strong>.
+          </p>
+        <h3>Open Sync calendars</h3>
+<p>
+            Open in the calendar <strong>Sync calendars</strong> and select
+            <strong>Add calendar connection</strong>. This will open Booking
+            wizard for connecting to another calendar.
+          </p>
+        <h3>Complete the calendar export</h3>
+<p>
+            In the wizard, click on <strong>Copy link</strong> and copy your
+            Booking.com iCal link. Under <strong>Export options</strong> it happens
+            it is possible to choose whether you want to export only reserved dates or
+            and closed dates.
+          </p>
+        <h3>Check for correct drive and link status</h3>
+<p>
+            If you have multiple rooms or units, verify that you are taking iCal right away
+            for the specific property you are connecting. After completion, in
+            An extranet usually displays the connection status, for example
+            <strong>Activating</strong> or <strong>OK</strong>.
+          </p>
+      
+            </section>
+            <section class="kb-article-topic-block">
+<h2>What can you take away from it practically?</h2>
+<p>
+          At Airbnb, thanks to the screenshots, we already have the current flow through confirmed
+          <strong>Calendar</strong> a <strong>Availability settings</strong>. U
+          Booking.com follow the same logic: open the calendar, find
+          sync calendars and copy the export link for specific
+          unit.
+        </p>
+            </section>
+            <section class="kb-article-topic-block">
+<h2>How to insert iCal into Superhost</h2>
+
+        <h3>Open the property detail</h3>
+<p>
+            In Superhost, you open a specific property that you just
+            you set.
+          </p>
+        <h3>Find the section for calendars or iCal</h3>
+<p>
+            In the property settings, go to the section where the resource is added
+            calendars.
+          </p>
+        <h3>Paste the iCal URL</h3>
+<p>
+            Paste the copied address from Airbnb or Booking into the field for iCal and
+            name the source clearly, e.g
+            <strong>Airbnb</strong> or <strong>Booking</strong>.
+          </p>
+        <h3>Save the settings and check the synchronization</h3>
+<p>
+            After saving, verify that the reservation or blocking has been written to
+            property calendar.
+          </p>
+      
+            </section>
+            <section class="kb-article-topic-block">
+<h2>What to watch out for</h2>
+<ul>
+          <li>always copy the entire iCal link, not just part of it</li>
+          <li>
+            for multiple units, make sure you match the correct calendar to the correct one
+            real estate
+          </li>
+          <li>iCal does not transmit prices or complete financial information</li>
+          <li>
+            if nothing went wrong, check that the link is not invalid or
+            old
+          </li>
+          <li>
+            at Airbnb today, count on the fact that the official route leads through
+            <strong>Calendar → Availability → Connect calendars</strong>
+          </li>
+          <li>
+            at Booking.com, the names of the sections differ according to the version of the Extranet, but
+            you currently move most often through <strong>Calendar</strong>,
+            <strong>Calendar &amp; Pricing</strong> a
+            <strong>Sync calendars</strong>
+          </li>
+        </ul>
+<aside class="kb-article-callout">
+          If you need not only blocking dates, but also more detailed data about
+          reservations, follows iCal, typically email forwarding and others
+          automation.
+        </aside>
+            </section>
+            <section class="kb-article-topic-block kb-article-topic-block-muted">
+<h2>Verification and sources</h2>
+<p>
+          This article is a practical guide according to the normal procedure in Airbnb and
+          Booking.com. The interface of the platforms can change, so it is good to count
+          with minor differences in section names.
+        </p>
+<ul>
+          <li>
+            <a href="https://www.airbnb.com/help/article/99" target="_blank" rel="noreferrer">Airbnb Help: Sync your home host calendar to other websites</a>
+          </li>
+          <li>
+            <a href="https://partner.booking.com/en-gb/help/rates-availability/extranet-calendar/syncing-your-bookingcom-calendar-third-party-calendars" target="_blank" rel="noreferrer">Booking.com Partner Hub: Syncing your Booking.com calendar to
+              third-party calendars</a>
+          </li>
+          <li>
+            <a href="https://help.parkwith.us/settings--integrations/bjC7KLQXqS9fYYmxFeVAiv/how-to-sync-your-bookingcom-listing/5iuTesEA9XBAFTciVmaxW6" target="_blank" rel="noreferrer">Partner walkthrough quoting current Booking.com sync flow</a>
+          </li>
+        </ul>
+<aside class="kb-article-callout kb-article-callout-muted">
+          <p>
+            <strong>Updated:</strong> 29/03/2026. We are part of Airbnb
+            verified against current official help. We are at Booking.com
+            verified current flow against Partner Hub URLs and publicly cited
+            partner walkthroughs; official partner help is out of login
+            partially limited, so exact item names may vary by
+            version of the Extranet.
+          </p>
+        </aside>
+            </section>
+            <section class="kb-article-topic-block">
+<h2>Do you want to make reservations on your phone?</h2>
+<p>
+          If you already use iCal or have the export ready, you can
+          View bookings in Apple Calendar, Google Calendar or others
+          application that supports iCal.
+        </p>
+<a class="kb-article-next-cta" href="./kalendar-airbnb-v-telefonu.html">
+          <span class="kb-article-next-cta-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"></rect><path d="M12 18h.01"></path></svg></span>
+          <span>
+            <strong>Open the calendar guide on your phone</strong>
+            <small>Follow-up procedure for Apple Calendar, Google Calendar and other applications.</small>
+          </span>
+          <svg class="kb-article-next-cta-arrow" aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+        </a>
+            </section>
+            <section class="kb-article-topic-block">
+<h2>Do you want to automate other work?</h2>
+<p>
+          iCal will help with the calendar. But if you don't want data from reservations
+          rewrite manually, it is followed by automatic processing of e-mails and
+          communication with guests.
+        </p>
+<a class="kb-article-next-cta" href="./jak-funguje-email-forwarding.html">
+          <span class="kb-article-next-cta-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span>
+          <span>
+            <strong>Automate the completion of data from e-mails</strong>
+            <small>Email forwarding will help retrieve data from reservation emails so you don't have to fill them in manually.</small>
+          </span>
+          <svg class="kb-article-next-cta-arrow" aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+        </a>
+<a class="kb-article-next-cta" href="./jak-funguji-automatizace-v-superhostem.html">
+          <span class="kb-article-next-cta-icon" aria-hidden="true"><svg viewbox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg></span>
+          <span>
+            <strong>Automate communication with guests</strong>
+            <small>Set up automations for messages and routine steps around stays.</small>
+          </span>
+          <svg class="kb-article-next-cta-arrow" aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+        </a>
+            </section>
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Related links</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Overview</span>
+  <strong>Help Center</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-pridat-novou-nemovitost.html">
+  <span>Previous</span>
+  <strong>How to add your property</strong>
+</a>
+
+<a class="kb-article-related-card" href="./kalendar-airbnb-v-telefonu.html">
+  <span>Another one</span>
+  <strong>Airbnb calendar on your phone 📱</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>On this page</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhost.cz</span>
+        <a href="./index.html">Help Center</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Back to top" title="Up">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../../assets/kb-navigation.js"></script>
+  </body>
+</html>

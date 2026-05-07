@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cách tự động liên lạc với khách</title>
+    <script>
+      (() => {
+        const preference = localStorage.getItem("superhostem-kb-theme") || "system";
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = preference === "dark" || (preference === "system" && systemDark);
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="../../assets/superhostem.css">
+  </head>
+  <body id="page-top" class="kb-article-page">
+    <header class="kb-help-header">
+      <div class="kb-help-header-inner">
+        <a class="kb-help-brand" href="./index.html" aria-label="Trung tâm trợ giúp Superhostem.cz">
+          <span class="kb-help-brand-mark" aria-hidden="true">S</span>
+          <span>
+            <strong>Superhostem.cz</strong>
+            <small>Trung tâm trợ giúp</small>
+          </span>
+        </a>
+
+        <nav class="kb-help-nav" aria-label="Điều hướng chính">
+          <a href="./index.html">Biển chỉ dẫn</a>
+          <a href="./index.html#knihovna">Thư viện</a>
+          <a href="#kb-article-related">Liên quan</a>
+        </nav>
+
+        <div class="kb-help-actions">
+<nav class="kb-language-switcher" aria-label="Ngôn ngữ"><a href="../jak-funguji-automatizace-v-superhostem.html">CZ</a><a href="../en/jak-funguji-automatizace-v-superhostem.html">EN</a><a href="./jak-funguji-automatizace-v-superhostem.html" class="is-active" aria-current="page">VN</a></nav>
+
+          <div class="kb-theme-toggle" role="group" aria-label="Chuyển chế độ màu">
+            <button type="button" data-theme-option="light" aria-label="Chế độ sáng" title="Chế độ sáng"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
+            <button type="button" data-theme-option="system" aria-label="Theo hệ thống" title="Theo hệ thống"><svg aria-hidden="true" viewbox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg></button>
+            <button type="button" data-theme-option="dark" aria-label="Chế độ tối" title="Chế độ tối"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+          </div>
+          <a class="kb-help-site-link" href="https://www.superhostem.cz/">Đến trang web chính <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-article-shell">
+      <div class="kb-article-container">
+        <article class="kb-article-main">
+          <p class="kb-article-kicker">Tự động hóa và truyền thông</p>
+          <h1 class="kb-article-title">Cách tự động liên lạc với khách</h1>
+          <p class="kb-article-lead">Mục đích của tự động hóa là để khách nhận được liên kết đến biểu mẫu hoặc sổ lưu bút vào đúng thời điểm và bạn không cần phải gửi thủ công với mỗi lần đặt phòng.</p>
+          <div class="kb-article-jump">
+            <a href="./index.html">Trung tâm trợ giúp</a>
+            <a href="./jak-pridat-novou-nemovitost.html">Bài viết trước</a>
+            <a href="./zakladni-legislativni-povinnosti-hostitele-v-cr.html">Bài tiếp theo →</a>
+          </div>
+          <div class="kb-article-intro-note">
+  <strong>Điều gì đang chờ đợi bạn tiếp theo?</strong>
+        <p>Đầu tiên, bạn sao chép liên kết của một chỗ nghỉ cụ thể trong Superhost, sau đó dán vào tin nhắn tự động trên Airbnb hoặc Booking.com, và cuối cùng bạn khớp thời gian gửi với thời gian bạn đã đặt trong ứng dụng.</p>
+</div>
+
+          <div class="kb-article-divider"></div>
+          <div class="kb-article-prose" id="kb-article-content">
+            <h2>Cần chuẩn bị gì trước</h2>
+
+      <h3>Bất động sản ở Superhostem</h3>
+<p>Bạn chỉ thiết lập tự động hóa khi bạn đã thiết lập một thuộc tính cụ thể trong hệ thống.</p>
+      <h3>Liên kết khách</h3>
+<p>Bạn cần một liên kết cố định hoặc liên kết công khai để gửi cho khách trong tin nhắn.</p>
+      <h3>Nền tảng đã chọn</h3>
+<p>Quyết định xem nên thiết lập tin nhắn tự động trên Airbnb hay Booking.com.</p>
+    
+<h2>Bắt đầu từ đâu trong Superhost</h2>
+<p>
+        Trong chi tiết của một thuộc tính cụ thể, hãy mở phần <strong>Tự động hóa</strong>. Đó là nơi bạn sẽ tìm thấy liên kết của khách
+        và đặt số lượng đặt phòng trước bao nhiêu ngày sẽ có sẵn cho khách thông qua liên kết này.
+      </p>
+<ul>
+        <li>sao chép liên kết của khách</li>
+        <li>đặt số ngày trước khi đặt chỗ sẽ được hiển thị</li>
+        <li>lưu cài đặt trước khi tạo tin nhắn tự động trên nền tảng OTA</li>
+      </ul>
+<aside class="kb-article-callout">
+        Cài đặt này phải trùng với thời điểm tin nhắn tự động được gửi trên Airbnb hoặc Booking.com. Nếu bạn đặt số ngày khác nhau trong ứng dụng và số ngày khác nhau trong OTA, khách có thể không thấy đặt phòng chính xác sau khi nhấp vào.
+      </aside>
+<h2>Nó trông như thế nào trong tin tức Airbnb</h2>
+<div class="kb-article-media-grid">
+      <figure class="kb-article-figure">
+        <img src="../../assets/screens/messages1_cz.png" alt="Tin nhắn Airbnb có biểu tượng cài đặt">
+        <figcaption>Trong Airbnb, bạn bắt đầu trong một phần <strong>Tin tức</strong>. Từ đó, mở qua bánh răng <strong>Cài đặt tin nhắn</strong>.</figcaption>
+      </figure>
+      <figure class="kb-article-figure">
+        <img src="../../assets/screens/messages2_cz.png" alt="Cài đặt tin nhắn Airbnb với quản lý trả lời nhanh">
+        <figcaption>Trong cài đặt tin nhắn, bạn nhập <strong>Tin nhắn trả lời nhanh</strong>, nơi bạn tạo hoặc chỉnh sửa mẫu.</figcaption>
+      </figure>
+      <figure class="kb-article-figure">
+        <img src="../../assets/screens/messages4_cz.png" alt="Bảng điều khiển Airbnb Thêm chi tiết">
+        <figcaption>Khi chỉnh sửa tin nhắn, bạn có thể thông qua <strong>Thêm chi tiết</strong> chèn các biến động như tên khách hoặc ngày đến.</figcaption>
+      </figure>
+      <figure class="kb-article-figure">
+        <img src="../../assets/screens/messages3_cz.png" alt="Nút Tạo Airbnb">
+        <figcaption>Sau khi hoàn tất, bạn sẽ tạo mẫu và đặt nó vào thời điểm chính xác để đến.</figcaption>
+      </figure>
+    </div>
+<h2>Cài đặt trong Airbnb</h2>
+
+      <h3>Mở quản lý trả lời nhanh</h3>
+<p>Trong Airbnb vào phần tin nhắn với khách, mở gear và vào phần <strong>Quản lý phản hồi nhanh</strong>.</p>
+      <h3>Tạo một mẫu mới</h3>
+<p>Tạo tin nhắn trả lời nhanh hoặc tin nhắn tự động mới. Nên có một mẫu riêng cho mỗi ưu đãi.</p>
+      <h3>Dán văn bản và liên kết từ Superhost</h3>
+<p>Dán mẫu giao tiếp của bạn vào văn bản tin nhắn và thêm liên kết khách đã sao chép từ phần <strong>Tự động hóa</strong> trong Siêu máy chủ.</p>
+      <h3>Chỉ chọn một đề nghị đúng</h3>
+<p>Trong cài đặt mẫu, hãy kiểm tra xem nó chỉ được gán cho một menu cụ thể hay không. Nếu bạn quản lý nhiều ưu đãi thì mỗi ưu đãi phải có mẫu riêng.</p>
+      <h3>Đặt thời gian gửi chính xác</h3>
+<p>Ví dụ: cài đặt được đề xuất là <strong>3 ngày trước khi đến</strong>. Điều quan trọng là số ngày tương tự cũng được đặt trong cài đặt liên kết trong Superhost.</p>
+      <h3>Kiểm tra mẫu cuối cùng</h3>
+<p>Trước khi lưu, hãy kiểm tra ba điều: liên kết chính xác, ưu đãi được chọn chính xác và thời gian gửi chính xác.</p>
+    
+<h2>Cài đặt trong Booking.com</h2>
+
+      <h3>Mở cài đặt tin nhắn</h3>
+<p>Trên trang chủ của extranet Booking.com, mở ưu đãi <strong>Cơ sở lưu trú</strong> và sau đó <strong>Cài đặt tin nhắn</strong>.</p>
+      <h3>Tạo một mẫu mới</h3>
+<p>Một phần <strong>Mẫu báo cáo</strong> chọn tạo mẫu mới.</p>
+      <h3>Dán liên kết từ Superhost</h3>
+<p>Dán liên kết khách đã sao chép vào văn bản của mẫu mới. Nếu bạn có một chỗ nghỉ có nhiều căn trên Booking.com, vui lòng kiểm tra xem bạn có đang sử dụng đúng liên kết cho đơn vị cụ thể hay không.</p>
+      <h3>Đặt tên cho mẫu và chọn chủ đề</h3>
+<p>Đặt cho mẫu một cái tên dễ hiểu và thường chọn thông tin liên lạc khi đến hoặc trước khi đến làm loại tin nhắn.</p>
+      <h3>Lên lịch gửi hàng</h3>
+<p>Đối với mẫu mới tạo, chọn <strong>Lên lịch gửi mẫu</strong> và đặt số ngày trước khi đến.</p>
+      <h3>Khớp thời gian với cài đặt trong Superhost</h3>
+<p>Đặt cùng số ngày trước khi đến phần <strong>Tự động hóa</strong> trong Siêu máy chủ. Nếu không, khách có thể không thấy đặt phòng chính xác sau khi mở liên kết.</p>
+    
+<h2>Làm thế nào để bạn biết tự động hóa được thiết lập chính xác?</h2>
+<ul>
+        <li>trong nội dung tin nhắn có một liên kết chính xác cho một thuộc tính cụ thể</li>
+        <li>mẫu được liên kết với đúng menu hoặc đơn vị</li>
+        <li>thời gian gửi trong OTA tương ứng với số ngày đặt trong Superhost</li>
+        <li>khách có thể xem đặt chỗ của mình sau khi nhấp vào liên kết</li>
+      </ul>
+<h2>Quy trình làm việc cơ bản được đề xuất</h2>
+
+      <h3>Tin nhắn sau khi đặt phòng</h3>
+<p>Một xác nhận đặt phòng ngắn gọn sẽ giúp khách hàng tin tưởng rằng mọi thứ đều ổn. Nhưng bạn không cần phải gửi tất cả các dịch vụ quản lý cùng một lúc ở giai đoạn này.</p>
+      <h3>Tin nhắn trước khi đến có biểu mẫu</h3>
+<p>Đây là tính năng tự động hóa chính mà bài viết này đề cập đến. Đây là nơi bạn gửi liên kết đến biểu mẫu hoặc sổ lưu bút và thu thập dữ liệu cần thiết cho hoạt động và pháp lý.</p>
+      <h3>Hướng dẫn lưu trú</h3>
+<p>Tùy thuộc vào loại hoạt động, bạn có thể theo dõi bằng một tin nhắn riêng với thông tin về việc nhận phòng, vào tòa nhà hoặc thông tin thiết thực về thời gian lưu trú của bạn.</p>
+      <h3>Lời nhắn sau khi khởi hành</h3>
+<p>Khi kết thúc thời gian lưu trú, bạn có thể kết thúc quá trình tự động hóa bằng lời cảm ơn, lời kêu gọi đánh giá hoặc danh sách kiểm tra nội bộ để dọn dẹp và các nhiệm vụ tiếp theo khác.</p>
+    
+<h2>Cách bắt đầu đơn giản</h2>
+<p>
+        Không cần phải tự động hóa mọi thứ ngay từ đầu. Đầu tiên, điều hợp lý nhất là thiết lập và chạy một thông báo hoạt động tốt
+        trước khi đến, sẽ gửi cho khách liên kết phù hợp vào đúng thời điểm. Chỉ khi đó việc mở rộng quy trình làm việc hơn nữa mới có ý nghĩa.
+      </p>
+<ul class="kb-article-link-list">
+<li><a href="./jak-vest-evidenci-hostu-a-pobytu-v-superhostem.html">Cách lưu trữ hồ sơ khách và lưu trú tại Superhostem</a></li>
+<li><a href="./jak-mesicne-zpracovat-poplatky-obci-v-superhostem.html">Cách xử lý phí hàng tháng cho đô thị trong Superhost</a></li>
+</ul>
+<h2>Những sai lầm phổ biến nhất</h2>
+<ul>
+        <li>liên kết sai hoặc liên kết cố định cũ được nhúng trong tin nhắn</li>
+        <li>một mẫu bị gán nhầm cho nhiều ưu đãi</li>
+        <li>số ngày trong OTA không khớp với cài đặt trong Superhost</li>
+        <li>tại Booking.com, một liên kết được sử dụng cho một đơn vị khác với một đặt phòng cụ thể</li>
+      </ul>
+<aside class="kb-article-callout">
+        Nếu bạn có thời gian lưu trú ngắn ngày hoặc đặt phòng vào phút cuối, điều quan trọng hơn nữa là phải kiểm tra xem tin nhắn tự động có xuất hiện đúng giờ hay không và khách có thứ gì đó để mở sau khi nhấp vào hay không.
+      </aside>
+<h2>Xác minh và nguồn</h2>
+<p>Chúng tôi đã chuẩn bị bài viết này như một hướng dẫn thực tế dựa trên logic thiết lập cơ sở lưu trú trong Superhost.</p>
+<aside class="kb-article-callout kb-article-callout-muted">
+        <p><strong>Đã cập nhật:</strong> 29/03/2026. Tên của các phần trong Airbnb và Booking.com có ​​thể thay đổi, nhưng logic của cài đặt vẫn giữ nguyên: liên kết phù hợp, ưu đãi phù hợp và thời gian gửi phù hợp.</p>
+      </aside>
+<h2>Bạn có muốn đặt chỗ trên điện thoại của bạn?</h2>
+<p>
+        Nếu tự động hóa được kết nối với đặt chỗ, việc có cùng một tính năng tự động hóa có thể hữu ích
+        tổng quan cũng có trong lịch di động.
+      </p>
+<ul class="kb-article-link-list">
+<li><a href="./kalendar-airbnb-v-telefonu.html">Mở hướng dẫn lịch trên điện thoại của bạn</a></li>
+</ul>
+          </div>
+          <section class="kb-article-related" id="kb-article-related">
+            <h2>Liên kết liên quan</h2>
+            <div class="kb-article-related-grid">
+              <a class="kb-article-related-card" href="./index.html">
+  <span>Tổng quan</span>
+  <strong>Trung tâm trợ giúp</strong>
+</a>
+
+<a class="kb-article-related-card" href="./jak-pridat-novou-nemovitost.html">
+  <span>trước đó</span>
+  <strong>Cách thêm tài sản của bạn</strong>
+</a>
+
+<a class="kb-article-related-card" href="./zakladni-legislativni-povinnosti-hostitele-v-cr.html">
+  <span>Một cái khác</span>
+  <strong>Nghĩa vụ pháp lý cơ bản của chủ nhà tại Cộng hòa Séc</strong>
+</a>
+
+            </div>
+          </section>
+        </article>
+
+        <aside class="kb-article-sidebar" id="kb-article-sidebar">
+          <div class="kb-article-sidebar-card">
+            <h2>Trên trang này</h2>
+            <nav class="kb-article-toc" id="kb-article-toc"></nav>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="kb-article-footer">
+      <div class="kb-help-container">
+        <span>© Superhost.cz</span>
+        <a href="./index.html">Trung tâm trợ giúp</a>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#page-top" aria-label="Quay lại đầu trang" title="Hướng lên">↑</a>
+
+    <script>
+      (() => {
+        const storageKey = "superhostem-kb-theme";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-option]");
+
+        const applyTheme = (preference) => {
+          const resolved = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+          document.documentElement.classList.toggle("dark", resolved === "dark");
+          document.documentElement.style.colorScheme = resolved === "dark" ? "dark" : "light";
+          buttons.forEach((button) => {
+            const active = button.dataset.themeOption === preference;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            localStorage.setItem(storageKey, button.dataset.themeOption);
+            applyTheme(button.dataset.themeOption);
+          });
+        });
+
+        media.addEventListener("change", () => {
+          if ((localStorage.getItem(storageKey) || "system") === "system") {
+            applyTheme("system");
+          }
+        });
+
+        applyTheme(localStorage.getItem(storageKey) || "system");
+
+        const slugify = (value) =>
+          value
+            .toLocaleLowerCase("cs-CZ")
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || "sekce";
+
+        const toc = document.querySelector("#kb-article-toc");
+        const sidebar = document.querySelector("#kb-article-sidebar");
+        const headings = [...document.querySelectorAll("#kb-article-content h2")];
+        const usedIds = new Set();
+
+        headings.forEach((heading) => {
+          let base = heading.id ? slugify(heading.id) : slugify(heading.textContent || "sekce");
+          let id = base;
+          let i = 2;
+          while (usedIds.has(id) || document.getElementById(id) !== heading && document.getElementById(id)) {
+            id = `${base}-${i}`;
+            i += 1;
+          }
+          heading.id = id;
+          usedIds.add(id);
+        });
+
+        if (headings.length < 2) {
+          sidebar.hidden = true;
+          return;
+        }
+
+        toc.innerHTML = headings
+          .map((heading) => `<a href="#${heading.id}">${heading.textContent.trim()}</a>`)
+          .join("");
+
+        const tocLinks = [...toc.querySelectorAll("a")];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const active = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+            if (!active) return;
+            tocLinks.forEach((link) => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+          },
+          { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+      })();
+    </script>
+      <script src="../../assets/kb-navigation.js"></script>
+  </body>
+</html>
